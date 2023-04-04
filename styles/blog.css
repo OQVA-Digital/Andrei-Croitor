@@ -1,0 +1,39 @@
+body {
+    background-color: #000000;
+    color:var(--light);
+}
+
+main {
+
+}
+
+main article {
+    width: clamp(10rem, 85vw, 70rem);
+    margin: clamp(4rem, 10vw, 9rem) auto;
+    font-size: 1.6rem;
+    color: #CCC;
+    padding: 1rem;
+} article p {
+    margin-top: 1rem;
+    color: #D1D1CF;
+}
+
+h1 {
+    font-size: clamp(4rem, 10vw, 7.1rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15rem;
+    color: v;
+    text-shadow: 0 -0.6rem 1.2rem var(--grey1);
+} h1 ~ h2 {
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--pink);
+    letter-spacing: 0.1rem;
+} article section {
+    margin-top: 3rem;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    
+}

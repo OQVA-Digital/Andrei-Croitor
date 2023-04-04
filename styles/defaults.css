@@ -1,0 +1,70 @@
+:root {
+    --light: #fafaf8;
+
+    --grey1:#303030;
+    --grey2: #1C161A;
+
+    --dark: #0D0B0D;
+
+    --pink:#ffb7ab;
+
+    --blue:#6ea8e8;
+}
+
+html, body, p, h1, h2, h3, h4, h5, h6 {
+    margin:0;
+    cursor:default;
+} html {
+    font-size:10px;
+    scroll-behavior:smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color:unset;
+}
+
+img {
+    user-select: none;
+    max-width: 100%;
+}
+
+.mobile_hidden {
+    display:none;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: VAR(--c2);
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+    font-weight: 400;
+    font-style: normal;
+} @font-face {
+    font-family: 'Open Sans';
+    src: url('../assets/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf');
+    font-weight: 400;
+    font-style: italic;
+}
+
+main {
+    min-height: 100vh;
+}
+
