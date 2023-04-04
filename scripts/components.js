@@ -18,7 +18,7 @@ function callHeader() {
   window.customElements.define('header-component', HeaderComponent);
 }
 
-fetch('/components/header.html').then(function (response) {
+fetch('../components/header.html').then(function (response) {
   return response.text();
 }).then(function (html) {
   headerHTML = html;
@@ -53,7 +53,7 @@ function callFooter() {
   window.customElements.define('footer-component', FooterComponent);
 }
 
-fetch('/components/footer.html').then(function (response) {
+fetch('../components/footer.html').then(function (response) {
   return response.text();
 }).then(function (html) {
   footerHTML = html;
@@ -88,7 +88,7 @@ function callBreadcrumbs() {
   window.customElements.define('breadcrumbs-component', BreadcrumbsComponent);
 }
 
-fetch('/components/breadcrumbs.html').then(function (response) {
+fetch('../components/breadcrumbs.html').then(function (response) {
   return response.text();
 }).then(function (html) {
   breadcrumbsHTML = html;
