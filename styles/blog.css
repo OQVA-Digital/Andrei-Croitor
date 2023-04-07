@@ -1,5 +1,4 @@
 body {
-    background-color: #4B4346;
     color: var(--light);
 }
 
@@ -19,14 +18,14 @@ main article {
 }
 
 h1 {
-    font-size: clamp(4rem, 10vw, 7.1rem);
+    font-size: clamp(4rem, 10vw, 8rem);
     line-height: 1.15;
     margin-bottom: 1rem;
     letter-spacing: 0.15rem;
 } h1 ~ h2 {
     font-weight: 500;
     font-size: 2rem;
-    color: var(--pink);
+    color: var(--grey);
     letter-spacing: 0.1rem;
 } article section {
     margin-top: 3rem;
