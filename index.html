@@ -22,42 +22,30 @@
         <div class="ctnr">
             <section class="intro_sec">
                 <div class="ctnr">
-                    <h1><span class="big">Andrei Croitor.</span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></h1>
+
+                    <div class="content">
+                        <h1><b>Andrei Croitor</b><span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</span></i></h1>
+                        <h2>Discover the framework to build clear customer avatars and boost your <strong>brand's success</strong>.</h2>
+                        <div class="cta_ctnr">
+                            <a href="#about">About me</a>
+                        </div>
+                    </div>
                 </div>
-
-                <h2>Discover the framework to build clear customer avatars and boost your brand's success</h2>
-            </section>
-
-            <section class="intro_sec">
-                <div class="ctnr">
-                    <h1><span class="big">Andrei Croitor.</span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></h1>
-                </div>
-
-                <h2>Discover the framework to build clear customer avatars and boost your brand's success</h2>
             </section>
             
-            <section class="intro_sec">
+            <section class="about_sec">
                 <div class="ctnr">
-                    <h1><span class="big">Andrei Croitor.</span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></h1>
-                </div>
+                    <div class="wrapper">
+                        <h1><b>Andrei Croitor</b><span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</span></i></h1>
+                    </div>
 
-                <h2>Discover the framework to build clear customer avatars and boost your brand's success</h2>
-            </section>
-            
-            <section class="intro_sec">
-                <div class="ctnr">
-                    <h1><span class="big">Andrei Croitor.</span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></h1>
+                    <div class="content">
+                        <h2>Discover the framework to build clear customer avatars and boost your <strong>brand's success</strong></h2>
+                        <div class="cta_ctnr">
+                            <a href="#about">About me</a>
+                        </div>
+                    </div>
                 </div>
-
-                <h2>Discover the framework to build clear customer avatars and boost your brand's success</h2>
-            </section>
-            
-            <section class="intro_sec">
-                <div class="ctnr">
-                    <h1><span class="big">Andrei Croitor.</span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></h1>
-                </div>
-
-                <h2>Discover the framework to build clear customer avatars and boost your brand's success</h2>
             </section>
         </div>
 
@@ -69,14 +57,12 @@
             </button>
 
             <div class="social">
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <a href="https://instagram.com/acroitor" target="_blank" class="instagram"></a>
+                <a href="https://twitter.com/andreicroitor" target="_blank" class="twitter"></a>
+                <a href="https://www.tiktok.com/@a.croitor" target="_blank" class="tiktok"></a>
             </div>
 
-            <img class="logo" src="assets/logo/logotype-light.svg" alt="">
+            <img class="logo" src="assets/logo/logo-pink.svg" alt="">
         </header>
     </main>
     
@@ -86,14 +72,14 @@
         const paths = document.querySelectorAll('.logo_outline path')
 
         for(i=0;i<paths.length;i++) {
-                paths[i].style.strokeDashoffset = `${window.scrollY * 1}px`
+                paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
                 console.log(Math.random())
                 paths[i].style.strokeDasharray = `${Math.random() * 250 + 100}rem`
         }
 
         window.addEventListener('scroll', function() {
             for(i=0;i<paths.length;i++) {
-                paths[i].style.strokeDashoffset = `${window.scrollY * 1}px`
+                paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
             }
         })
     </script>

@@ -26,7 +26,7 @@ html, body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Brooklyn', sans-serif;
     background-color: var(--c3);
 }
 
@@ -59,15 +59,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+    font-family: 'Brandford';
+    src: url('../assets/fonts/Brandford.ttf');
     font-weight: 400;
     font-style: normal;
 } @font-face {
-    font-family: 'Open Sans';
-    src: url('../assets/fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf');
+    font-family: 'Brooklyn';
+    src: url('../assets/fonts/Brooklyn-normal.ttf');
     font-weight: 400;
-    font-style: italic;
+} @font-face {
+    font-family: 'Brooklyn';
+    src: url('../assets/fonts/Brooklyn-semibold.ttf');
+    font-weight: 600;
+} @font-face {
+    font-family: 'Brooklyn';
+    src: url('../assets/fonts/Brooklyn-bold.ttf');
+    font-weight: 800;
 }
 
 main {
@@ -77,4 +84,5 @@ button {
     background-color: transparent;
     outline-color: transparent;
     border: unset;
+    padding: unset;
 }
