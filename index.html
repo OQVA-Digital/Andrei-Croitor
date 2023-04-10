@@ -52,10 +52,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- <section class="midsec">
-
-            </section> -->
             
             <section class="about_sec">
                 <div class="ctnr">
@@ -77,20 +73,21 @@
             </section>
 
             
-            <section class="about_sec">
+            <section class="my_philosophy_sec">
                 <div class="ctnr">
 
                     <div class="content">
-                        <p class="big">Hi, I'm <strong>Andrei Croitor</strong>, Creative Director at <strong>OQVA.digital</strong>.</p>
+                        <p>My philosophy is rooted in the concept that <b><strong>identity tools</strong> are the cornerstone of successful branding</b>. By providing individuals with the tools to build their identity, you empower them to become <b>true brand advocates</b>. Consciousness is formed through recognising contrast, which allows us to create strong and impactful identities that <b>resonate with our target audience</b>.</p>
+                    </div>
+                </div>
+            </section>
 
-                        <p>I've always been fascinated by the way <b>identity shapes our world</b>. Over the years, I've developed two fundamental ideas that have become the core of my branding philosophy:</p>
-    
-                        <ol>
-                            <li><p>"The sole purpose of any organisation is to provide the individual tools to build their own identity."</p></li>
-                            <li><p>"Consciousness is nothing but recognition of contrast."</p></li>
-                        </ol>
+            <section class="framework_sec">
+                <div class="ctnr">
+                    <div class="content">
+                        <p>I've developed an Identity Framework to help you build clear customer avatars and give your brand a competitive edge. This framework will guide you through the process of identifying the key individuals, events, locations, and sacrifices that shape your customers' identities.</p>
 
-                        <p>I believe that by understanding and leveraging these principles, you can create a powerful, influential, and successful brand.</p>
+                        <p>By understanding and leveraging these elements, you can create a powerful connection with your audience and drive your brand's success.</p>
                     </div>
                 </div>
             </section>
@@ -105,20 +102,20 @@
         const postIframe = document.querySelector('.tiktok-embed')
 
         for(i=0;i<paths.length;i++) {
-                paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
+                paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
                 
-                paths[i].style.strokeDasharray = `${Math.random() * 250 + 100}rem`
+                paths[i].style.strokeDasharray = `${Math.random() * 250 + 120}rem`
         }
 
         window.addEventListener('scroll', function() {
             for(i=0;i<paths.length;i++) {
-                paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
+                paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
             }
         })
 
         if(window.matchMedia('(min-width:900px)').matches) {
             window.addEventListener('scroll', function() {
-                if(window.scrollY < window.innerHeight) {
+                if(window.scrollY < window.innerHeight * 1.3) {
                     // console.log(window.scrollY, window.innerHeight * 0.33)
                     postIframe.style.transform = `translateY(calc(-33vh + ${window.scrollY / 3}px))`
                 }

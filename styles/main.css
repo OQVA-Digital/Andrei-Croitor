@@ -142,26 +142,34 @@ section>.ctnr {
     /* background-attachment: fixed; */
     /* border-bottom: 0.4rem solid var(--dark); */
     /* box-shadow: 0 1rem 9rem var(--dark); */
-} .intro_sec>.ctnr {
+}
+
+.intro_sec>.ctnr {
     background-color: rgb(13 11 13 / 50%);
     padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 25vw, 8rem) clamp(2rem, 6vw, 4rem);
     padding-left: clamp(2rem, 7vw, 15rem);
     min-height: clamp(85vh, 145vw, 94vh);
     flex-direction: column;
-} .intro_sec h1 {
+}
+
+.intro_sec h1 {
     font-weight: 400;
     text-shadow: 0 1rem 4rem var(--dark);
     /* position: sticky; */
     /* top: calc(clamp(2rem, 10vw, 5rem) + 8rem); */
     margin-bottom: clamp(7rem, 24vw, 11rem);
-} .intro_sec h2 {
+}
+
+.intro_sec h2 {
     font-weight: 800;
     font-size: clamp(2.1rem, calc(1.8vw + 2.6vh), 5rem);
     width: fit-content;
     max-width: 73rem;
     margin-bottom: 2.5rem;
     line-height: 1.3;
-} .intro_sec h2 strong {
+}
+
+.intro_sec h2 strong {
     letter-spacing: 0;
     color: var(--c1a);
 }
@@ -246,16 +254,73 @@ section>.ctnr {
 
 
 
-.midsec {
-    min-height: 20rem;
+.my_philosophy_sec {
+    min-height: 40rem;
+    background-color: var(--c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.my_philosophy_sec>.ctnr {
+    display: flex;
+    justify-content: center;
+}
+
+.my_philosophy_sec .content {
+    width: clamp(14rem, 85vw, 110rem);
+    text-align: center;
+    font-size: clamp(1.5rem, calc(1.5vw + 2vh), 2.6rem);
+    color: var(--c3);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.my_philosophy_sec .content b,
+.my_philosophy_sec .content strong {
     background-color: var(--c1a);
 }
 
+.my_philosophy_sec .content p {}
 
 
 
 
 
+
+
+
+.framework_sec {
+    min-height: 40rem;
+    background-color: var(--c3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.framework_sec>.ctnr {
+    display: flex;
+    justify-content: center;
+}
+
+.framework_sec .content {
+    width: clamp(14rem, 85vw, 110rem);
+    text-align: center;
+    font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+    color: var(--light);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.framework_sec .content p {
+}
 
 
 
@@ -269,49 +334,67 @@ section>.ctnr {
 
 .about_sec {
     background-image: url(../assets/Andrei/andrei02.jpg);
-    background-position: 70% center;
+    background-position: 60% center;
     /* background-attachment: fixed; */
-} .about_sec>.ctnr {
+}
+
+.about_sec>.ctnr {
     background-color: rgb(13 11 13 / 93%);
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
-    padding: clamp(2rem, 20vw, 10rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 20vw, 10rem) clamp(2rem, 6vw, 4rem);
+    padding: clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem);
     min-height: clamp(85vh, 145vw, 94vh);
     display: flex;
     flex-direction: column;
     gap: 4rem;
     margin-top: -13rem;
-} .about_sec .content {
-    font-size: clamp(1.5rem, calc(1.3vw + 1.6vh), 2.2rem);
+}
+
+.about_sec .content {
+    font-size: clamp(1.5rem, calc(1.3vw + 1.4vh), 2.2rem);
     font-weight: 400;
     line-height: 1.45;
     color: var(--light);
     width: 100%;
-}  .about_sec .content .big {
+}
+
+.about_sec .content .big {
     font-size: clamp(1.5em, calc(2vw + 2vh), 2.1em);
     line-height: 1.3;
     margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: 800;
     letter-spacing: 0;
-}  .about_sec .content .big b, .about_sec .content .big strong {
+}
+
+.about_sec .content .big b,
+.about_sec .content .big strong {
     font-weight: 800;
-} .about_sec .content ol {
+}
+
+.about_sec .content ol {
     padding-inline-start: 2.5rem;
-} .about_sec .content li {
+}
+
+.about_sec .content li {
     margin-bottom: 1rem;
-} .about_sec .content li::marker {
+}
+
+.about_sec .content li::marker {
     color: var(--c1a);
     font-weight: 900;
-} .about_sec .content b, .about_sec .content strong {
+}
+
+.about_sec .content b,
+.about_sec .content strong {
     color: var(--c1a);
     font-weight: 400;
-} .about_sec iframe {
-    
 }
+
+.about_sec iframe {}
 
 .tiktok-embed {
     border-radius: 1.3rem;
-    height: 57rem;
+    height: 67rem;
     /* top: -4rem; */
     width: fit-content !important;
     margin: 0 auto !important;
@@ -320,6 +403,15 @@ section>.ctnr {
     background-color: var(--c1a);
     z-index: 8;
     /* box-shadow: 0 -1rem 4rem 0rem var(--dark); */
+    border-top-width: 0.5rem;
+    border-bottom-width: 0.5rem;
+    max-width: 30rem !important;
+    /* min-width: 40rem !important; */
+}
+
+.tiktok-embed>iframe {
+    /* max-height: unset !important; */
+    /* height: 100% !important; */
 }
 
 
@@ -374,8 +466,7 @@ section>.ctnr {
         gap: 2rem;
     }
 
-    .cta_ctnr {
-    }
+    .cta_ctnr {}
 
     .intro_sec h1 span {
         font-size: clamp(1rem, calc(2.4vw + 2.6vh - 1.2rem), 1.35rem);
@@ -391,7 +482,7 @@ section>.ctnr {
     }
 
     .intro_sec h2 {
-        margin: clamp(0rem, 3vh, 1rem) 0 clamp(0rem, 4vh, 2.5rem);
+        margin: clamp(0rem, 3vh, 3rem) 0 clamp(0rem, 4vh, 2.5rem);
         /* font-weight: 600; */
         line-height: 1.15;
     }
@@ -408,7 +499,9 @@ section>.ctnr {
         justify-content: flex-end;
         gap: unset;
         margin-top: unset;
-    } .about_sec .content {
+    }
+
+    .about_sec .content {
         width: clamp(26rem, calc(58vw - 20rem), 83rem);
     }
 
