@@ -260,7 +260,9 @@ section>.ctnr {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0;
+    padding: 5rem 3rem;
+    box-shadow: 0 4rem 4rem -5rem var(--c1), inset 0 -4.5rem 4rem -5rem var(--c3);
+    position: relative;
 }
 
 .my_philosophy_sec>.ctnr {
@@ -269,9 +271,9 @@ section>.ctnr {
 }
 
 .my_philosophy_sec .content {
-    width: clamp(14rem, 85vw, 110rem);
+    width: clamp(14rem, 91vw, 110rem);
     text-align: center;
-    font-size: clamp(1.5rem, calc(1.5vw + 2vh), 2.6rem);
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.6rem);
     color: var(--c3);
     font-weight: 600;
     line-height: 1.5;
@@ -309,7 +311,7 @@ section>.ctnr {
 .framework_sec .content {
     width: clamp(14rem, 85vw, 110rem);
     text-align: center;
-    font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.6rem);
     color: var(--light);
     font-weight: 400;
     line-height: 1.5;
@@ -339,7 +341,7 @@ section>.ctnr {
 }
 
 .about_sec>.ctnr {
-    background-color: rgb(13 11 13 / 93%);
+    background-color: rgb(13 11 13 / 94%);
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
     padding: clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem);
@@ -433,11 +435,12 @@ section>.ctnr {
     header {
         height: 100vh;
         height: 100dvh;
-        width: clamp(11rem, calc(7vw + 6vh), 18rem);
+        min-width: clamp(11rem, calc(7vw + 6vh), 18rem);
         padding: clamp(2rem, 2.5vw, 5rem) 0;
         flex-direction: column;
         position: sticky;
         top: 0;
+        width: unset;
     }
 
     header .social {
@@ -510,4 +513,6 @@ section>.ctnr {
         transform: translateY(-33vh);
         /* will-change: transform; */
     }
+
+    .my_philosophy_sec .content, .framework_sec .content {width: clamp(14rem, 75vw, 110rem);}
 }
