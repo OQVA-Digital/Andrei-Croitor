@@ -5,7 +5,7 @@ body {
 
 main {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 main>.ctnr {
@@ -23,14 +23,14 @@ header {
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    padding: 0 clamp(1.5rem, 5vw, 2rem);
-    position: sticky;
+    padding: 0 clamp(1.5rem, 6vw, 3rem);
+    /* position: sticky; */
     top: 0;
     z-index: 9;
 }
 
 header .logo {
-    width: clamp(5rem, calc(4vw + 4vh), 7rem);
+    width: clamp(4rem, calc(3.5vw + 4vh), 7rem);
     /* height: 70%; */
     max-width: 75%;
     max-height: 70%;
@@ -40,7 +40,9 @@ header .social {
     display: flex;
     flex-direction: row;
     gap: clamp(0.6rem, calc(0.9vw + 0.9vh), 1.6rem);
-} header .social a {
+}
+
+header .social a {
     width: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
     min-height: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
     border: 0.2rem solid var(--c2);
@@ -51,14 +53,22 @@ header .social {
     background-position: center;
     background-color: var(--c2a);
     transition: background-color 0.3s ease;
-} header .social a:hover {
+}
+
+header .social a:hover {
     background-color: var(--c2);
     transition: background-color 0.05s ease;
-} header .social .instagram {
+}
+
+header .social .instagram {
     background-image: url(../assets/icons/instagram.svg);
-} header .social .twitter {
+}
+
+header .social .twitter {
     background-image: url(../assets/icons/twitter.svg);
-} header .social .tiktok {
+}
+
+header .social .tiktok {
     background-image: url(../assets/icons/tiktok.svg);
 }
 
@@ -83,23 +93,23 @@ header .social {
     min-height: 107vh;
     mix-blend-mode: color-dodge;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.4;
     /* filter: drop-shadow(-2rem -1rem 1rem var(--c1)); */
     pointer-events: none;
     z-index: 8;
-    /* transform: scale(0.99); */
+    transform: scale(1.05);
 }
 
 .path01 {
     fill: none;
     stroke: darksalmon;
     stroke-miterlimit: 10;
-    stroke-width: 0.3rem;
+    stroke-width: 0.2rem;
     stroke-dasharray: 185rem;
     stroke-dashoffset: 50vh;
     vector-effect: non-scaling-stroke;
     stroke-linecap: round;
-    transition: stroke-dashoffset 1s ease;
+    transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -109,79 +119,147 @@ header .social {
 main section {
     /* min-height: clamp(85vh, 150vw, 97vh); */
     background-size: cover;
-    border-bottom: 1.2rem solid var(--dark);
+    /* border-bottom: 0.4rem solid #111; */
+    box-sizing: border-box;
+}
+
+section>.ctnr {
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
 }
 
 
-
-
-
 .intro_sec {
-    background-image: linear-gradient(5deg, var(--c1) -10%, transparent 24%), url(../assets/Andrei/andrei01.jpg);
+    background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), url(../assets/Andrei/andrei01.jpg);
     background-position: 56% center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    background-attachment: fixed;
-}.intro_sec h1 {
+    /* background-attachment: fixed; */
+    /* border-bottom: 0.1rem solid var(--c3); */
+    /* box-shadow: 0 1rem 9rem var(--dark); */
+} .intro_sec>.ctnr {
+    background-color: rgb(13 11 13 / 50%);
+    padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 15vw, 7rem) clamp(2rem, 6vw, 4rem);
+    padding-left: clamp(2rem, 7vw, 15rem);
+    min-height: clamp(85vh, 145vw, 94vh);
+} .intro_sec h1 {
     font-weight: 400;
     text-shadow: 0 1rem 4rem var(--dark);
     /* position: sticky; */
     /* top: calc(clamp(2rem, 10vw, 5rem) + 8rem); */
-    margin-bottom: 11rem;
-}  .intro_sec h2 {
+    margin-bottom: clamp(7rem, 24vw, 11rem);
+} .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(1.6vw + 2.6vh), 3.8rem);
+    font-size: clamp(2.1rem, calc(1.8vw + 2.6vh), 5rem);
     width: fit-content;
     max-width: 73rem;
     margin-bottom: 2.5rem;
-} .intro_sec h2 strong {background-color: var(--dark);padding: 0 1rem;letter-spacing: 0;color: var(--c1a);}
+    line-height: 1.25;
+} .intro_sec h2 strong {
+    letter-spacing: 0;
+    color: var(--c1a);
+}
 
-section > .ctnr {
-    background-color: rgb(13 11 13 / 62%);
-    box-sizing: border-box;
-    width: 100%;
-    padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem);
-    box-sizing: border-box;
-    min-height: clamp(85vh, 150vw, 91vh);
-    justify-content: space-between;
-} .intro_sec>.ctnr .wrapper {
+.intro_sec>.ctnr .wrapper {
     /* min-height: 40vh; */
     margin-bottom: clamp(1rem, 6vw, 5rem);
     flex: 1;
-} .intro_sec h1 b {
-    font-size: clamp(5.4rem, calc(6vw + 6vh), 10rem);
-    line-height: 1;
+}
+
+.intro_sec h1 b {
+    font-size: clamp(5.4rem, calc(5vw + 5vh), 11rem);
+    line-height: 0.95;
     display: block;
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.5rem;
     color: var(--light);
     flex: 1;
-} .intro_sec h1 span {
-    font-size: clamp(1.1rem, calc(1.8vw + 2vh - 1.2rem), 1.6rem);
+    max-width: 80%;
+}
+
+.intro_sec h1 span {
+    font-size: clamp(1.1rem, calc(1.9vw + 2vh - 1.3rem), 1.6rem);
     line-height: 1.4;
     /* text-transform: uppercase; */
     letter-spacing: 0.1rem;
-    width: 65vw;
+    width: 45vw;
     max-width: 50rem;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--light);
-} .intro_sec h1 span i {color: var(--c1a);} .intro_sec .content {} .intro_sec .content a {
-    background-color: var(--c2a);
+}
+
+.intro_sec h1 span i {
+    color: var(--c1a);
+}
+
+.intro_sec .content {}
+
+.cta_ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 3rem);
+}
+
+.cta_ctnr .cta {
+    /* background-color: var(--c1a); */
     text-align: center;
     color: var(--light);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     font-weight: 800;
-    font-size: 1.7rem;
-    padding: 1.3rem 4rem;
+    font-size: 1.8rem;
+    padding: 1.1rem 2rem;
     border-radius: 0.3rem;
     letter-spacing: 0.1rem;
-    border: 0.2rem solid #ffffff55;
-} 
+    border: 0.2rem solid var(--c1a);
+    white-space: nowrap;
+    backdrop-filter: blur(0.4rem);
+    position: relative;
+    z-index: 8;
+}
+
+.cta_ctnr a:not(.cta) {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.midsec {
+    min-height: 20rem;
+    background-color: var(--c1a);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -191,8 +269,29 @@ section > .ctnr {
 .about_sec {
     background-image: url(../assets/Andrei/andrei02.jpg);
     background-position: 70% center;
+    background-attachment: fixed;
+} .about_sec>.ctnr {
+    background-color: rgb(13 11 13 / 91%);
+    align-items: center;
+    /* backdrop-filter: blur(0.5rem); */
+    padding: 0 clamp(2rem, 6vw, 4rem) clamp(2rem, 20vw, 12rem) clamp(2rem, 6vw, 4rem);
+    /* min-height: clamp(85vh, 145vw, 94vh); */
+} .about_sec .content {
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.4rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--light);
+    width: clamp(10rem, 85vw, 85.5rem);
+} .about_sec .content b, .about_sec .content strong {
+    color: var(--c1a);
 }
 
+.tiktok-embed {
+    border-radius: 1.5rem;
+    height: 70rem;
+    width: fit-content !important;
+    top: -4rem;
+}
 
 
 
@@ -207,7 +306,7 @@ section > .ctnr {
 
 @media screen and (min-width: 650px) {
     main {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
     header {
@@ -216,6 +315,8 @@ section > .ctnr {
         width: clamp(11rem, calc(7vw + 6vh), 18rem);
         padding: clamp(2rem, 2.5vw, 5rem) 0;
         flex-direction: column;
+        position: sticky;
+        top: 0;
     }
 
     header .social {
@@ -227,7 +328,8 @@ section > .ctnr {
     .logo_outline {
         opacity: unset;
         inset: -4rem;
-        top: -40%;
+        top: -8vh;
+        /* transform: translateY(-25%); */
     }
 
     .path01 {
@@ -237,23 +339,32 @@ section > .ctnr {
     .intro_sec h1 {
         /* top: clamp(2rem, 12vw, 5rem); */
         margin-bottom: unset;
-        max-width: 51rem;
+        max-width: 54rem;
         display: flex;
         align-items: self-end;
         gap: 2rem;
-    } .intro_sec h1 span {
-        font-size: clamp(1rem, calc(2.4vw + 2.6vh - 1.2rem), 1.5rem);
+    }
+
+    .cta_ctnr {
+    }
+
+    .intro_sec h1 span {
+        font-size: clamp(1rem, calc(2.4vw + 2.6vh - 1.2rem), 1.35rem);
         position: relative;
         bottom: clamp(1rem, 1.5vw, 2rem);
-    } .intro_sec .content {
-    } section > .ctnr {
+    }
+
+    .intro_sec .content {}
+
+    section>.ctnr {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: clamp(2rem, 8vw, 15rem);
     }
 
     .intro_sec h2 {
-        margin: clamp(0rem, 3vh, 2.5rem) 0 clamp(0rem, 4vh, 3rem);
+        margin: clamp(0rem, 3vh, 2rem) 0 clamp(0rem, 4vh, 2.5rem);
+        /* font-weight: 600; */
+        line-height: 1.15;
     }
 }
