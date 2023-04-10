@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrei Acroitor</title>
+    <title>Andrei Acroitor · Discover the framework to boost your brand's success.</title>
 
     <link rel="stylesheet" href="styles/defaults.css">
     <link rel="stylesheet" href="styles/components.css">
     <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <script src="scripts/components.js" defer></script>
 </head>
@@ -57,10 +59,31 @@
             
             <section class="about_sec">
                 <div class="ctnr">
-                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@a.croitor/video/7218861398040825114" data-video-id="7218861398040825114" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@a.croitor" href="https://www.tiktok.com/@a.croitor?refer=embed">@a.croitor</a> Photos and videos to fill social profiles and define the brand are on the menu today <a title="marketing" target="_blank" href="https://www.tiktok.com/tag/marketing?refer=embed">#marketing</a> <a title="entrepreneurship" target="_blank" href="https://www.tiktok.com/tag/entrepreneurship?refer=embed">#entrepreneurship</a> <a title="influencermarketing" target="_blank" href="https://www.tiktok.com/tag/influencermarketing?refer=embed">#influencermarketing</a> <a title="manfromsomewhere" target="_blank" href="https://www.tiktok.com/tag/manfromsomewhere?refer=embed">#manfromsomewhere</a> <a title="capcut" target="_blank" href="https://www.tiktok.com/tag/capcut?refer=embed">#CapCut</a> <a target="_blank" title="♬ ALMOST HOME - Mad Adix, Marc Steinmeier" href="https://www.tiktok.com/music/ALMOST-HOME-6768784033171130370?refer=embed">♬ ALMOST HOME - Mad Adix, Marc Steinmeier</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@a.croitor/video/7220024837664804122" data-video-id="7220024837664804122" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@a.croitor" href="https://www.tiktok.com/@a.croitor?refer=embed">@a.croitor</a> If you want to build a tribe that resonates deeply with a bunch of people, you need to understand that what you’re selling is identity. <a title="entrepreneurship" target="_blank" href="https://www.tiktok.com/tag/entrepreneurship?refer=embed">#entrepreneurship</a> <a title="marketing" target="_blank" href="https://www.tiktok.com/tag/marketing?refer=embed">#marketing</a> <a title="content" target="_blank" href="https://www.tiktok.com/tag/content?refer=embed">#content</a> <a title="marketingbusiness" target="_blank" href="https://www.tiktok.com/tag/marketingbusiness?refer=embed">#marketingbusiness</a> <a title="branding" target="_blank" href="https://www.tiktok.com/tag/branding?refer=embed">#branding</a> <a title="businessmarketing" target="_blank" href="https://www.tiktok.com/tag/businessmarketing?refer=embed">#businessmarketing</a> <a title="marketingstrategy" target="_blank" href="https://www.tiktok.com/tag/marketingstrategy?refer=embed">#marketingstrategy</a> <a title="business" target="_blank" href="https://www.tiktok.com/tag/business?refer=embed">#business</a> <a title="brand" target="_blank" href="https://www.tiktok.com/tag/brand?refer=embed">#brand</a> <a target="_blank" title="♬ Crush - HËXĖ" href="https://www.tiktok.com/music/Crush-7072853789786523649?refer=embed">♬ Crush - HËXĖ</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
 
                     <div class="content">
-                        <p>Hi, I'm <strong>Andrei Croitor</strong>, Creative Director at <strong>OQVA.digital</strong>. I've always been fascinated by the way <b>identity shapes our world</b>. Over the years, I've developed two fundamental ideas that have become the core of my branding philosophy:</p>
+                        <p class="big">Hi, I'm <strong>Andrei Croitor</strong>, Creative Director at <strong>OQVA.digital</strong>.</p>
+
+                        <p>I've always been fascinated by the way <b>identity shapes our world</b>. Over the years, I've developed two fundamental ideas that have become the core of my branding philosophy:</p>
+    
+                        <ol>
+                            <li><p>"The sole purpose of any organisation is to provide the individual tools to build their own identity."</p></li>
+                            <li><p>"Consciousness is nothing but recognition of contrast."</p></li>
+                        </ol>
+
+                        <p>I believe that by understanding and leveraging these principles, you can create a powerful, influential, and successful brand.</p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="about_sec">
+                <div class="ctnr">
+
+                    <div class="content">
+                        <p class="big">Hi, I'm <strong>Andrei Croitor</strong>, Creative Director at <strong>OQVA.digital</strong>.</p>
+
+                        <p>I've always been fascinated by the way <b>identity shapes our world</b>. Over the years, I've developed two fundamental ideas that have become the core of my branding philosophy:</p>
     
                         <ol>
                             <li><p>"The sole purpose of any organisation is to provide the individual tools to build their own identity."</p></li>
@@ -79,9 +102,11 @@
     <script>
         const paths = document.querySelectorAll('.logo_outline path')
 
+        const postIframe = document.querySelector('.tiktok-embed')
+
         for(i=0;i<paths.length;i++) {
                 paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
-                console.log(Math.random())
+                
                 paths[i].style.strokeDasharray = `${Math.random() * 250 + 100}rem`
         }
 
@@ -90,6 +115,19 @@
                 paths[i].style.strokeDashoffset = `${window.scrollY * 2}px`
             }
         })
+
+        if(window.matchMedia('(min-width:900px)').matches) {
+            window.addEventListener('scroll', function() {
+                if(window.scrollY < window.innerHeight) {
+                    // console.log(window.scrollY, window.innerHeight * 0.33)
+                    postIframe.style.transform = `translateY(calc(-33vh + ${window.scrollY / 3}px))`
+                }
+            })
+        }
+
+
+
+
     </script>
 </body>
 </html>
