@@ -146,7 +146,7 @@ section>.ctnr {
 
 .intro_sec>.ctnr {
     background-color: rgb(13 11 13 / 50%);
-    padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 25vw, 8rem) clamp(2rem, 6vw, 4rem);
+    padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 10vw, 8rem) clamp(2rem, 6vw, 4rem);
     padding-left: clamp(2rem, 7vw, 15rem);
     min-height: clamp(85vh, 145vw, 94vh);
     flex-direction: column;
@@ -171,7 +171,7 @@ section>.ctnr {
 
 .intro_sec h2 strong {
     letter-spacing: 0;
-    color: var(--c1a);
+    color: var(--c1);
 }
 
 .intro_sec>.ctnr .wrapper {
@@ -186,7 +186,7 @@ section>.ctnr {
     display: block;
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.5rem;
-    color: var(--c1a);
+    color: var(--c1);
     flex: 1;
     max-width: 80%;
 }
@@ -227,7 +227,7 @@ section>.ctnr {
     padding: 1.1rem 2rem;
     border-radius: 0.3rem;
     letter-spacing: 0.1rem;
-    border: 0.2rem solid var(--c1a);
+    border: 0.2rem solid var(--c1);
     white-space: nowrap;
     backdrop-filter: blur(0.4rem);
     position: relative;
@@ -261,7 +261,7 @@ section>.ctnr {
     justify-content: center;
     align-items: center;
     padding: 5rem 3rem;
-    box-shadow: 0 4rem 4rem -5rem var(--c1), inset 0 -4.5rem 4rem -5rem var(--c3);
+    box-shadow: 0 2rem 4rem -3rem var(--c1), inset 0 -4.5rem 4rem -5rem var(--c3);
     position: relative;
 }
 
@@ -296,7 +296,7 @@ section>.ctnr {
 
 .framework_sec {
     min-height: 40rem;
-    background-color: var(--c3);
+    background-color: var(--dark);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,12 +344,10 @@ section>.ctnr {
     background-color: rgb(13 11 13 / 94%);
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
-    padding: clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem);
+    padding: clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 15vw, 8rem) clamp(2rem, 6vw, 4rem);
     min-height: clamp(85vh, 145vw, 94vh);
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    margin-top: -13rem;
 }
 
 .about_sec .content {
@@ -409,6 +407,7 @@ section>.ctnr {
     border-bottom-width: 0.5rem;
     max-width: 30rem !important;
     /* min-width: 40rem !important; */
+    top: -7vh;
 }
 
 .tiktok-embed>iframe {
@@ -501,7 +500,6 @@ section>.ctnr {
         padding-left: clamp(2rem, 7vw, 15rem);
         justify-content: flex-end;
         gap: unset;
-        margin-top: unset;
     }
 
     .about_sec .content {
@@ -512,6 +510,7 @@ section>.ctnr {
         /* margin: unset !important; */
         transform: translateY(-33vh);
         /* will-change: transform; */
+        top: unset;
     }
 
     .my_philosophy_sec .content, .framework_sec .content {width: clamp(14rem, 75vw, 110rem);}
