@@ -55,6 +55,41 @@ header .social a {
     transition: background-color 0.3s ease;
 }
 
+header nav {
+    position: absolute;
+    min-height: 10rem;
+    /* min-width: 30rem; */
+    background-color: rgb(250 250 248 / 80%);
+    display: flex;
+    flex-direction: column;
+    padding: clamp(2rem, 4vw, 2.5rem);
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    gap: 1rem;
+    top: 8rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    /* border-radius: 0 0 1.2rem 1.2rem; */
+    z-index: 8;
+    backdrop-filter: blur(0.9rem);
+    display: none;
+}
+
+header nav a {
+    white-space: nowrap;
+    padding: 1.2rem 2.5rem;
+    border-radius: 0.4rem;
+    background-color: var(--c2a);
+    transition: background-color 0.3s ease;
+    border: 0.2rem solid var(--c2a);
+}
+
+header nav a:hover {
+    background-color: var(--c2);
+    transition: background-color 0.05s ease;
+}
+
 header .social a:hover {
     background-color: var(--c2);
     transition: background-color 0.05s ease;
@@ -78,6 +113,7 @@ header .social .tiktok {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .hambt div {
@@ -93,7 +129,6 @@ header .social .tiktok {
     min-height: 107vh;
     mix-blend-mode: color-dodge;
     width: 100%;
-    opacity: 0.4;
     /* filter: drop-shadow(-2rem -1rem 1rem var(--c1)); */
     pointer-events: none;
     z-index: 8;
@@ -104,14 +139,28 @@ header .social .tiktok {
     fill: none;
     stroke: darksalmon;
     stroke-miterlimit: 10;
-    stroke-width: 0.2rem;
+    stroke-width: 0.1rem;
     stroke-dasharray: 185rem;
     stroke-dashoffset: 50vh;
     vector-effect: non-scaling-stroke;
     stroke-linecap: round;
+    transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1);
     /* transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1); */
     /* backface-visibility: hidden; */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -129,44 +178,50 @@ section>.ctnr {
     width: 100%;
     box-sizing: border-box;
     justify-content: space-between;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
 
 .intro_sec {
     background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), url(../assets/Andrei/andrei01.jpg);
+    background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(
+        url(../assets/Andrei/andrei01-1x.webp) 1x, 
+        url(../assets/Andrei/andrei01-2x.webp) 2x,
+        url(../assets/Andrei/andrei01-1x.jpg) 1x, 
+        url(../assets/Andrei/andrei01-2x.jpg) 2x
+        );
     background-position: 56% center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
     /* background-attachment: fixed; */
-    /* border-bottom: 0.4rem solid var(--dark); */
+    /* border-bottom: 0.3rem solid var(--c1); */
     /* box-shadow: 0 1rem 9rem var(--dark); */
 }
 
 .intro_sec>.ctnr {
     background-color: rgb(13 11 13 / 50%);
-    padding: clamp(2rem, 10vw, 5rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 10vw, 8rem) clamp(2rem, 6vw, 4rem);
-    padding-left: clamp(2rem, 7vw, 15rem);
-    min-height: clamp(85vh, 145vw, 94vh);
-    flex-direction: column;
+    min-height: clamp(85vh, 160vw, 92vh);
 }
 
 .intro_sec h1 {
     font-weight: 400;
-    text-shadow: 0 1rem 4rem var(--dark);
-    /* position: sticky; */
-    /* top: calc(clamp(2rem, 10vw, 5rem) + 8rem); */
-    margin-bottom: clamp(7rem, 24vw, 11rem);
+    margin-bottom: 10rem;
 }
 
 .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(1.8vw + 2.6vh), 5rem);
+    font-size: clamp(2.1rem, calc(2vw + 2.2vh), 6rem);
     width: fit-content;
-    max-width: 73rem;
+    max-width: 77rem;
     margin-bottom: 2.5rem;
     line-height: 1.3;
+    letter-spacing: 0;
 }
 
 .intro_sec h2 strong {
@@ -185,7 +240,7 @@ section>.ctnr {
     line-height: 1;
     display: block;
     font-family: 'Brandford', sans-serif;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.05em;
     color: var(--c1);
     flex: 1;
     max-width: 80%;
@@ -206,7 +261,11 @@ section>.ctnr {
     color: var(--c1a);
 }
 
-.intro_sec .content {}
+.intro_sec .content {
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
+    margin-top: 3rem;
+}
 
 .cta_ctnr {
     display: flex;
@@ -237,92 +296,10 @@ section>.ctnr {
 .cta_ctnr a:not(.cta) {
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
+    max-width: 50vh;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.my_philosophy_sec {
-    min-height: 40rem;
-    background-color: var(--c1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 3rem;
-    box-shadow: 0 2rem 4rem -3rem var(--c1), inset 0 -4.5rem 4rem -5rem var(--c3);
-    position: relative;
-}
-
-.my_philosophy_sec>.ctnr {
-    display: flex;
-    justify-content: center;
-}
-
-.my_philosophy_sec .content {
-    width: clamp(14rem, 91vw, 110rem);
-    text-align: center;
-    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.6rem);
-    color: var(--c3);
-    font-weight: 600;
-    line-height: 1.5;
-    letter-spacing: 0;
-}
-
-.my_philosophy_sec .content b,
-.my_philosophy_sec .content strong {
-    background-color: var(--c1a);
-}
-
-.my_philosophy_sec .content p {}
-
-
-
-
-
-
-
-
-.framework_sec {
-    min-height: 40rem;
-    background-color: var(--dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem 0;
-}
-
-.framework_sec>.ctnr {
-    display: flex;
-    justify-content: center;
-}
-
-.framework_sec .content {
-    width: clamp(14rem, 85vw, 110rem);
-    text-align: center;
-    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.6rem);
-    color: var(--light);
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.framework_sec .content p {
-}
 
 
 
@@ -336,6 +313,12 @@ section>.ctnr {
 
 .about_sec {
     background-image: url(../assets/Andrei/andrei02.jpg);
+    background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(
+        url(../assets/Andrei/andrei02-1x.webp) 1x, 
+        url(../assets/Andrei/andrei02-2x.webp) 2x,
+        url(../assets/Andrei/andrei02-1x.jpg) 1x, 
+        url(../assets/Andrei/andrei02-2x.jpg) 2x
+        );
     background-position: 60% center;
     /* background-attachment: fixed; */
 }
@@ -344,22 +327,24 @@ section>.ctnr {
     background-color: rgb(13 11 13 / 94%);
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
-    padding: clamp(2rem, 20vw, 3rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 15vw, 8rem) clamp(2rem, 6vw, 4rem);
-    min-height: clamp(85vh, 145vw, 94vh);
-    display: flex;
+    min-height: clamp(75vh, 15vw, 94vh);
+    /* display: flex; */
     flex-direction: column;
+    padding-bottom: 5rem;
 }
 
 .about_sec .content {
-    font-size: clamp(1.5rem, calc(1.3vw + 1.4vh), 2.2rem);
+    font-size: clamp(1.5rem, calc(1.3vw + 1.3vh), 2.2rem);
     font-weight: 400;
     line-height: 1.45;
     color: var(--light);
     width: 100%;
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
 }
 
 .about_sec .content .big {
-    font-size: clamp(1.5em, calc(2vw + 2vh), 2.1em);
+    font-size: clamp(1.5em, calc(2.2vw + 1.5vh), 2.1em);
     line-height: 1.3;
     margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: 800;
@@ -392,28 +377,400 @@ section>.ctnr {
 
 .about_sec iframe {}
 
-.tiktok-embed {
-    border-radius: 1.3rem;
-    height: 67rem;
-    /* top: -4rem; */
-    width: fit-content !important;
-    margin: 0 auto !important;
-    border: 0.1rem solid var(--c1);
-    overflow: hidden !important;
+.andrei_video {
+    border-radius: 1.5rem;
+    width: clamp(20rem, 72vw, 40rem);
+    margin: 0 auto;
+    border: 0.2rem solid var(--c1);
     background-color: var(--c1a);
     z-index: 8;
-    /* box-shadow: 0 -1rem 4rem 0rem var(--dark); */
-    border-top-width: 0.5rem;
-    border-bottom-width: 0.5rem;
-    max-width: 30rem !important;
-    /* min-width: 40rem !important; */
+    border-top-width: 0.6rem;
+    border-bottom-width: 0.6rem;
+    position: relative;
     top: -7vh;
+    display: block;
 }
 
-.tiktok-embed>iframe {
-    /* max-height: unset !important; */
-    /* height: 100% !important; */
+
+
+
+
+
+
+
+
+
+.my_philosophy_sec,
+.my_philosophy_sec b,
+.my_philosophy_sec strong,
+.framework_sec,
+.framework_sec b,
+.framework_sec strong {
+    /* transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1), color 0.2s cubic-bezier(0, 0, 0.2, 1); */
 }
+
+.my_philosophy_sec.inverted b,
+.my_philosophy_sec.inverted strong {
+    color: var(--c1a);
+    background-color: transparent;
+}
+
+
+.my_philosophy_sec {
+    background-color: var(--c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    position: relative;
+    color: var(--c3);
+    padding: clamp(5rem, 9vw, 12rem) 0;
+}
+
+.my_philosophy_sec.inverted {
+    background-color: var(--c3);
+    color: var(--light);
+}
+
+.my_philosophy_sec>.ctnr {
+    display: flex;
+    justify-content: center;
+}
+
+.my_philosophy_sec .content {
+    /* text-align: center; */
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.5rem);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0;
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
+}
+
+.my_philosophy_sec b,
+.my_philosophy_sec strong {
+    background-color: var(--c1a);
+}
+
+.my_philosophy_sec .content p {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.framework_sec {
+    min-height: 40rem;
+    background-color: var(--c2);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.framework_sec.inverted {
+    background-color: var(--c2);
+    color: var(--light);
+}
+
+.framework_sec .box b,
+.framework_sec .box strong {
+    color: var(--light);
+    background-color: var(--c2);
+    font-weight: 800;
+}
+
+.framework_sec .txt b,
+.framework_sec .txt strong {
+    color: var(--light);
+    background-color: var(--c2a);
+}
+
+.framework_sec>.ctnr {
+    padding: clamp(5rem, 9vw, 12rem) 0;
+}
+
+.framework_sec .content {
+    width: unset;
+    /* text-align: center; */
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.2rem);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 5vw, 5rem);
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
+}
+
+.framework_sec .content .txt {
+    flex: 1;
+    min-width: clamp(20rem, 40vw, 67rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.framework_sec b,
+.framework_sec strong {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.framework_sec .content p {}
+
+
+.framework_sec .box {
+    background-color: #fff2;
+    padding: 3rem clamp(3rem, 5vw, 4rem);
+    box-sizing: border-box;
+    font-size: 0.9em;
+    border-radius: 0.5rem;
+    border: 0.15rem solid var(--light);
+    backdrop-filter: blur(0.3rem);
+    z-index: 8;
+}
+
+.framework_sec .box a {
+    display: block;
+    background-color: var(--c2a);
+    width: fit-content;
+    margin: 2rem auto 0;
+    padding: 1.2rem 0.5rem;
+    color: var(--light);
+    font-weight: 600;
+    border-radius: 0.4rem;
+    text-align: center;
+    line-height: 1.2;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.blog_sec {
+    /* min-height: clamp(75vh, 15vw, 94vh); */
+    background-color: var(--dark);
+    background-image: url(../assets/Andrei/andrei03.jpg);
+    background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(
+        url(../assets/Andrei/andrei03-1x.webp) 1x, 
+        url(../assets/Andrei/andrei03-2x.webp) 2x,
+        url(../assets/Andrei/andrei03-1x.jpg) 1x, 
+        url(../assets/Andrei/andrei03-2x.jpg) 2x
+        );
+}
+
+.blog_sec>.ctnr {
+    padding: clamp(5rem, 9vw, 8rem) 0 0;
+    background-color: rgb(13 11 13 / 94%);
+}
+
+.blog_sec .content {
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
+}
+
+.blog_sec .ctnr>a {
+    font-size: clamp(3rem, 4vw, 3.5rem);
+    font-family: 'Brandford';
+    letter-spacing: 0.05em;
+    line-height: 1;
+    position: absolute;
+    bottom: clamp(3.5rem, 12vw, 4.5rem);
+    width: clamp(15rem, 85vw, 130rem);
+    max-width: 85%;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-align: center;
+}
+
+.blog_sec .title {
+    display: flex;
+    gap: clamp(1rem, 2vw, 2rem);
+    align-items: center;
+}
+
+.blog_sec h3 {
+    font-size: clamp(5.4rem, calc(4.8vw + 4.8vh), 13rem);
+    line-height: 1;
+    font-family: 'Brandford', sans-serif;
+    letter-spacing: 0.05em;
+    color: var(--c1);
+}
+
+.blog_sec sub {
+    font-size: clamp(1.1rem, calc(1.8vw + 1.9vh - 1.3rem), 1.6rem);
+    line-height: 1.4;
+    max-width: clamp(10rem, 50vw, 28rem);
+}
+
+.blog_sec sub b {
+    color: var(--c1);
+    font-weight: 400;
+}
+
+
+.blog_posts {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: clamp(2.5rem, 7vw, 4rem);
+    margin-top: 2rem;
+    width: clamp(15rem, 100vw, 130rem);
+    padding: 0 8vw 12rem;
+    box-sizing: border-box;
+    z-index: 8;
+    -webkit-mask-image: linear-gradient(90deg, white calc(100% - 8vw), transparent);
+}
+
+.blog_posts article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+    border-radius: 1.8rem;
+    min-width: clamp(17rem, 62vw, 40rem);
+    height: clamp(28rem, 100vw, 40rem);
+    max-height: 80vh;
+    padding: 1rem clamp(1.5rem, 3vw, 3rem);
+    box-sizing: border-box;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    text-align: center;
+    font-family: 'Brandford', sans-serif;
+    letter-spacing: 0.5rem;
+    color: var(--light);
+    background-size: cover;
+    background-position: center;
+    border: 0.1rem solid var(--light);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s 0.2s ease;
+}
+
+.blog_posts article:hover {
+    transform: translateY(-0.5rem);
+    transition: transform 0.2s ease;
+}
+
+.blog_posts article h4 {
+    cursor: pointer;
+}
+
+.blog_posts article a {
+    position: absolute;
+    bottom: 2.5rem;
+    letter-spacing: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--c1);
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+}
+
+.blog_posts article:nth-child(3n + 1) {
+    background-image: url(../blog/placeholders/01.jpg);
+}
+
+.blog_posts article:nth-child(3n + 2) {
+    background-image: url(../blog/placeholders/02.jpg);
+}
+
+.blog_posts article:nth-child(3n + 3) {
+    background-image: url(../blog/placeholders/03.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: clamp(10rem, 90vw, 38rem);
+    font-size: 5rem;
+    background-color: var(--c4);
+    color: var(--light);
+    font-weight: 400;
+    text-align: center;
+    padding: 0 5rem;
+    box-sizing: border-box;
+    font-family: 'Brandford';
+    letter-spacing: 0.05em;
+}
+
+
+
+
+
+
 
 
 
@@ -442,10 +799,20 @@ section>.ctnr {
         width: unset;
     }
 
+    .path01 {}
+
     header .social {
         flex-direction: column;
         max-height: calc(80vh - 9rem);
         overflow-y: auto;
+    }
+
+    header nav {
+        left: unset;
+        bottom: 0;
+        top: 0;
+        right: clamp(11rem, calc(7vw + 6vh), 18rem);
+        border-radius: 0 0 0 0.4rem;
     }
 
     .logo_outline {
@@ -455,14 +822,10 @@ section>.ctnr {
         /* transform: translateY(-25%); */
     }
 
-    .path01 {
-        transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1);
-    }
-
     .intro_sec h1 {
         /* top: clamp(2rem, 12vw, 5rem); */
         margin-bottom: unset;
-        max-width: 47rem;
+        max-width: clamp(20rem, 40vw, 47rem);
         display: flex;
         align-items: self-end;
         gap: 2rem;
@@ -476,7 +839,9 @@ section>.ctnr {
         bottom: clamp(1rem, 1.5vw, 2rem);
     }
 
-    .intro_sec .content {}
+    .intro_sec .content {
+        margin-top: unset;
+    }
 
     section>.ctnr {
         display: flex;
@@ -496,22 +861,66 @@ section>.ctnr {
 
     .about_sec>.ctnr {
         flex-direction: row-reverse;
-        flex-flow: row-reverse wrap;
-        padding-left: clamp(2rem, 7vw, 15rem);
-        justify-content: flex-end;
         gap: unset;
+        padding: 5rem 0;
     }
 
     .about_sec .content {
-        width: clamp(26rem, calc(58vw - 20rem), 83rem);
+        font-size: clamp(1.5rem, calc(0.6vw + 1.2vh), 2.2rem);
+        display: flex;
+        flex-flow: row-reverse wrap;
+        justify-content: space-between;
     }
 
-    .tiktok-embed {
-        /* margin: unset !important; */
-        transform: translateY(-33vh);
-        /* will-change: transform; */
+    .about_sec .content .txt {
+        width: clamp(26rem, calc(64vw - 20rem), 75rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .andrei_video {
+        /* margin: unset; */
+        transform: translateY(-12vw);
         top: unset;
+        width: clamp(16rem, 28vw, 32rem);
+        max-height: 80vh;
+        max-width: fit-content;
+        height: fit-content;
     }
 
-    .my_philosophy_sec .content, .framework_sec .content {width: clamp(14rem, 75vw, 110rem);}
+    .my_philosophy_sec .content {
+        width: clamp(14rem, 75vw, 110rem);
+        text-align: center;
+    }
+
+    .framework_sec>.ctnr {}
+
+    .framework_sec .content {
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .framework_sec .box {
+        flex: 1;
+        text-align: center;
+        min-width: 35rem;
+        padding: 3rem clamp(2rem, 3vw, 4rem);
+        max-width: 55vw;
+        margin: 0 auto;
+    }
+
+    .blog_posts {
+        padding: 2rem clamp(5rem, 7vw, 12rem) clamp(5rem, 15vw, 12rem);
+        width: calc(100vw - clamp(11rem, calc(7vw + 6vh), 18rem));
+        margin: 0 0 0 auto;
+        -webkit-mask-image: linear-gradient(90deg, white calc(100% - clamp(5rem, 7vw, 12rem)), transparent);
+    }
+
+    .blog_sec .ctnr>a {
+        text-align: right;
+    }
+
+
 }
