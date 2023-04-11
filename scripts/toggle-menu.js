@@ -8,11 +8,13 @@ function toggleNav() {
     if(showingMenu == false) {
 
         nav.style.display = 'flex';
+        menuBt.classList.add('close')
 
         showingMenu = true;
     } else {
 
         nav.style.display = 'none';
+        menuBt.classList.remove('close')
 
         showingMenu = false;
     }

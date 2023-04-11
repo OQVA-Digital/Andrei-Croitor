@@ -26,7 +26,7 @@ header {
     padding: 0 clamp(1.5rem, 6vw, 3rem);
     /* position: sticky; */
     top: 0;
-    z-index: 9;
+    z-index: 10;
 }
 
 header .logo {
@@ -59,7 +59,7 @@ header nav {
     position: absolute;
     min-height: 10rem;
     /* min-width: 30rem; */
-    background-color: rgb(250 250 248 / 80%);
+    background-color: rgb(188 224 255 / 80%);
     display: flex;
     flex-direction: column;
     padding: clamp(2rem, 4vw, 2.5rem);
@@ -71,7 +71,7 @@ header nav {
     left: 0;
     text-align: center;
     /* border-radius: 0 0 1.2rem 1.2rem; */
-    z-index: 8;
+    z-index: 11;
     backdrop-filter: blur(0.9rem);
     display: none;
 }
@@ -114,14 +114,17 @@ header .social .tiktok {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-}
-
-.hambt div {
+} .hambt div {
     background-color: var(--light);
     height: 18%;
     width: 100%;
     border-radius: 0.2rem;
-}
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+} .hambt.close {
+
+} .hambt.close div:nth-child(1) {
+    transform: translateY(220%) rotate(45deg);
+} .hambt.close div:nth-child(2) {transform: rotate(-45deg);} .hambt.close div:nth-child(3) {opacity: 0;transform: translateY(-220%);}
 
 .logo_outline {
     position: fixed;
@@ -274,8 +277,8 @@ section>.ctnr {
     gap: clamp(1rem, 4vw, 3rem);
 }
 
-.cta_ctnr .cta {
-    /* background-color: var(--c1a); */
+.intro_sec .cta_ctnr .cta {
+    background-color: rgb(255 183 171 / 15%);
     text-align: center;
     color: var(--light);
     display: inline-flex;
@@ -283,14 +286,18 @@ section>.ctnr {
     align-items: center;
     font-weight: 800;
     font-size: 1.8rem;
-    padding: 1.1rem 2rem;
+    padding: 1.1rem 2.5rem;
     border-radius: 0.3rem;
     letter-spacing: 0.1rem;
     border: 0.2rem solid var(--c1);
     white-space: nowrap;
     backdrop-filter: blur(0.4rem);
     position: relative;
-    z-index: 8;
+    z-index: 9;
+    transition: background-color 0.4s ease;
+} .intro_sec .cta_ctnr .cta:hover {
+    background-color: rgb(255 183 171 / 24%);
+    transition: background-color 0.05s ease;
 }
 
 .cta_ctnr a:not(.cta) {
@@ -382,13 +389,15 @@ section>.ctnr {
     width: clamp(20rem, 72vw, 40rem);
     margin: 0 auto;
     border: 0.2rem solid var(--c1);
-    background-color: var(--c1a);
+    background-color: rgb(255 205 194 / 25%);
     z-index: 8;
     border-top-width: 0.6rem;
     border-bottom-width: 0.6rem;
     position: relative;
-    top: -7vh;
+    top: -6vh;
     display: block;
+} .andrei_video::-webkit-media-controls-fullscreen-button {
+    display: none;
 }
 
 
@@ -547,7 +556,7 @@ section>.ctnr {
     border-radius: 0.5rem;
     border: 0.15rem solid var(--light);
     backdrop-filter: blur(0.3rem);
-    z-index: 8;
+    z-index: 9;
 }
 
 .framework_sec .box a {
@@ -632,6 +641,7 @@ section>.ctnr {
     text-decoration: underline;
     text-underline-offset: 1rem;
     text-align: center;
+    z-index: 9;
 }
 
 .blog_sec .title {
@@ -646,6 +656,7 @@ section>.ctnr {
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.05em;
     color: var(--c1);
+    margin-bottom: -1rem;
 }
 
 .blog_sec sub {
@@ -665,11 +676,10 @@ section>.ctnr {
     flex-direction: row;
     overflow-x: auto;
     gap: clamp(2.5rem, 7vw, 4rem);
-    margin-top: 2rem;
     width: clamp(15rem, 100vw, 130rem);
-    padding: 0 8vw 12rem;
+    padding: 3rem 8vw 12rem;
     box-sizing: border-box;
-    z-index: 8;
+    z-index: 9;
     -webkit-mask-image: linear-gradient(90deg, white calc(100% - 8vw), transparent);
 }
 
@@ -682,10 +692,10 @@ section>.ctnr {
     border-radius: 1.8rem;
     min-width: clamp(17rem, 62vw, 40rem);
     height: clamp(28rem, 100vw, 40rem);
-    max-height: 80vh;
+    max-height: 70vh;
     padding: 1rem clamp(1.5rem, 3vw, 3rem);
     box-sizing: border-box;
-    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-size: clamp(2.2rem, calc(2vw + 2vh), 3rem);
     text-align: center;
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.5rem;
@@ -695,7 +705,7 @@ section>.ctnr {
     border: 0.1rem solid var(--light);
     position: relative;
     cursor: pointer;
-    transition: transform 0.5s 0.2s ease;
+    transition: transform 1s 0.1s ease;
 }
 
 .blog_posts article:hover {
@@ -812,7 +822,6 @@ footer {
         bottom: 0;
         top: 0;
         right: clamp(11rem, calc(7vw + 6vh), 18rem);
-        border-radius: 0 0 0 0.4rem;
     }
 
     .logo_outline {
@@ -911,16 +920,18 @@ footer {
         margin: 0 auto;
     }
 
+    .blog_sec .ctnr>a {
+        text-align: right;
+    } .blog_sec h3 {
+        margin-bottom: unset;
+    }
     .blog_posts {
-        padding: 2rem clamp(5rem, 7vw, 12rem) clamp(5rem, 15vw, 12rem);
+        padding: 2vh clamp(5rem, 7vw, 12rem) clamp(5rem, 15vw, 12rem);
         width: calc(100vw - clamp(11rem, calc(7vw + 6vh), 18rem));
         margin: 0 0 0 auto;
         -webkit-mask-image: linear-gradient(90deg, white calc(100% - clamp(5rem, 7vw, 12rem)), transparent);
     }
 
-    .blog_sec .ctnr>a {
-        text-align: right;
-    }
 
 
 }

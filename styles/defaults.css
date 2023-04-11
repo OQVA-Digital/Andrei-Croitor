@@ -55,8 +55,8 @@ img {
 }
 
 ::selection {
-    color: var(--grey);
-    background-color: var(--c1a);
+    color: var(--light);
+    background-color: var(--c3);
 }
 
 ::-webkit-scrollbar {
