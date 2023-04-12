@@ -106,8 +106,13 @@ button {
     outline-color: transparent;
     border: unset;
     padding: unset;
+    -webkit-tap-highlight-color: transparent;
 }
 
+
+.flex {
+    display: flex;
+}
 
 
 
