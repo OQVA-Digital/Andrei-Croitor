@@ -98,7 +98,7 @@ hr {
 .post_grid article,
 .post_column article {
     background-color: var(--c3);
-    border-radius: 1.6rem;
+    border-radius: clamp(2rem, 3vw, 2.5rem);
     /* backdrop-filter: blur(0.3rem); */
     /* flex: 1; */
     background-image: url(../blog/placeholders/02.jpg);
@@ -106,7 +106,7 @@ hr {
     background-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
-    padding: clamp(1.5rem, 2vw, 2.6rem) clamp(1.5rem, 2vw, 2.6rem) clamp(1rem, 2vw, 2.2rem);
+    padding: clamp(1.5rem, 2vw, 2.6rem) clamp(1.5rem, 2vw, 5rem) clamp(1rem, 2vw, 2.2rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,6 +114,8 @@ hr {
     height: clamp(19rem, 62vh, 23rem);
     border: 0.1rem solid var(--grey);
     transition: border-color 0.3s ease;
+    border-bottom-width: 0.4rem;
+    border-top-width: 0.4rem;
 }
 article:hover {
     border-color: var(--light);
@@ -145,7 +147,9 @@ article:nth-of-type(3n + 3) {
 .post_grid .latest {
     height: 38rem;
     border: 0.1rem solid var(--c2);
-    border-width: 0.2rem;
+    border-width: 0.1rem;
+    border-bottom-width: 0.4rem;
+    border-top-width: 0.4rem;
 } article .title {
     position: sticky;
     top: 1.5rem;
