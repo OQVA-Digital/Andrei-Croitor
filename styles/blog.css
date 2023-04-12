@@ -9,7 +9,7 @@ main {
     align-items: flex-start;
     align-items: center;
     flex: 1;
-    padding-bottom: 5rem;
+    padding-bottom: 12rem;
 }
 
 main>.ctnr {
@@ -59,9 +59,9 @@ h1 {
 }
 
 .subheading {
-    margin: calc(clamp(2.4rem, calc(4vw + 3vh), 5.4rem) * -1) 0 2.5rem;
+    margin: calc(clamp(2.4rem, calc(3.3vw + 3vh), 5.4rem) * -1) 0 2.5rem;
     font-weight: 400;
-    font-size: clamp(1.6rem, calc(1.6vw + 2vh), 3rem);
+    font-size: clamp(1.6rem, calc(1.6vw + 1.8vh), 3rem);
     text-align: right;
 }
 
