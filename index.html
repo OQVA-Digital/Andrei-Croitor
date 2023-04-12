@@ -18,12 +18,11 @@
 
     <script src="scripts/components.js" defer></script>
     <script src="scripts/toggle-menu.js" defer></script>
+    <script src="scripts/stroke-anim.js" defer></script>
 </head>
 
 <body>
     <!-- <header-component></header-component> -->
-
-    <main>
         <svg class="logo_outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753.54 590.04"
             preserveAspectRatio="xMinYMin slice">
             <defs></defs>
@@ -41,7 +40,7 @@
             </g>
         </svg>
 
-
+    <div class="flex">
         <header>
             <div class="ctnr">
                 <button class="hambt" type="button">
@@ -61,11 +60,13 @@
                 <img class="logo" src="assets/logo/logo-pink.svg" alt="">
 
                 <nav>
+                    <a href="index.html">Home</a>
+
                     <a href="#about">About me</a>
 
                     <a href="#identity-framework">Identity Framework</a>
 
-                    <a href="#blog">Blog</a>
+                    <a href="blog/index.html">Blog</a>
 
                     <div class="flex">
                         <a href="#contact">Contact</a>
@@ -76,7 +77,7 @@
             </div>
         </header>
 
-        <div class="ctnr">
+        <main>
             <section class="intro_sec">
                 <div class="ctnr">
 
@@ -217,8 +218,8 @@
                     <a href="blog/index.html">Access the full blog</a>
                 </div>
             </section>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <footer>
         <p>Connect with Andrei Croitor</p>
@@ -227,29 +228,6 @@
     <!-- <footer-component></footer-component> -->
 
     <script>
-        const paths = document.querySelectorAll('.logo_outline path')
-
-        const postIframe = document.querySelector('.andrei_video')
-
-        for (i = 0; i < paths.length; i++) {
-            paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
-
-            paths[i].style.strokeDasharray = `${Math.random() * 250 + 120}rem`
-        }
-
-        window.addEventListener('scroll', function () {
-            for (i = 0; i < paths.length; i++) {
-                paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
-            }
-        })
-
-        if (window.matchMedia('(min-width:650px)').matches) {
-            window.addEventListener('scroll', function () {
-                if (window.scrollY < window.innerHeight * 1.1) {
-                    postIframe.style.transform = `translateY(calc(-12vw + ${window.scrollY / 3}px))`
-                }
-            })
-        }
 
         // const philosophySec = document.querySelector('.my_philosophy_sec')
         // const frameworkSec = document.querySelector('.framework_sec')
