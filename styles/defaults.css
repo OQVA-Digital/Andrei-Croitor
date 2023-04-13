@@ -230,7 +230,7 @@ header nav {
     box-sizing: border-box;
     font-size: 1.6rem;
     gap: 1rem;
-    top: 8rem;
+    top: clamp(7rem, 18vw, 8rem);
     right: 0;
     left: 0;
     text-align: center;

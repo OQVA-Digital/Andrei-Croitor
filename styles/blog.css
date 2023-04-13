@@ -232,6 +232,11 @@ hr {
     box-sizing: border-box;
     backdrop-filter: blur(0.4rem);
     background-color: rgb(13 11 13 / 50%);
+} .blog_post article .txt b, .blog_post article .txt strong {
+
+} .blog_post article .txt a {
+    color:var(--c1);
+    text-decoration: underline;
 }
 
 .blog_post article .txt p {
