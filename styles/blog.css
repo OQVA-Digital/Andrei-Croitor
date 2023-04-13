@@ -88,7 +88,7 @@ hr {
 .post_header {
     display: flex;
     flex-direction: column-reverse;
-    gap: clamp(2rem, 2vw, 5rem);
+    gap: clamp(2rem, 3vw, 5rem);
     align-items: flex-start;
 }
 
@@ -105,14 +105,14 @@ hr {
     min-width: 40%;
     line-height: 1.1;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     font-family: 'Brandford', sans-serif;
     cursor: unset;
     font-weight: 100;
 }
 
 .blog_post h1 {
-    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 6.5rem);
+    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 7.5rem);
 } .blog_post article {
     position: relative;
 }
@@ -133,7 +133,7 @@ hr {
 }
 
 .post:first-of-type h2 {
-    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 6.4rem);
+    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 7.5rem);
 }
 
 .post:first-of-type .cover {
@@ -291,14 +291,14 @@ hr {
     }
 
     .post:first-of-type .cover {
-        height: clamp(20rem, 30vw, 45rem);
-        width: clamp(20rem, 30vw, 45rem);
+        height: clamp(24rem, 30vw, 43rem);
+        width: clamp(24rem, 30vw, 43rem);
     }
 
     .post .cover,
     .post_header .cover {
-        height: clamp(20rem, 30vw, 35rem);
-        width: clamp(20rem, 30vw, 35rem);
+        height: clamp(24rem, 30vw, 35rem);
+        width: clamp(24rem, 30vw, 35rem);
         position: relative;
         z-index: 9;
     }
