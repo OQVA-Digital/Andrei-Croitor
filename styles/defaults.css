@@ -16,7 +16,7 @@
     --c4: #fdca40;
 
     --width-mobile:clamp(15rem, 85vw, 130rem);
-    --width-desktop:clamp(15rem, calc(80vw - 10rem), 200rem);
+    --width-desktop: clamp(15rem, calc(80vw - 10rem), 200rem);
 }
 
 html,
@@ -195,7 +195,7 @@ header>.ctnr {
 header .logo {
     width: clamp(4rem, calc(3.5vw + 4vh), 7rem);
     /* height: 70%; */
-    max-width: 75%;
+    /* max-width: 75%; */
     max-height: 70%;
 }
 
@@ -312,7 +312,7 @@ header .social .tiktok {
     height: 18%;
     width: 100%;
     border-radius: 0.2rem;
-    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 }
 
 .hambt.close {}
@@ -410,6 +410,7 @@ header .social .tiktok {
 
     .path01 {
         transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1);
+        stroke-width: 0.2rem;
     }
 
     .hambt {
