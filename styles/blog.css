@@ -18,24 +18,36 @@ main>.ctnr {
 }
 
 
-h1 {
+.blog_home h1 {
     font-size: clamp(5.4rem, calc(7vw + 6vh), 10rem);
     line-height: 1;
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.05em;
     color: var(--c1);
     width: fit-content;
-    margin-bottom: clamp(1rem, 2vw, 2rem);
+    margin-bottom: clamp(1rem, 2vw, 3rem);
 }
 
+.blog_home h1 span {
+    font-size: 0.3em;
+    width: 10rem;
+    display: inline-block;
+    color: var(--light);
+    margin-left: -0.5rem;
+}
+
+.blog_post h1 {}
+
 .back {
-    font-size: 1.6rem;
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
     display: inline-flex;
-    padding: 1rem 1rem 1rem 0;
+    padding: 0.8rem 1rem 0.8rem 1rem;
     background-color: transparent;
     margin-bottom: 1rem;
     position: relative;
     gap: 1.4rem;
+    left: -1rem;
+    transition: background-color 0.3s ease;
 }
 
 .back::before {
@@ -48,20 +60,12 @@ h1 {
     border-color: var(--light);
     transform: translate(0.4rem, 0.25em) rotate(-45deg);
     /* left: -0.6rem; */
-    top: 0.2rem;
+    top: 0.4rem;
 }
 
 .back:hover {
-    opacity: 0.6;
-}
-
-.subheading {
-    margin: calc(clamp(2.4rem, calc(2.9vw + 2.9vh), 4.9rem) * -1) 0 3rem;
-    font-weight: 400;
-    font-size: clamp(1.6rem, calc(1.5vw + 1.4vh), 2.6rem);
-    text-align: right;
-    color: var(--grey);
-    display: none;
+    background-color: #222;
+    transition: background-color 0.05s ease;
 }
 
 hr {
@@ -74,26 +78,60 @@ hr {
 
 .logo_outline .path01 {
     stroke: var(--c1);
-} .logo_outline {
+}
+
+.logo_outline {
     /* mix-blend-mode: unset; */
 }
 
-.post {
+.post,
+.post_header {
     display: flex;
-    flex-direction: column;
-    gap: clamp(2rem, 3vw, 5rem);
+    flex-direction: column-reverse;
+    gap: clamp(2rem, 2vw, 5rem);
     align-items: flex-start;
+}
+
+.post_header {
+    margin-bottom: clamp(4rem, 5vw, 6rem);
 }
 
 .post h2 {
     font-size: clamp(2.7rem, calc(3vw + 2.4vh), 5rem);
+}
+
+.post h2,
+.blog_post h1 {
     min-width: 40%;
     line-height: 1.1;
     font-weight: 800;
     letter-spacing: 0.1em;
     font-family: 'Brandford', sans-serif;
     cursor: unset;
+    font-weight: 100;
 }
+
+.blog_post h1 {
+    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 6.5rem);
+} .blog_post article {
+    position: relative;
+}
+
+.sharebt {
+    cursor: pointer;
+    background-image: url(../assets/icons/share.svg);
+    width: clamp(2rem, 6vw, 2.8rem);
+    height: clamp(2rem, 6vw, 2.8rem);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+} .sharebt:hover {
+    filter: brightness(2);
+}
+
 .post:first-of-type h2 {
     font-size: clamp(2.7rem, calc(3vw + 3.2vh), 6.4rem);
 }
@@ -102,17 +140,22 @@ hr {
     border: 0.1rem solid var(--c2);
     border-top-width: 0.5rem;
     border-bottom-width: 0.5rem;
-} .post .cover {
+}
+
+.post .cover,
+.post_header .cover {
     border-radius: clamp(2.5rem, 5vw, 3rem);
     border: 0.1rem solid var(--c1);
     border-top-width: 0.4rem;
     border-bottom-width: 0.4rem;
     position: relative;
-    z-index: 8;
+    z-index: 9;
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
-} .cover img {
+}
+
+.cover img {
     width: 100%;
     height: 100%;
     display: block;
@@ -120,35 +163,44 @@ hr {
     object-position: center;
 }
 
-.post .content {
+.post .content,
+.post_header .content {
     flex: 1;
+    position: relative;
 }
 
 .post .content a {
     align-self: flex-end;
-    font-weight: 600;
+    font-weight: 200;
     text-underline-offset: 0.5rem;
     transition: color 0.15s ease;
     color: var(--light);
     cursor: pointer;
-} .post p a:hover {
+}
+
+.post p a:hover {
     color: var(--c1);
-} .post:first-of-type p a:hover {
+}
+
+.post:first-of-type p a:hover {
     color: var(--c2);
 }
 
 .post .content p {
     font-size: clamp(1.4rem, calc(1.2vw + 1.4vh), 1.7rem);
-    color: var(--grey);
+    color: #BBB;
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.5;
     max-width: 60rem;
-} .post p b {
-    color: #AAA;
+}
+
+.post p b {
+    color: #DDD;
     font-weight: inherit;
 }
 
-.post time {
+.post time,
+.post_header time {
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -164,17 +216,30 @@ hr {
 }
 
 .post h2 strong,
-.post h2 b {
+.post h2 b,
+.blog_post h1 strong,
+.blog_post h1 b {
     color: var(--c1);
 }
 
-article:hover a {
-    color: var(--light);
-    transition: color 0.05s ease;
+.blog_post article .txt {
+    color: #CCC;
+    max-width: 90rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+    /* padding: 2rem; */
+    box-sizing: border-box;
+    backdrop-filter: blur(0.4rem);
+    background-color: rgb(13 11 13 / 50%);
 }
 
-
-
+.blog_post article .txt p {
+    font-size: clamp(1rem, calc(1.5vw + 1vh), 1.9rem);
+    margin-bottom: 2rem;
+    text-align: justify;
+    line-height: 1.6;
+}
 
 
 
@@ -203,21 +268,32 @@ article:hover a {
         flex-flow: row wrap;
     }
 
-    .post .content {
+    .post_header {
+        flex-flow: row-reverse wrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .post .content,
+    .post_header .content {
         min-width: clamp(10rem, 50vh, 30rem);
         position: sticky;
         top: 2rem;
         z-index: 3;
+        /* margin-top: 2rem; */
     }
 
     .post:first-of-type .cover {
         height: clamp(20rem, 30vw, 45rem);
         width: clamp(20rem, 30vw, 45rem);
-    } .post .cover {
+    }
+
+    .post .cover,
+    .post_header .cover {
         height: clamp(20rem, 30vw, 35rem);
         width: clamp(20rem, 30vw, 35rem);
-        /* position: sticky; */
-        /* top: 2rem; */
+        position: relative;
+        z-index: 9;
     }
 
     .post:first-of-type {
@@ -225,4 +301,14 @@ article:hover a {
         justify-content: flex-end;
     }
 
+    .sharebt {
+        position: unset;
+        bottom: unset;
+        right: unset;
+        margin-top: 0.8rem;
+    }
+
+    .blog_post article .txt p {
+        font-size: clamp(1.6rem, calc(1vw + 1vh), 1.9rem);
+    }
 }
