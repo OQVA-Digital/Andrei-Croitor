@@ -25,7 +25,7 @@ main>.ctnr {
     letter-spacing: 0.05em;
     color: var(--c1);
     width: fit-content;
-    margin-bottom: clamp(1rem, 2vw, 3rem);
+    margin: 2rem 0 clamp(1rem, 2vw, 3rem);
 }
 
 .blog_home h1 span {
@@ -43,11 +43,11 @@ main>.ctnr {
     display: inline-flex;
     padding: 0.8rem 1rem 0.8rem 1rem;
     background-color: transparent;
-    margin-bottom: 1rem;
     position: relative;
     gap: 1.4rem;
     left: -1rem;
     transition: background-color 0.3s ease;
+    border-radius: 0.3rem;
 }
 
 .back::before {
@@ -64,7 +64,7 @@ main>.ctnr {
 }
 
 .back:hover {
-    background-color: #222;
+    background-color: #151515;
     transition: background-color 0.05s ease;
 }
 
