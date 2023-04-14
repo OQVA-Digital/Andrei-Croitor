@@ -103,7 +103,7 @@ hr {
 .post h2,
 .blog_post h1 {
     min-width: 40%;
-    line-height: 1.1;
+    line-height: 1.05;
     font-weight: 800;
     letter-spacing: 0.05em;
     font-family: 'Brandford', sans-serif;
@@ -112,7 +112,7 @@ hr {
 }
 
 .blog_post h1 {
-    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 7.5rem);
+    font-size: clamp(2.7rem, calc(3.5vw + 2vh + 1.5rem), 7.5rem);
 } .blog_post article {
     position: relative;
 }
@@ -133,7 +133,7 @@ hr {
 }
 
 .post:first-of-type h2 {
-    font-size: clamp(2.7rem, calc(3vw + 3.2vh), 7.5rem);
+    font-size: clamp(2.7rem, calc(3.5vw + 2vh + 1.5rem), 7.5rem);
 }
 
 .post:first-of-type .cover {
