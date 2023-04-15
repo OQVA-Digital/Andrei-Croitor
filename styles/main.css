@@ -856,12 +856,11 @@ footer button {
         /* max-height: fit-content; */
         max-width: fit-content;
         height: fit-content;
-        position: sticky;
-        position: -webkit-sticky;
-        top: calc(50vh - 15vw);
+        /* position: sticky; */
+        /* top: calc(50vh - 15vw); */
         box-sizing: border-box;
         object-fit: contain;
-        margin: calc(-8vh - 8vw) 0 calc(-8vh - 8vw);
+        /* margin: calc(-8vh - 8vw) 0 calc(-8vh - 8vw); */
     }
 
     .my_philosophy_sec .content {
