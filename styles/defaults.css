@@ -15,7 +15,7 @@
 
     --c4: #fdca40;
 
-    --width-mobile:clamp(15rem, 85vw, 130rem);
+    --width-mobile: clamp(15rem, 88vw, 130rem);
     --width-desktop: clamp(15rem, calc(80vw - 10rem), 200rem);
 }
 
@@ -42,6 +42,7 @@ body {
     font-family: 'Brooklyn', sans-serif;
     background-color: var(--dark);
     letter-spacing: 0.06rem;
+    position: relative;
 }
 
 a {
@@ -145,6 +146,8 @@ main section {
 body>.flex {
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 main>.ctnr {
@@ -200,23 +203,27 @@ header .logo {
     /* max-height: 70%; */
 }
 
-header .social {
+header .social, footer .social {
     display: flex;
     flex-direction: row;
     gap: clamp(0.6rem, calc(0.9vw + 0.9vh), 1.6rem);
+    justify-content: center;
+}
+
+.social a {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.3s ease;
 }
 
 header .social a {
-    width: clamp(2rem, calc(2.8vw + 2.4vh), 3.5rem);
-    min-height: clamp(2rem, calc(2.8vw + 2.4vh), 3.5rem);
+    width: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
+    min-height: clamp(2rem, calc(3vw + 2.4vh), 3.5rem);
     border: 0.2rem solid var(--c2);
     border-radius: 50%;
     display: block;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
+    background-size: 45%;
     background-color: var(--c2a);
-    transition: background-color 0.3s ease;
 }
 
 header nav {
@@ -277,26 +284,25 @@ header nav .flex a:not(.icon) {
     flex: 1;
 }
 
-header nav a:hover {
+header nav a:hover, .social a:hover, footer button:hover {
     background-color: var(--c2);
     transition: background-color 0.05s ease;
 }
 
-header .social a:hover {
-    background-color: var(--c2);
-    transition: background-color 0.05s ease;
-}
-
-header .social .instagram {
+.social .instagram {
     background-image: url(../assets/icons/instagram.svg);
 }
 
-header .social .twitter {
+.social .twitter {
     background-image: url(../assets/icons/twitter.svg);
 }
 
-header .social .tiktok {
+.social .tiktok {
     background-image: url(../assets/icons/tiktok.svg);
+}
+
+.social .linkedin {
+    background-image: url(../assets/icons/linkedin.svg);
 }
 
 .hambt {
