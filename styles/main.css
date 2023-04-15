@@ -855,12 +855,14 @@ footer button {
         width: clamp(16rem, calc(14vw + 9vh), 33rem);
         /* max-height: fit-content; */
         max-width: fit-content;
-        height: fit-content;
+        height: min-content;
         /* position: sticky; */
         /* top: calc(50vh - 15vw); */
         box-sizing: border-box;
         object-fit: contain;
         /* margin: calc(-8vh - 8vw) 0 calc(-8vh - 8vw); */
+        margin: 0 auto;
+        max-height: 60rem;
     }
 
     .my_philosophy_sec .content {
