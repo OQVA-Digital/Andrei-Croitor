@@ -7,13 +7,13 @@ let showingMenu = false;
 function toggleNav() {
     if(showingMenu == false) {
 
-        nav.style.display = 'flex';
+        nav.classList.add('show')
         menuBt.classList.add('close')
 
         showingMenu = true;
     } else {
 
-        nav.style.display = 'none';
+        nav.classList.remove('show')
         menuBt.classList.remove('close')
 
         showingMenu = false;

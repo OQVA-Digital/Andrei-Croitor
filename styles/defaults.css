@@ -104,7 +104,11 @@ img {
     font-weight: 800;
 }
 
-main {}
+main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
 
 button {
     background-color: transparent;
@@ -135,9 +139,6 @@ button {
 
 
 
-
-
-
 main section {
     background-size: cover;
     box-sizing: border-box;
@@ -147,7 +148,7 @@ body>.flex {
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: 1;
+    box-shadow: 0 1rem 4vh #BE8C06;
 }
 
 main>.ctnr {
@@ -178,7 +179,7 @@ main>.ctnr {
 header {
     background-color: var(--c2a);
     width: 100%;
-    height: clamp(7rem, 18vw, 8rem);
+    min-height: clamp(7rem, 18vw, 8rem);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -186,6 +187,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
+    flex: 0;
 }
 
 header>.ctnr {
@@ -206,7 +208,7 @@ header .logo {
 header .social, footer .social {
     display: flex;
     flex-direction: row;
-    gap: clamp(0.6rem, calc(0.9vw + 0.9vh), 1.6rem);
+    gap: clamp(0.6rem, calc(0.9vw + 0.9vh), 1.4rem);
     justify-content: center;
 }
 
@@ -242,13 +244,18 @@ header nav {
     left: 0;
     text-align: center;
     /* border-radius: 0 0 1.2rem 1.2rem; */
-    z-index: 11;
+    /* z-index: 11; */
     backdrop-filter: blur(0.9rem);
-    display: none;
     border-bottom: 0.1rem solid var(--light);
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    opacity: 0;
+    visibility: hidden;
+} header nav.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-header nav a {
+header nav a, header nav button {
     white-space: nowrap;
     padding: 0 clamp(2rem, 4vw, 4rem);
     border-radius: 0.4rem;
@@ -263,11 +270,14 @@ header nav a {
     cursor: pointer;
 }
 
-header nav a.icon {
-    width: 4rem;
-    padding: unset;
+.icon {
     background-position: center;
     background-repeat: no-repeat;
+}
+
+header nav a.icon, header nav button.icon {
+    width: 4rem;
+    padding: unset;
     background-size: 55%;
 }
 
@@ -284,8 +294,13 @@ header nav .flex a:not(.icon) {
     flex: 1;
 }
 
-header nav a:hover, .social a:hover, footer button:hover {
+header nav a:hover, header .social a:hover, header nav button:hover {
     background-color: var(--c2);
+    transition: background-color 0.05s ease;
+}
+
+ footer button:hover, footer .social a:hover {
+    background-color: var(--c2a);
     transition: background-color 0.05s ease;
 }
 
@@ -337,6 +352,11 @@ header nav a:hover, .social a:hover, footer button:hover {
     transform: translateY(-220%);
 }
 
+
+
+.stroke_ctnr {
+}
+
 .logo_outline {
     position: fixed;
     inset: 0;
@@ -345,8 +365,8 @@ header nav a:hover, .social a:hover, footer button:hover {
     width: 100%;
     /* filter: drop-shadow(-2rem -1rem 1rem var(--c1)); */
     pointer-events: none;
-    z-index: 8;
     transform: scale(1.05);
+    z-index: 1;
 }
 
 .path01 {
@@ -363,6 +383,63 @@ header nav a:hover, .social a:hover, footer button:hover {
     /* backface-visibility: hidden; */
     will-change: stroke-dashoffset;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.mail_form_ctnr {
+    position:fixed;
+    height: clamp(30rem, calc(40vh + 10vw), 50rem);
+    width: clamp(15rem, 88vw, 70rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:50%;
+    transform:translateY(-50%);
+    background-color: var(--c2a);
+    z-index: 10;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--light);
+    display: none;
+} .mail_form_ctnr form {
+
+}.mail_form_ctnr input, .mail_form_ctnr textarea {
+
+} .mail_form_ctnr input {
+
+} .mail_form_ctnr textarea {
+
+} .mail_form_ctnr .submit {
+
+} .mail_form_ctnr label {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -407,7 +484,7 @@ header nav a:hover, .social a:hover, footer button:hover {
         /* flex-direction: column; */
         position: sticky;
         top: 0;
-        width: clamp(11rem, calc(7vw + 6vh), 18rem);
+        min-width: clamp(11rem, calc(7vw + 6vh), 18rem);
     }
 
     header>.ctnr {
@@ -431,7 +508,7 @@ header nav a:hover, .social a:hover, footer button:hover {
 
     header .social {
         flex-direction: column;
-        max-height: calc(80vh - 9rem);
+        max-height: calc(85vh - 9rem);
         overflow-y: auto;
     }
 
@@ -442,6 +519,7 @@ header nav a:hover, .social a:hover, footer button:hover {
         right: 100%;
         border-bottom: unset;
         border-left: 0.1rem solid rgb(250 250 248 / 80%);
+        overflow-y: auto;
     }
 
     .logo_outline {

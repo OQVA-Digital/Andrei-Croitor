@@ -2,6 +2,8 @@
 
 const outlineCtnr = document.createElement("div");
 
+outlineCtnr.classList.add('stroke_ctnr')
+
 outlineCtnr.innerHTML = `
 <svg class="logo_outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753.54 590.04"
     preserveAspectRatio="xMinYMin slice">
@@ -20,7 +22,7 @@ outlineCtnr.innerHTML = `
     </g>
 </svg>`
 
-document.body.appendChild(outlineCtnr);
+document.querySelector('main').appendChild(outlineCtnr);
 
 const paths = document.querySelectorAll('.logo_outline path')
 
