@@ -2,6 +2,12 @@ body {
     color: var(--light);
 }
 
+body>.flex {
+    box-shadow: 0 3rem 4vh #BE8C06;
+    position: relative;
+    z-index: 2;
+}
+
 section>.ctnr {
     box-sizing: border-box;
     width: 100%;
@@ -651,7 +657,8 @@ footer .social {
 }
 
 footer .social a {
-    width: 4rem;
+    min-width: 4rem;
+    font-family: 'Brooklyn', sans-serif;
 }
 
 footer .social a,
@@ -668,17 +675,18 @@ footer button {
     /* text-transform: uppercase; */
     white-space: nowrap;
     transition: background-color 0.3s ease;
-    letter-spacing: 0.05rem;
+    font-size: 1.5rem;
 }
 
-footer .social button {
-    padding: 0.3rem 1.2rem;
+footer .social a {
+    padding: 0.3rem 1.5rem 0.3rem 1rem;
     cursor: pointer;
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-} footer button .icon.mail {
+    letter-spacing: 0;
+} footer .icon.mail {
     background-image: url(../assets/icons/mail.svg);
     height: 100%;
     width: 2rem;

@@ -43,6 +43,7 @@ body {
     background-color: var(--dark);
     letter-spacing: 0.06rem;
     position: relative;
+    color: var(--light);
 }
 
 a {
@@ -61,7 +62,7 @@ img {
 
 ::selection {
     color: var(--light);
-    background-color: var(--c3);
+    background-color: #31393c;
 }
 
 ::-webkit-scrollbar {
@@ -117,7 +118,12 @@ button {
     padding: unset;
     font-family: 'Brooklyn', sans-serif;
     -webkit-tap-highlight-color: transparent;
-} button:focus-visible {outline: 0.1rem solid transparent;}
+    color: var(--light);
+}
+
+button:not([type="submit"]):focus-visible {
+    outline: 0.1rem solid transparent;
+}
 
 .flex {
     display: flex;
@@ -147,8 +153,6 @@ main section {
 body>.flex {
     display: flex;
     flex-direction: column;
-    position: relative;
-    box-shadow: 0 1rem 4vh #BE8C06;
 }
 
 main>.ctnr {
@@ -205,7 +209,8 @@ header .logo {
     /* max-height: 70%; */
 }
 
-header .social, footer .social {
+header .social,
+footer .social {
     display: flex;
     flex-direction: row;
     gap: clamp(0.6rem, calc(0.9vw + 0.9vh), 1.4rem);
@@ -236,6 +241,7 @@ header nav {
     display: flex;
     flex-direction: column;
     padding: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
     box-sizing: border-box;
     font-size: 1.6rem;
     gap: 1rem;
@@ -249,13 +255,16 @@ header nav {
     border-bottom: 0.1rem solid var(--light);
     transition: opacity 0.15s ease, visibility 0.15s ease;
     opacity: 0;
+    letter-spacing: 0.04em;
     visibility: hidden;
-} header nav.show {
+}
+
+header nav.show {
     opacity: 1;
     visibility: visible;
 }
 
-header nav a, header nav button {
+header nav a {
     white-space: nowrap;
     padding: 0 clamp(2rem, 4vw, 4rem);
     border-radius: 0.4rem;
@@ -275,10 +284,10 @@ header nav a, header nav button {
     background-repeat: no-repeat;
 }
 
-header nav a.icon, header nav button.icon {
+header nav a.icon {
     width: 4rem;
     padding: unset;
-    background-size: 55%;
+    background-size: 50%;
 }
 
 header .icon.mail {
@@ -294,12 +303,13 @@ header nav .flex a:not(.icon) {
     flex: 1;
 }
 
-header nav a:hover, header .social a:hover, header nav button:hover {
+header nav a:hover,
+header .social a:hover {
     background-color: var(--c2);
     transition: background-color 0.05s ease;
 }
 
- footer button:hover, footer .social a:hover {
+footer .social a:hover {
     background-color: var(--c2a);
     transition: background-color 0.05s ease;
 }
@@ -354,8 +364,7 @@ header nav a:hover, header .social a:hover, header nav button:hover {
 
 
 
-.stroke_ctnr {
-}
+.stroke_ctnr {}
 
 .logo_outline {
     position: fixed;
@@ -371,7 +380,7 @@ header nav a:hover, header .social a:hover, header nav button:hover {
 
 .path01 {
     fill: none;
-    stroke: salmon;
+    stroke: var(--c1);
     stroke-miterlimit: 10;
     stroke-width: 0.1rem;
     stroke-dasharray: 185rem;
@@ -390,41 +399,6 @@ header nav a:hover, header .social a:hover, header nav button:hover {
 
 
 
-
-
-
-
-
-.mail_form_ctnr {
-    position:fixed;
-    height: clamp(30rem, calc(40vh + 10vw), 50rem);
-    width: clamp(15rem, 88vw, 70rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top:50%;
-    transform:translateY(-50%);
-    background-color: var(--c2a);
-    z-index: 10;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    border-radius: 1rem;
-    border: 0.1rem solid var(--light);
-    display: none;
-} .mail_form_ctnr form {
-
-}.mail_form_ctnr input, .mail_form_ctnr textarea {
-
-} .mail_form_ctnr input {
-
-} .mail_form_ctnr textarea {
-
-} .mail_form_ctnr .submit {
-
-} .mail_form_ctnr label {
-
-}
 
 
 

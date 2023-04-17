@@ -2,7 +2,7 @@
 
 const outlineCtnr = document.createElement("div");
 
-outlineCtnr.classList.add('stroke_ctnr')
+// outlineCtnr.classList.add('stroke_ctnr')
 
 outlineCtnr.innerHTML = `
 <svg class="logo_outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753.54 590.04"
