@@ -22,7 +22,7 @@ outlineCtnr.innerHTML = `
     </g>
 </svg>`
 
-document.querySelector('main').appendChild(outlineCtnr);
+document.body.appendChild(outlineCtnr);
 
 const paths = document.querySelectorAll('.logo_outline path')
 

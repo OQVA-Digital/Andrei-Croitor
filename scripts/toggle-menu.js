@@ -1,5 +1,6 @@
 const menuBt = document.querySelector('.hambt')
 const nav = document.querySelector('header nav')
+const navBts = document.querySelectorAll('header nav a')
 
 let showingMenu = false;
 
@@ -21,3 +22,8 @@ function toggleNav() {
 }
 
 menuBt.addEventListener('click', toggleNav)
+
+
+for(i=0;i<navBts.length;i++) {
+    navBts[i].addEventListener('click', toggleNav)
+}

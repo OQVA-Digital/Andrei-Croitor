@@ -3,9 +3,6 @@ body {
 }
 
 body>.flex {
-    box-shadow: 0 3rem 4vh #BE8C06;
-    position: relative;
-    z-index: 2;
 }
 
 section>.ctnr {
@@ -492,7 +489,7 @@ section>.ctnr {
     letter-spacing: 0.05em;
     line-height: 1;
     position: absolute;
-    bottom: clamp(3.5rem, calc(4vw + 5vh), 6rem);
+    bottom: clamp(3.5rem, calc(4vw + 5vh), 7rem);
     width: var(--width-mobile);
     text-decoration: underline;
     text-underline-offset: 1rem;
@@ -647,8 +644,6 @@ footer {
     letter-spacing: 0.05em;
     box-sizing: border-box;
     gap: 1rem;
-    position: sticky;
-    bottom: 0;
     z-index: 0;
 }
 
@@ -890,7 +885,7 @@ footer .social a {
     }
 
     .blog_posts {
-        padding: 3vh clamp(5rem, 8vw, 25rem) clamp(5rem, 15vw, 15rem);
+        padding: 3vh clamp(5rem, 8vw, 25rem) clamp(5rem, 15vw, 16rem);
         width: calc(100vw - clamp(11rem, calc(7vw + 6vh), 18rem));
         margin: 0 0 0 auto;
         -webkit-mask-image: linear-gradient(90deg, white calc(100% - clamp(5rem, 7vw, 12rem)), transparent);
