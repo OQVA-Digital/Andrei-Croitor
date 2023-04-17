@@ -867,7 +867,7 @@ footer .social a {
         text-align: center;
         min-width: 35rem;
         padding: 3rem clamp(2rem, 3vw, 4rem);
-        max-width: 55vw;
+        /* max-width: 55vw; */
         margin: 0 auto;
     }
 
