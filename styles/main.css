@@ -15,6 +15,7 @@ section>.ctnr {
     align-items: center;
     flex-direction: column;
     position: relative;
+    display: list-item;
 }
 
 .intro_sec {
@@ -68,7 +69,7 @@ section>.ctnr {
 }
 
 .intro_sec h1 b {
-    font-size: clamp(5.4rem, calc(7vw + 5vh), 10rem);
+    font-size: clamp(5.4rem, calc(7vw + 5vh), 10.5rem);
     line-height: 1;
     display: block;
     font-family: 'Brandford', sans-serif;
@@ -317,6 +318,7 @@ section>.ctnr {
 .my_philosophy_sec b,
 .my_philosophy_sec strong {
     background-color: var(--c1a);
+    font-weight: 600;
 }
 
 .my_philosophy_sec .content p {}
@@ -350,6 +352,7 @@ section>.ctnr {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .framework_sec.inverted {
@@ -521,6 +524,7 @@ section>.ctnr {
     letter-spacing: 0.05em;
     color: var(--c1);
     margin-bottom: -1rem;
+    font-weight: 100;
 }
 
 .blog_sec sub {
@@ -567,16 +571,20 @@ section>.ctnr {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 0.1rem solid #666;
+    border: 0.1rem solid var(--c3);
     border-top-width: 0.4rem;
     position: relative;
     /* cursor: pointer; */
-    transition: transform 1s 0.1s ease;
+    transition: transform 1s 0.1s ease, border-color 0.3s ease;
 }
 
 .blog_posts article:hover {
-    transform: translateY(-0.5rem);
-    transition: transform 0.2s ease;
+    transform: translateY(-0.7rem);
+    transition: transform 0.2s ease, border-color 0.1s ease;
+    border-color: var(--c2);
+} .blog_posts article:hover a {
+    color:var(--light);
+    transition: color 0.1s ease;
 }
 
 .blog_posts article h4 {
@@ -595,6 +603,7 @@ section>.ctnr {
     text-decoration: underline;
     text-underline-offset: 1rem;
     right: 2rem;
+    transition: color 0.3s ease;
 }
 
 .blog_posts article:nth-child(3n + 1) {
