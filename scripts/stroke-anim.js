@@ -22,18 +22,30 @@ outlineCtnr.innerHTML = `
     </g>
 </svg>`
 
+
+// let increment = 0;
+let scroll;
+
 document.body.appendChild(outlineCtnr);
 
 const paths = document.querySelectorAll('.logo_outline path')
 
 for (i = 0; i < paths.length; i++) {
-    paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
+    paths[i].style.strokeDashoffset = `${scroll * 1.5}px`
 
     paths[i].style.strokeDasharray = `${Math.random() * 250 + 120}rem`
+
+    // setInterval(() => {
+    //     increment++
+    
+    //     paths[i].style.strokeDashoffset = `${increment / -50}rem`
+    // }, 1);
 }
 
 window.addEventListener('scroll', function () {
+    scroll = window.scrollY;
+
     for (i = 0; i < paths.length; i++) {
-        paths[i].style.strokeDashoffset = `${window.scrollY * 1.5}px`
+        paths[i].style.strokeDashoffset = `${scroll}px`
     }
 })

@@ -3,7 +3,7 @@
 
     --grey: #6a757f;
 
-    --dark: #0D0B0D;
+    --dark: #111111;
 
     --c1: #ffb7ab;
     --c1a: #ffcdc2;
@@ -54,6 +54,7 @@ a {
 img {
     user-select: none;
     max-width: 100%;
+    height: auto;
 }
 
 .mobile_hidden {
@@ -205,7 +206,7 @@ main>.ctnr {
     transition: stroke-dashoffset 5s cubic-bezier(0, 0, 0.2, 1);
     /* transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1); */
     /* backface-visibility: hidden; */
-    will-change: stroke-dashoffset;
+    /* will-change: stroke-dashoffset; */
 }
 
 
@@ -239,6 +240,55 @@ main>.ctnr {
 
 
 
+/* .intro_sec .cta_ctnr */
+
+.cta {
+    background-color: var(--c2a);
+    /* text-align: center; */
+    color: var(--light);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    font-size: clamp(1.4rem, 3.9vw, 1.65rem);
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    letter-spacing: 0.05rem;
+    border: 0.2rem solid var(--c2);
+    backdrop-filter: blur(0.4rem);
+    position: relative;
+    z-index: 9;
+    transition: background-color 0.4s ease;
+    width: fit-content;
+    box-shadow: 0.6rem 0.6rem #fff2;
+}
+
+.cta::after {
+    content:'';
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-top: 0.2rem solid var(--light);
+    border-right: 0.2rem solid var(--light);
+    /* transform: rotate(45deg); */
+}
+
+.cta:hover {
+    background-color: var(--c2);
+    transition: background-color 0.05s ease;
+}
+
+.cta_ctnr a:not(.cta) {
+    font-size: clamp(1.4rem, 4vw, 1.7rem);
+    letter-spacing: 0.1rem;
+    max-width: 70vh;
+    text-decoration: underline;
+    text-underline-offset: 0.6rem;
+    text-decoration-color: var(--c1a);
+}
+
 
 
 
@@ -266,7 +316,7 @@ main>.ctnr {
     }
 
     .path01 {
-        transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1);
+        /* transition: stroke-dashoffset 3s cubic-bezier(0, 0, 0.2, 1); */
         stroke-width: 0.15rem;
     }
 

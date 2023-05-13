@@ -2,8 +2,7 @@ body {
     color: var(--light);
 }
 
-body>.flex {
-}
+body>.flex {}
 
 section>.ctnr {
     box-sizing: border-box;
@@ -36,9 +35,9 @@ section>.ctnr {
 }
 
 .intro_sec>.ctnr {
-    background-color: rgb(13 11 13 / 62%);
+    background-color: rgb(13 11 13 / 75%);
     /* min-height: clamp(80vh, 160vw, 92vh); */
-    padding: 0 0 clamp(8rem, calc(30vh - 11rem), 11rem);
+    padding: 0 0 clamp(8rem, calc(30vh - 11rem), 14rem);
 }
 
 .intro_sec h1 {
@@ -48,7 +47,7 @@ section>.ctnr {
 
 .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(2vw + 1.5vh + 1rem), 6rem);
+    font-size: clamp(2.1rem, calc(1.9vw + 1.8vh + 1rem), 6rem);
     width: fit-content;
     max-width: 79rem;
     margin-bottom: 2.5rem;
@@ -69,7 +68,7 @@ section>.ctnr {
 }
 
 .intro_sec h1 b {
-    font-size: clamp(5.4rem, calc(7vw + 5vh), 10.5rem);
+    font-size: clamp(5.4rem, calc(7vw + 5vh), 9rem);
     line-height: 1;
     display: block;
     font-family: 'Brandford', sans-serif;
@@ -108,39 +107,6 @@ section>.ctnr {
     gap: clamp(1rem, calc(2vw + 1vh), 3rem);
 }
 
-.intro_sec .cta_ctnr .cta {
-    background-color: rgb(255 183 171 / 15%);
-    text-align: center;
-    color: var(--light);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 800;
-    font-size: 1.8rem;
-    padding: 1.1rem 2.5rem;
-    border-radius: 0.7rem;
-    letter-spacing: 0.1rem;
-    border: 0.2rem solid var(--c1);
-    white-space: nowrap;
-    backdrop-filter: blur(0.4rem);
-    position: relative;
-    z-index: 9;
-    transition: background-color 0.4s ease;
-}
-
-.intro_sec .cta_ctnr .cta:hover {
-    background-color: rgb(255 183 171 / 24%);
-    transition: background-color 0.05s ease;
-}
-
-.cta_ctnr a:not(.cta) {
-    font-size: clamp(1.4rem, 4vw, 1.6rem);
-    letter-spacing: 0.1rem;
-    max-width: 70vh;
-    text-decoration: underline;
-    text-underline-offset: 0.4rem;
-    text-decoration-color: var(--c1a);
-}
 
 
 
@@ -183,7 +149,6 @@ section>.ctnr {
 }
 
 .about_sec .content {
-    font-size: clamp(1.5rem, calc(1.3vw + 1.3vh), 2.2rem);
     font-weight: 400;
     line-height: 1.45;
     color: var(--light);
@@ -192,14 +157,25 @@ section>.ctnr {
     position: relative;
 }
 
+.about_sec .content p {
+    margin-bottom: 1rem;
+    font-size: clamp(1.5rem, calc(1.3vw + 1.3vh), 1.85rem);
+}
+
+.about_sec .content .cta {
+    margin-top: 1.5rem;
+    max-width: 77%;
+}
+
 .about_sec .content .txt {
     padding-top: 5rem;
     margin-top: -2rem;
+    scroll-margin: 15rem;
 }
 
 .about_sec .content .big {
-    font-size: clamp(1.5em, calc(2.2vw + 1.5vh), 2.1em);
-    line-height: 1.3;
+    font-size: clamp(1.2rem, calc(2.8vw + 1.4vh), 4.1rem);
+    line-height: 1.35;
     margin-bottom: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: 800;
     letter-spacing: 0;
@@ -212,6 +188,7 @@ section>.ctnr {
 
 .about_sec .content ol {
     padding-inline-start: 2.5rem;
+    margin: 1.2rem 0;
 }
 
 .about_sec .content li {
@@ -238,8 +215,9 @@ section>.ctnr {
     border: 0.2rem solid var(--c1);
     background-color: rgb(255 205 194 / 25%);
     z-index: 9;
-    border-top-width: 0.6rem;
-    border-bottom-width: 0.6rem;
+    border-top-width: 0.5rem;
+    border-bottom-width: 0.5rem;
+    border-bottom-color: var(--c1a);
     position: relative;
     margin-top: -6vh;
     display: block;
@@ -308,9 +286,9 @@ section>.ctnr {
 
 .my_philosophy_sec .content {
     /* text-align: center; */
-    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 2.8rem);
+    font-size: clamp(1.5rem, calc(1.5vw + 1.5vh), 3rem);
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.6;
     letter-spacing: 0;
     width: var(--width-mobile);
 }
@@ -352,7 +330,7 @@ section>.ctnr {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    /* display: none; */
 }
 
 .framework_sec.inverted {
@@ -363,8 +341,7 @@ section>.ctnr {
 .framework_sec .box b,
 .framework_sec .box strong {
     color: var(--light);
-    background-color: var(--c2a);
-    font-weight: 800;
+    background-color: rgb(33 118 255 / 70%);
 }
 
 .framework_sec .txt b,
@@ -421,18 +398,12 @@ section>.ctnr {
 
 .framework_sec .box a {
     display: block;
-    background-color: var(--c2a);
     width: fit-content;
     margin: 2rem auto 0;
     padding: 1.2rem 0.5rem;
-    color: var(--light);
-    font-weight: 600;
-    border-radius: 0.4rem;
-    text-align: center;
     line-height: 1.2;
     width: 100%;
     box-sizing: border-box;
-    font-size: 0.9em;
 }
 
 
@@ -522,7 +493,6 @@ section>.ctnr {
     line-height: 1;
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.05em;
-    color: var(--c1);
     margin-bottom: -1rem;
     font-weight: 100;
 }
@@ -534,8 +504,8 @@ section>.ctnr {
 }
 
 .blog_sec sub b {
-    color: var(--c1);
-    font-weight: 400;
+    color: var(--c2);
+    font-weight: 600;
 }
 
 
@@ -551,19 +521,20 @@ section>.ctnr {
     -webkit-mask-image: linear-gradient(90deg, white calc(100% - 8vw), transparent);
 }
 
-.blog_posts article {
+.blog_posts a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: var(--dark);
     border-radius: 1.8rem;
-    min-width: clamp(17rem, calc(20vh + 30vw), 40rem);
+    min-width: clamp(17rem, calc(20vh + 30vw), 30rem);
+    max-width: 40rem;
     height: clamp(28rem, 100vw, 40rem);
     max-height: 70vh;
     padding: 3rem clamp(1.5rem, 5vw, 3rem);
     box-sizing: border-box;
-    font-size: clamp(2.2rem, calc(3vw + 3vh), 3.4rem);
+    font-size: clamp(2.2rem, calc(3vw + 3vh), 4.8rem);
     /* text-align: center; */
     font-family: 'Brandford', sans-serif;
     letter-spacing: 0.5rem;
@@ -574,46 +545,56 @@ section>.ctnr {
     border: 0.1rem solid var(--c3);
     border-top-width: 0.4rem;
     position: relative;
-    /* cursor: pointer; */
+    cursor: pointer;
     transition: transform 1s 0.1s ease, border-color 0.3s ease;
 }
 
-.blog_posts article:hover {
+.blog_posts a:hover {
     transform: translateY(-0.7rem);
     transition: transform 0.2s ease, border-color 0.1s ease;
     border-color: var(--c2);
-} .blog_posts article:hover a {
-    color:var(--light);
+}
+
+.blog_posts article:hover .read_more {
+    color: var(--light);
     transition: color 0.1s ease;
 }
 
-.blog_posts article h4 {
+.blog_posts a h4 {
     font-weight: 100;
+    cursor: pointer;
 }
 
-.blog_posts article a {
+.blog_posts a h4 b {
+    color: var(--c2);
+    font-weight: inherit;
+}
+
+.blog_posts a .read_more {
     position: absolute;
     bottom: 2.5rem;
     letter-spacing: 0.5rem;
-    font-size: 2.5rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 400;
     color: var(--c1);
     text-transform: uppercase;
-    text-decoration: underline;
-    text-underline-offset: 1rem;
     right: 2rem;
     transition: color 0.3s ease;
+    background-color: var(--dark);
+    padding: 0.8rem 1.3rem 0.4rem 1.3rem;
+    border-radius: 0.2rem;
+    border: 0.1rem solid var(--c1a);
 }
 
-.blog_posts article:nth-child(3n + 1) {
+.blog_posts a:nth-child(3n + 1) {
     background-image: url(../blog/placeholders/01.jpg);
 }
 
-.blog_posts article:nth-child(3n + 2) {
+.blog_posts a:nth-child(3n + 2) {
     background-image: url(../blog/placeholders/02.jpg);
 }
 
-.blog_posts article:nth-child(3n + 3) {
+.blog_posts a:nth-child(3n + 3) {
     background-image: url(../blog/placeholders/03.jpg);
 }
 
@@ -689,7 +670,9 @@ footer .social a {
     align-items: center;
     justify-content: center;
     letter-spacing: 0;
-} footer .icon.mail {
+}
+
+footer .icon.mail {
     background-image: url(../assets/icons/mail.svg);
     height: 100%;
     width: 2rem;
@@ -805,7 +788,7 @@ footer .social a {
     }
 
     .intro_sec h2 {
-        margin: clamp(0rem, 3vh, 2rem) 0 clamp(0rem, 4vh, 2.5rem);
+        margin: clamp(0rem, 3vh, 2rem) 0 clamp(0rem, 5vh, 3.5rem);
         /* font-weight: 600; */
         line-height: 1.15;
     }
@@ -837,7 +820,7 @@ footer .social a {
         flex-direction: column;
         justify-content: center;
         flex: 1;
-        max-width: 80rem;
+        max-width: 74rem;
     }
 
     .andrei_video {
@@ -848,12 +831,13 @@ footer .social a {
         /* max-height: fit-content; */
         max-width: fit-content;
         /* height: min-content; */
-        position: sticky;
-        top: calc(50vh - 20vw);
         box-sizing: border-box;
+        position: relative;
+        top: calc(50vh - 20vw);
         object-fit: contain;
-        margin: calc(-8vh - 8vw) auto calc(-8vh - 8vw);
+        margin: calc(-8vh - 8vw + 3rem) auto calc(-8vh - 8vw + 3rem);
         /* max-height: 60rem; */
+        box-shadow: 0 1.8rem 1.2rem -1rem rgb(86 41 34 / 20%);
     }
 
     .my_philosophy_sec .content {
@@ -900,5 +884,28 @@ footer .social a {
     }
 
 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 850px) {
+
+
+    .andrei_video {
+        position: sticky;
+        top: calc(50vh - 20vw);
+    }
 
 }
