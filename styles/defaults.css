@@ -252,7 +252,7 @@ main>.ctnr {
     font-weight: 800;
     font-size: clamp(1.4rem, 3.9vw, 1.65rem);
     padding: 1rem 2rem;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     border: 0.2rem solid var(--c2);
     backdrop-filter: blur(0.4rem);

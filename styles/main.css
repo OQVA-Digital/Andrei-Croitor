@@ -129,17 +129,18 @@ section>.ctnr {
 
 
 .about_sec {
-    background-image: url(../assets/Andrei/andrei02.jpg);
-    background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(url(../assets/Andrei/andrei02-1x.webp) 1x,
+    /* background-image: url(../assets/Andrei/andrei02-1x.jpg); */
+    /* background-image: linear-gradient(9deg, var(--c3) 4%, transparent 38%), -webkit-image-set(url(../assets/Andrei/andrei02-1x.webp) 1x,
             url(../assets/Andrei/andrei02-2x.webp) 2x,
             url(../assets/Andrei/andrei02-1x.jpg) 1x,
-            url(../assets/Andrei/andrei02-2x.jpg) 2x);
+            url(../assets/Andrei/andrei02-2x.jpg) 2x); */
     background-position: 60% center;
     /* background-attachment: fixed; */
+    background-color: #111111;
 }
 
 .about_sec>.ctnr {
-    background-color: rgb(13 11 13 / 93%);
+    /* background-color: rgb(13 11 13 / 93%); */
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
     /* min-height: clamp(75vh, 15vw, 94vh); */
@@ -168,9 +169,11 @@ section>.ctnr {
 }
 
 .about_sec .content .txt {
-    padding-top: 5rem;
-    margin-top: -2rem;
-    scroll-margin: 15rem;
+    margin-top: 3rem;
+    scroll-margin: 10rem;
+    backdrop-filter: blur(0.4rem);
+    z-index: 2;
+    background-color: rgb(17 17 17 / 60%);
 }
 
 .about_sec .content .big {
@@ -340,8 +343,8 @@ section>.ctnr {
 
 .framework_sec .box b,
 .framework_sec .box strong {
-    color: var(--light);
-    background-color: rgb(33 118 255 / 70%);
+    color: var(--c2);
+    /* background-color: var(--light); */
 }
 
 .framework_sec .txt b,
@@ -377,7 +380,7 @@ section>.ctnr {
 
 .framework_sec b,
 .framework_sec strong {
-    background-color: var(--light);
+    /* background-color: var(--light); */
     color: var(--dark);
     font-weight: 600;
 }
@@ -386,13 +389,13 @@ section>.ctnr {
 
 
 .framework_sec .box {
-    background-color: #fff2;
+    background-color: var(--dark);
     padding: 3rem clamp(3rem, 5vw, 4rem);
     box-sizing: border-box;
     font-size: 0.9em;
     border-radius: 0.5rem;
-    border: 0.15rem solid var(--light);
-    backdrop-filter: blur(0.3rem);
+    /* border: 0.15rem solid var(--light); */
+    /* backdrop-filter: blur(0.3rem); */
     z-index: 9;
 }
 
@@ -400,7 +403,6 @@ section>.ctnr {
     display: block;
     width: fit-content;
     margin: 2rem auto 0;
-    padding: 1.2rem 0.5rem;
     line-height: 1.2;
     width: 100%;
     box-sizing: border-box;
@@ -574,16 +576,15 @@ section>.ctnr {
     position: absolute;
     bottom: 2.5rem;
     letter-spacing: 0.5rem;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 400;
-    color: var(--c1);
+    color: var(--light);
     text-transform: uppercase;
-    right: 2rem;
+    right: 0;
     transition: color 0.3s ease;
-    background-color: var(--dark);
-    padding: 0.8rem 1.3rem 0.4rem 1.3rem;
-    border-radius: 0.2rem;
-    border: 0.1rem solid var(--c1a);
+    /* background-color: var(--dark); */
+    padding: 0.8rem 2rem 0.2rem 0;
+    border-bottom: 0.2rem solid var(--c2);
 }
 
 .blog_posts a:nth-child(3n + 1) {
@@ -801,7 +802,7 @@ footer .icon.mail {
     .about_sec>.ctnr {
         flex-direction: row-reverse;
         gap: unset;
-        padding: clamp(1rem, 9vw, 12rem) 0;
+        padding: clamp(1rem, 9vw, 6rem) 0 clamp(1rem, 9vw, 8rem);
     }
 
     .about_sec .content {
@@ -824,19 +825,14 @@ footer .icon.mail {
     }
 
     .andrei_video {
-        /* margin: unset; */
-        /* transform: translateY(-12vw); */
         top: unset;
         width: clamp(16rem, calc(16vw + 9vh), 33rem);
-        /* max-height: fit-content; */
         max-width: fit-content;
-        /* height: min-content; */
         box-sizing: border-box;
         position: relative;
         top: calc(50vh - 20vw);
         object-fit: contain;
-        margin: calc(-8vh - 8vw + 3rem) auto calc(-8vh - 8vw + 3rem);
-        /* max-height: 60rem; */
+        margin: calc((8rem + 8vh) * -1) auto;
         box-shadow: 0 1.8rem 1.2rem -1rem rgb(86 41 34 / 20%);
     }
 
