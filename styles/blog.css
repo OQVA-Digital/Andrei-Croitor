@@ -3,6 +3,10 @@ body {
     background-color: var(--dark);
 }
 
+html {
+    scroll-behavior: unset;
+}
+
 
 .blog_home h1 {
     font-size: clamp(5.4rem, calc(7vw + 6vh), 10rem);
@@ -94,7 +98,7 @@ hr {
 }
 
 .post:first-of-type h2 {
-    font-size: clamp(2.7rem, calc(1.8vw + 1.5vh + 1.5rem), 7.5rem);
+    font-size: clamp(2.7rem, calc(2.8vw + 2vh + 1rem), 7.5rem);
 }
 
 .post:first-of-type .cover {
@@ -211,7 +215,9 @@ hr {
     color: #EEE;
 }
 
-.blog_post article .txt strong {color: var(--c1);}
+.blog_post article .txt strong {
+    color: var(--c1);
+}
 
 .blog_post article .txt p a {
     color: var(--c1);
@@ -225,21 +231,50 @@ hr {
     letter-spacing: 0.1rem;
 }
 
-.blog_post article .txt p sup {
+.blog_post article .txt p sup, .footnotes sup {
     font-weight: 900;
-    color: var(--grey);
+    color: var(--c2);
     letter-spacing: 0;
+    font-size: clamp(1rem, calc(0.9vw + 0.9vh), 1.3rem);
+    cursor: default;
+}
+
+.blog_post .txt .note {
+    position: relative;
+}
+
+.blog_post .txt .note span {
+    position: absolute;
+    background-color: var(--dark);
+    padding: 0.7rem 1rem;
+    text-align: left;
+    border: 0.1rem solid var(--c2a);
+    border-radius: 0.3rem;
+    width: max-content;
+    max-width: clamp(10rem, 70vw, 30rem);
+    top: 0;
+    left: 2rem;
+    line-height: 1.5;
+    display: none;
+}
+
+.blog_post article .txt .note a {
+    color: unset;
+    text-decoration: unset;
 }
 
 .footnotes {
     font-size: 0.9em;
     line-height: 1.5;
     max-width: 86rem;
-} .footnotes span {
+}
+
+.footnotes span {
     display: block;
     margin-bottom: 0.6rem;
-} .footnotes sup {
-    color:var(--light)
+}
+
+.footnotes sup {
 }
 
 .next_post {
@@ -280,10 +315,15 @@ hr {
     align-items: center;
     position: relative;
     transition: border-color 0.2s ease;
-} .next_post a b, .next_post a strong {
-    color:var(--c2)
-} .next_post a::after {
-    content:'';
+}
+
+.next_post a b,
+.next_post a strong {
+    color: var(--c2)
+}
+
+.next_post a::after {
+    content: '';
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -293,10 +333,14 @@ hr {
     border-right: 0.3rem solid var(--c2);
     transform: rotate(45deg);
     transition: transform 0.2s ease;
-} .next_post a:hover {
-    border-color:var(--c2);
+}
+
+.next_post a:hover {
+    border-color: var(--c2);
     transition: border-color 0.05s ease;
-} .next_post a:hover:after {
+}
+
+.next_post a:hover:after {
     transform: translateX(0.5rem) rotate(45deg);
 }
 
@@ -398,10 +442,14 @@ hr {
         margin-top: 0.8rem;
     }
 
-    .blog_post article .txt p {
+    .blog_post article .txt p {}
+
+    .blog_post .txt .note:hover span {
+        display: block;
     }
 
-    .next_post h3, .next_post .soon {
+    .next_post h3,
+    .next_post .soon {
         text-align: center;
     }
 }

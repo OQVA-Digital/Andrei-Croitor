@@ -112,6 +112,13 @@ main {
     flex: 1;
 }
 
+input {
+    font-family: inherit;
+    font-size: inherit;
+    border: unset;
+    color: inherit;
+}
+
 button {
     background-color: transparent;
     outline-color: transparent;
@@ -120,6 +127,7 @@ button {
     font-family: 'Brooklyn', sans-serif;
     -webkit-tap-highlight-color: transparent;
     color: var(--light);
+    font-size: inherit;
 }
 
 button:not([type="submit"]):focus-visible {

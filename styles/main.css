@@ -341,10 +341,54 @@ section>.ctnr {
     color: var(--light);
 }
 
+.framework_sec .box>button {
+    text-align: center;
+    width: 100%;
+    background-color: var(--c2a);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.2rem;
+    font-weight: 800;
+    font-size: clamp(1.4rem, 3.9vw, 1.65rem);
+}
+
 .framework_sec .box b,
 .framework_sec .box strong {
     color: var(--c2);
     /* background-color: var(--light); */
+}
+
+.framework_sec .box form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 35rem;
+    margin-inline: auto;
+}
+
+.framework_sec .box form p {
+    display: flex;
+}
+
+.framework_sec .box form p:first-child {
+    flex: 1;
+}
+
+.framework_sec .box form input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.2rem 0.3rem 0.2rem 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.6rem;
+    background-color: var(--c3);
+}
+
+.framework_sec .box form button[type="submit"] {
+    padding: 1rem;
+    background-color: var(--c2a);
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
 }
 
 .framework_sec .txt b,
@@ -549,7 +593,10 @@ section>.ctnr {
     position: relative;
     cursor: pointer;
     transition: transform 1s 0.1s ease, border-color 0.3s ease;
+    overflow: hidden;
 }
+
+.blog_posts a .cover {position: absolute;inset: 0;z-index: 0;opacity: 0.6;}
 
 .blog_posts a:hover {
     transform: translateY(-0.7rem);
@@ -565,6 +612,7 @@ section>.ctnr {
 .blog_posts a h4 {
     font-weight: 100;
     cursor: pointer;
+    position: relative;
 }
 
 .blog_posts a h4 b {
@@ -587,7 +635,7 @@ section>.ctnr {
     border-bottom: 0.2rem solid var(--c2);
 }
 
-.blog_posts a:nth-child(3n + 1) {
+/* .blog_posts a:nth-child(3n + 1) {
     background-image: url(../blog/placeholders/01.jpg);
 }
 
@@ -597,7 +645,7 @@ section>.ctnr {
 
 .blog_posts a:nth-child(3n + 3) {
     background-image: url(../blog/placeholders/03.jpg);
-}
+} */
 
 
 

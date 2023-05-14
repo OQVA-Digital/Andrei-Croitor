@@ -145,11 +145,37 @@
                         </div>
 
                         <div class="box">
-                            Give your potential customers what they want, <b>identity</b>. Sacrifice your phone number
-                            for instant access to the Identity Framework, designed to help you build clear customer
-                            avatars and craft a <b>compelling brand story</b>… I promise not to share it with anyone.
+                            Give your potential customers what they want, <b>identity</b>. Sacrifice your phone number for a call back explaining the Identity Framework, designed to help you build clear customer avatars and craft a <b>compelling brand story</b>… I promise not to share it with anyone.
 
-                            <a class="cta" target="_blank" href="https://ndi06h7ojln.typeform.com/to/uFElmmlE" title="You will be taken to Typeform">Start Working with Identity Tools</a>
+                            <form id="tel_form" name="contact" method="POST" data-netlify="true">
+                                <p>
+                                    <input type="tel" name="name" placeholder="Your phone number"/>
+                                </p>
+                                <p>
+                                    <button type="submit">Send</button>
+                                </p>
+                            </form>
+
+                            <script>
+                                const handleSubmit = (event) => {
+                                event.preventDefault();
+
+                                const myForm = event.target;
+                                const formData = new FormData(myForm);
+                                
+                                fetch("/", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                                    body: new URLSearchParams(formData).toString(),
+                                })
+                                    .then(() => alert("Form successfully submitted"))
+                                    .catch((error) => alert(error));
+                                };
+
+                                document
+                                .querySelector("#tel_form")
+                                .addEventListener("submit", handleSubmit);
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -166,6 +192,7 @@
 
                     <div class="blog_posts">
                         <a href="blog/your-brand-is-compression-of-sensation/index.html">
+                            <img class="cover" src="blog/your-brand-is-compression-of-sensation/cover.jpg" alt="Your brand is compression of sensation, here's why" loading="lazy">
                             <h4>Your brand is <b>compression of sensation</b>, here's why</h4>
 
                             <span class="read_more">Read more</span>
