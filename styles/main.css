@@ -47,11 +47,11 @@ section>.ctnr {
 
 .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(1.9vw + 1.8vh + 1rem), 6rem);
+    font-size: clamp(2.1rem, calc(1.7vw + 1.6vh + 1rem), 6rem);
     width: fit-content;
     max-width: 79rem;
     margin-bottom: 2.5rem;
-    line-height: 1.3;
+    line-height: 1.25;
     letter-spacing: 0;
     /* text-shadow: 0.3rem 0.3rem 0rem var(--c3); */
 }
@@ -104,7 +104,7 @@ section>.ctnr {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    gap: clamp(1rem, calc(2vw + 1vh), 3rem);
+    gap: clamp(1rem, calc(2vw + 1.5vh), 3rem);
 }
 
 
@@ -361,9 +361,11 @@ section>.ctnr {
 .framework_sec .box form {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     max-width: 35rem;
     margin-inline: auto;
+    font-size: clamp(1.6rem, 4vw, 1.7rem);
+    font-weight: 600;
 }
 
 .framework_sec .box form p {
@@ -380,16 +382,17 @@ section>.ctnr {
     box-sizing: border-box;
     padding: 0.2rem 0.3rem 0.2rem 1rem;
     border-radius: 0.3rem;
-    font-size: 1.6rem;
-    background-color: var(--c3);
+    background-color: var(--dark);
+    border: 0.1rem solid var(--c3);
 }
 
 .framework_sec .box form button[type="submit"] {
-    padding: 1rem;
+    padding: 1rem 1.4rem;
     background-color: var(--c2a);
     border-radius: 0.3rem;
-    font-size: 1.5rem;
 }
+
+.framework_sec .response {text-align: center;margin-top: 2rem;font-size: 1.6rem;color: var(--c4);display: none;}
 
 .framework_sec .txt b,
 .framework_sec .txt strong {
@@ -429,7 +432,8 @@ section>.ctnr {
     font-weight: 600;
 }
 
-.framework_sec .content p {}
+.framework_sec .content p {
+}
 
 
 .framework_sec .box {
@@ -441,6 +445,8 @@ section>.ctnr {
     /* border: 0.15rem solid var(--light); */
     /* backdrop-filter: blur(0.3rem); */
     z-index: 9;
+    letter-spacing: 0.05rem;
+    box-shadow: 1.1rem 1.1rem #fff3;
 }
 
 .framework_sec .box a {
@@ -492,10 +498,11 @@ section>.ctnr {
             url(../assets/Andrei/andrei03-2x.webp) 2x,
             url(../assets/Andrei/andrei03-1x.jpg) 1x,
             url(../assets/Andrei/andrei03-2x.jpg) 2x);
+    background-attachment: fixed;
 }
 
 .blog_sec>.ctnr {
-    padding: clamp(5rem, 9vw, 8rem) 0 0;
+    padding: clamp(5rem, 14vw, 9rem) 0 0;
     background-color: rgb(13 11 13 / 94%);
 }
 
@@ -508,7 +515,7 @@ section>.ctnr {
     font-family: 'Brandford';
     letter-spacing: 0.05em;
     line-height: 1;
-    position: absolute;
+    position: relative;
     bottom: clamp(3.5rem, calc(4vw + 5vh), 7rem);
     width: var(--width-mobile);
     text-decoration: underline;
@@ -596,7 +603,16 @@ section>.ctnr {
     overflow: hidden;
 }
 
-.blog_posts a .cover {position: absolute;inset: 0;z-index: 0;opacity: 0.6;}
+.blog_posts a .cover {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.6;
+    bottom: 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
 
 .blog_posts a:hover {
     transform: translateY(-0.7rem);
@@ -679,7 +695,7 @@ footer {
     padding: 5rem 3rem;
     box-sizing: border-box;
     font-family: 'Brandford';
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15rem;
     box-sizing: border-box;
     gap: 1rem;
     z-index: 0;
@@ -902,7 +918,7 @@ footer .icon.mail {
         flex: 1;
         text-align: center;
         min-width: 35rem;
-        padding: 3rem clamp(2rem, 3vw, 4rem);
+        padding: 3rem clamp(2rem, 3vw, 4rem) 3.5rem;
         /* max-width: 55vw; */
         margin: 0 auto;
     }
@@ -914,6 +930,7 @@ footer .icon.mail {
     .blog_sec .ctnr>a {
         width: fit-content;
         left: clamp(5rem, 8vw, 25rem);
+        position: absolute;
     }
 
     .blog_sec h3 {

@@ -49,12 +49,12 @@ hr {
 .post_header {
     display: flex;
     flex-direction: column-reverse;
-    gap: clamp(2rem, 8vw, 5rem);
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: flex-start;
 }
 
 .post_header {
-    margin: 2rem 0 clamp(4rem, 5vw, 6rem);
+    margin: 2rem 0 clamp(2rem, 5vw, 6rem);
 }
 
 .post h2 {
@@ -73,7 +73,7 @@ hr {
 }
 
 .blog_post h1 {
-    font-size: clamp(2.7rem, calc(3.5vw + 2vh + 1.5rem), 7.5rem);
+    font-size: clamp(2.7rem, calc(3.3vw + 1vh + 1.5rem), 7.5rem);
 }
 
 .blog_post article {
@@ -98,7 +98,7 @@ hr {
 }
 
 .post:first-of-type h2 {
-    font-size: clamp(2.7rem, calc(2.8vw + 2vh + 1rem), 7.5rem);
+    font-size: clamp(2.7rem, calc(2.8vw + 1.7vh + 1rem), 7.5rem);
 }
 
 .post:first-of-type .cover {
@@ -118,6 +118,7 @@ hr {
     overflow: hidden;
     width: 100%;
     box-sizing: border-box;
+    height: 25rem;
 }
 
 .cover img {
@@ -256,6 +257,7 @@ hr {
     left: 2rem;
     line-height: 1.5;
     display: none;
+    font-size: clamp(1.6rem, calc(1vw + 1vh), 1.7rem);
 }
 
 .blog_post article .txt .note a {

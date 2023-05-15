@@ -117,6 +117,7 @@ input {
     font-size: inherit;
     border: unset;
     color: inherit;
+    font-weight: inherit;
 }
 
 button {

@@ -145,7 +145,7 @@
                         </div>
 
                         <div class="box">
-                            Give your potential customers what they want, <b>identity</b>. Sacrifice your phone number for a call back explaining the Identity Framework, designed to help you build clear customer avatars and craft a <b>compelling brand story</b>… I promise not to share it with anyone.
+                            <p>Give your potential customers what they want, <b>identity</b>. Sacrifice your phone number for a call back explaining the Identity Framework, designed to help you build clear customer avatars and craft a <b>compelling brand story</b>… I promise not to share it with anyone.</p>
 
                             <form id="tel_form" name="contact" method="POST" data-netlify="true">
                                 <p>
@@ -156,7 +156,11 @@
                                 </p>
                             </form>
 
+                            <span class="response">Thank you for your submission!</span>
+
                             <script>
+                                const response = document.querySelector('.framework_sec .response')
+
                                 const handleSubmit = (event) => {
                                 event.preventDefault();
 
@@ -168,7 +172,7 @@
                                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                                     body: new URLSearchParams(formData).toString(),
                                 })
-                                    .then(() => alert("Form successfully submitted"))
+                                    .then(() => response.style.display = 'block')
                                     .catch((error) => alert(error));
                                 };
 
