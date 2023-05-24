@@ -1,9 +1,9 @@
 # Andrei-Website
-https://oqva-digital.github.io/Andrei-Website/index.html
+https://oqva-digital.github.io/Andrei-Croitor/index.html
 
-https://oqva-digital.github.io/Andrei-Website/blog/index.html
+https://oqva-digital.github.io/Andrei-Croitor/blog/index.html
 
-https://oqva-digital.github.io/Andrei-Website/blog/post-01/index.html
+https://oqva-digital.github.io/Andrei-Croitor/blog/post-01/index.html
 
 
 ## Netlify Preview:
