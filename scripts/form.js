@@ -19,8 +19,8 @@ const handleSubmit = (event) => {
       .catch((error) => alert(error));
   };
   
-  document.querySelector("form").addEventListener("submit", handleSubmit);
 
+  document.querySelector("form").addEventListener("submit", handleSubmit);
 
   const formBt = document.querySelector('form button')
 
