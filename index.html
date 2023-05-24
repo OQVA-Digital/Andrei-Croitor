@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrei Croitor: Identity Architect, Author of Identity Tools: The Power of Conscious Contrast</title>
+    <title>Andrei Croitor | Author of Identity Tools: The Power of Conscious Contrast</title>
 
     <meta name="keywords"
         content="Branding strategy, Identity tools, Brand consultation, Brand development, Conscious contrast, Customer avatars, Brand storytelling, Brand differentiation, Brand ambassadors, Brand locations, Business branding, Brand loyalty, Brand metrics, Rebranding, Brand voice and tone, Emotional branding, Brand alignment, Brand positioning">
@@ -18,6 +18,17 @@
 
     <script src="scripts/toggle-menu.js" defer></script>
     <script src="scripts/stroke-anim.js" defer></script>
+
+    <!--
+        OPENGRAPH PROTOCOL
+        og:title and og:description tags omitted for social platforms interpretation
+    -->
+    <!-- <meta property="og:site_name" content="Andrei croitor: Identity Architect, Author of Identity Tools"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://croitor.co.uk/"/>
+    <meta property="og:image" content="https://croitor.co.uk/assets/og/cover.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/> -->
 </head>
 
 <body>
@@ -69,8 +80,7 @@
                             <!-- <span> Identity Architect, Author of <i>Identity Tools: The Power of Conscious Contrast</i></span> -->
                         </h1>
 
-                        <h2>Discover the framework to build clear customer avatars and boost your <strong>brand's
-                                success</strong>.</h2>
+                        <h2>Discover the framework to build clear customer avatars and boost your <strong>brand's success</strong>.</h2>
 
                         <div class="cta_ctnr">
                             <a class="cta" target="_blank" href="https://ndi06h7ojln.typeform.com/to/uFElmmlE" title="You will be taken to Typeform">Start Working with Identity Tools</a>
@@ -90,7 +100,7 @@
 
                         <div class="txt" id="about">
 
-                            <p class="big">Hi, I'm <strong>Andrei Croitor</strong>, <strong>Creative Director at OQVA.digital</strong> and your guide to the transformative world of identity-based branding.</p>
+                            <p class="big">Hi, I'm <strong>Andrei Croitor</strong>, your guide to the transformative world of identity-based branding.</p>
 
                             <p>I've always been fascinated by the way identity shapes our world. Over the years, I've developed two fundamental ideas that have become the core of my branding philosophy:</p>
 
@@ -156,7 +166,7 @@
                                 </p>
                             </form>
 
-                            <span class="response">Thank you for your submission!</span>
+                            <span class="response">Thanks for submitting!</span>
 
                             <script>
                                 const response = document.querySelector('.framework_sec .response')
@@ -166,13 +176,23 @@
 
                                 const myForm = event.target;
                                 const formData = new FormData(myForm);
+
+                                const telInput = document.querySelector('#tel_form input')
+
+                                function successTel() {
+                                    response.style.display = 'block';
+
+                                    setTimeout(() => {
+                                    telInput.value = ""
+                                    }, 900);
+                                }
                                 
                                 fetch("/", {
                                     method: "POST",
                                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                                     body: new URLSearchParams(formData).toString(),
                                 })
-                                    .then(() => response.style.display = 'block')
+                                    .then(() => successTel())
                                     .catch((error) => alert(error));
                                 };
 

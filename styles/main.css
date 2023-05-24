@@ -47,9 +47,9 @@ section>.ctnr {
 
 .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(1.7vw + 1.6vh + 1rem), 6rem);
+    font-size: clamp(2.1rem, calc(1.8vw + 1.6vh + 1rem), 6rem);
     width: fit-content;
-    max-width: 79rem;
+    max-width: 78rem;
     margin-bottom: 2.5rem;
     line-height: 1.25;
     letter-spacing: 0;
