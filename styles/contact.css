@@ -65,6 +65,11 @@ form {
     max-width: 60rem;
 }
 
+input::selection, textarea::selection {
+    background-color: var(--c1);
+    color:var(--dark);
+}
+
 input,
 textarea {
     padding: 1.5rem;
@@ -142,4 +147,3 @@ form .flex {
     stroke: var(--c1);
     stroke-width: 0.1rem;
 }
-
