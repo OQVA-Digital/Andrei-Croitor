@@ -73,9 +73,11 @@
 
                 <article>
                     <div class="post_header">
-                        <div class="cover">
-                            <img src="cover.jpg" alt="placeholder image" loading="lazy">
-                        </div>
+                        <picture class="cover">
+                            <source srcset='cover.webp' type='image/webp' width="350" height="250">
+                            <source srcset='cover.jpg' type='image/jpeg' width="350" height="250">
+                            <img src='cover.jpg' alt="Your brand is compression of sensation, here's why" loading="lazy" width="350" height="250">
+                        </picture>
 
                         <div class="content">
                             <time>May 12</time>

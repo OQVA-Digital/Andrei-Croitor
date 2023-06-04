@@ -39,7 +39,7 @@
     <div class="flex">
         <header>
             <div class="ctnr">
-                <button class="hambt" type="button" name="toggle-menu-button">
+                <button class="hambt" type="button" aria-label="toggle-menu-button">
                     <div></div>
                     <div></div>
                     <div></div>
@@ -164,7 +164,7 @@
                                     <input type="tel" name="name" placeholder="Your phone number" required/>
                                 </p>
                                 <p>
-                                    <button type="submit">Send</button>
+                                    <button type="submit" aria-label="Send phone number">Send</button>
                                 </p>
                             </form>
 
@@ -218,7 +218,12 @@
 
                     <div class="blog_posts">
                         <a href="blog/your-brand-is-compression-of-sensation/index.html">
-                            <img class="cover" src="blog/your-brand-is-compression-of-sensation/cover.jpg" alt="Your brand is compression of sensation, here's why" loading="lazy">
+                            <picture class="cover">
+                                <source srcset='blog/your-brand-is-compression-of-sensation/cover.webp' type='image/webp' width="350" height="400">
+                                <source srcset='blog/your-brand-is-compression-of-sensation/cover.jpg' type='image/jpeg' width="350" height="400">
+                                <img src='blog/your-brand-is-compression-of-sensation/cover.jpg' alt="Your brand is compression of sensation, here's why" loading="lazy" width="350" height="400">
+                            </picture>
+
                             <h4>Your brand is <b>compression of sensation</b>, here's why</h4>
 
                             <span class="read_more">Read more</span>
@@ -243,7 +248,7 @@
 
             <a href="https://www.linkedin.com/in/andreicroitor/" target="_blank" class="linkedin" title="LinkedIn"></a>
         
-            <a href="contact/index.html" type="button">
+            <a href="contact/index.html">
                 <div class="icon mail"></div>
                 E-mail me
             </a>

@@ -392,7 +392,13 @@ section>.ctnr {
     border-radius: 0.3rem;
 }
 
-.framework_sec .response {text-align: center;margin-top: 2rem;font-size: 1.6rem;color: var(--c4);display: none;}
+.framework_sec .response {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: var(--c4);
+    display: none;
+}
 
 .framework_sec .txt b,
 .framework_sec .txt strong {
@@ -432,8 +438,7 @@ section>.ctnr {
     font-weight: 600;
 }
 
-.framework_sec .content p {
-}
+.framework_sec .content p {}
 
 
 .framework_sec .box {
