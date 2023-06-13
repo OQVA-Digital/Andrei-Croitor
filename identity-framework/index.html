@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../styles/identity-framework.css">
 
     <script src="../scripts/identity-framework.js" defer></script>
+    <script src="../scripts/stroke-anim.js" defer></script>
 </head>
 
 <body class="id-framework-body">
@@ -22,15 +23,66 @@
 
     <main>
         <section class="intro">
-            <h1>Boost your brand's success with the <strong>Identity Framework.</strong></h1>
+            <header>
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logo/logo-light.svg" alt="Andrei Croitor Logo">
+                </a>
+            </header>
 
-            <h2></h2>
+            <div class="content">
+                <h1>Boost your brand's success with the <strong>Identity Framework.</strong></h1>
+    
+                <h2>Please rate your <b>level of agreement</b> with the following statements regarding your brand. <b>Be honest - there's no right or wrong; just truth.</b></h2>
+    
+                <a href="#start" class="cta">Let's start</a>
+            </div>
 
-            <a href="#start">Let's start</a>
+            <div>
+
+            </div>
         </section>
-
-        <section id="start">
+        
+        <section class="quiz_ctnr" id="start">
+            <fieldset>
+                <legend>Conscious Contrast</legend>
+                <div class="questions">
+                    <div class="statement">
+                        <p class="title">1. My brand consciously uses contrast to <b>differentiate itself from competitors</b>.</p>
             
+                        <div class="answer">
+                            <span>Disagree</span>
+                            <input class="unset" type="range" value="0" min="0" max="5" name="answer-01" value="1">
+                            <span>Agree</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="statement">
+                        <p class="title">2. I have clearly <b>defined how my brand contrasts</b> with others in the same market space.</p>
+            
+                        <div class="answer">
+                            <span>Disagree</span>
+                            <input class="unset" type="range" value="0" min="0" max="5" name="answer-01" value="1">
+                            <span>Agree</span>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="statement">
+                        <p class="title">3. The contrasting elements of my brand are <b>easily recognisable and understood</b> by my customers.</p>
+            
+                        <div class="answer">
+                            <span>Disagree</span>
+                            <input class="unset" type="range" value="0" min="0" max="5" name="answer-01" value="1">
+                            <span>Agree</span>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button onclick="calculateScore()" type="button" aria-label="Submit button" class="submit">Submit</button>
         </section>
     </main>
 </body>

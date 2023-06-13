@@ -209,7 +209,7 @@ main>.ctnr {
     width: 100%;
     /* filter: drop-shadow(-2rem -1rem 1rem var(--c1)); */
     pointer-events: none;
-    transform: scale(1.05);
+    transform: scale(1.06);
     z-index: 1;
 }
 
@@ -270,7 +270,7 @@ main>.ctnr {
     align-items: center;
     font-weight: 600;
     font-size: clamp(1.4rem, 3.9vw, 1.75rem);
-    padding: 1.1rem 2.2rem;
+    padding: 1.1rem 3rem;
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     border: 0.2rem solid var(--c2);

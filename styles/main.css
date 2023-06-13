@@ -2,9 +2,9 @@ body {
     color: var(--light);
 }
 
-body>.flex {}
+body > .flex {}
 
-section>.ctnr {
+section > .ctnr {
     box-sizing: border-box;
     width: 100%;
     box-sizing: border-box;
@@ -34,7 +34,7 @@ section>.ctnr {
     /* box-shadow: 0 1rem 9rem var(--dark); */
 }
 
-.intro_sec>.ctnr {
+.intro_sec > .ctnr {
     background-color: rgb(13 11 13 / 75%);
     /* min-height: clamp(80vh, 160vw, 92vh); */
     padding: 0 0 clamp(8rem, calc(30vh - 11rem), 14rem);
@@ -61,7 +61,7 @@ section>.ctnr {
     color: var(--c1);
 }
 
-.intro_sec>.ctnr .wrapper {
+.intro_sec > .ctnr .wrapper {
     /* min-height: 40vh; */
     margin-bottom: clamp(1rem, 6vw, 5rem);
     flex: 1;
@@ -139,7 +139,7 @@ section>.ctnr {
     background-color: #111111;
 }
 
-.about_sec>.ctnr {
+.about_sec > .ctnr {
     /* background-color: rgb(13 11 13 / 93%); */
     align-items: center;
     /* backdrop-filter: blur(0.5rem); */
@@ -282,7 +282,7 @@ section>.ctnr {
     color: var(--light);
 }
 
-.my_philosophy_sec>.ctnr {
+.my_philosophy_sec > .ctnr {
     display: flex;
     justify-content: center;
 }
@@ -341,7 +341,7 @@ section>.ctnr {
     color: var(--light);
 }
 
-.framework_sec .box>button {
+.framework_sec .box > button {
     text-align: center;
     width: 100%;
     background-color: var(--c2a);
@@ -406,7 +406,7 @@ section>.ctnr {
     background-color: var(--c2a);
 }
 
-.framework_sec>.ctnr {
+.framework_sec > .ctnr {
     padding: clamp(5rem, 9vw, 10rem) 0;
 }
 
@@ -506,7 +506,7 @@ section>.ctnr {
     background-attachment: fixed;
 }
 
-.blog_sec>.ctnr {
+.blog_sec > .ctnr {
     padding: clamp(5rem, 14vw, 9rem) 0 0;
     background-color: rgb(13 11 13 / 94%);
 }
@@ -515,7 +515,7 @@ section>.ctnr {
     width: var(--width-mobile);
 }
 
-.blog_sec .ctnr>a {
+.blog_sec .ctnr > a {
     font-size: clamp(3rem, 4vw, 3.5rem);
     font-family: 'Brandford';
     letter-spacing: 0.05em;
@@ -529,7 +529,7 @@ section>.ctnr {
     z-index: 9;
 }
 
-.blog_sec .ctnr>a::after {
+.blog_sec .ctnr > a::after {
     content: '';
     position: absolute;
     width: 0.7rem;
@@ -836,7 +836,7 @@ footer .icon.mail {
 
     .cta_ctnr {}
 
-    .intro_sec>.ctnr {
+    .intro_sec > .ctnr {
         padding-top: clamp(8rem, calc(30vh - 11rem), 11rem);
     }
 
@@ -852,7 +852,7 @@ footer .icon.mail {
         width: var(--width-desktop);
     }
 
-    section>.ctnr {
+    section > .ctnr {
         display: flex;
         justify-content: center;
     }
@@ -868,7 +868,7 @@ footer .icon.mail {
 
 
 
-    .about_sec>.ctnr {
+    .about_sec > .ctnr {
         flex-direction: row-reverse;
         gap: unset;
         padding: clamp(1rem, 9vw, 6rem) 0 clamp(1rem, 9vw, 8rem);
@@ -910,7 +910,7 @@ footer .icon.mail {
         width: var(--width-desktop);
     }
 
-    .framework_sec>.ctnr {}
+    .framework_sec > .ctnr {}
 
     .framework_sec .content {
         flex-flow: row wrap;
@@ -932,7 +932,7 @@ footer .icon.mail {
         width: var(--width-desktop);
     }
 
-    .blog_sec .ctnr>a {
+    .blog_sec .ctnr > a {
         width: fit-content;
         left: clamp(5rem, 8vw, 25rem);
         position: absolute;
