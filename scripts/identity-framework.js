@@ -44,4 +44,5 @@ function updateThumb() {
 for (i = 0; i < answers.length; i++) {
     answers[i].addEventListener("input", updateThumb);
     answers[i].addEventListener("mousedown", updateThumb);
+    answers[i].addEventListener("touchstart", updateThumb);
 }
