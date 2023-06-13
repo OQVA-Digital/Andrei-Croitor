@@ -2,14 +2,29 @@ let score;
 
 let answers = document.querySelectorAll('.answer input[type="range"]');
 
+let allFilled = false;
+
 function calculateScore() {
-    score = 0;
 
     for (i = 0; i < answers.length; i++) {
-        score += Number(answers[i].value)
+        if (answers[i].classList.contains('unset')) {
+            alert("Please, answer all the fields.");
+            allFilled = false;
+            return
+        } else {
+            allFilled = true;
+        }
     }
 
-    alert(score + " points")
+    if (allFilled == true) {
+        score = 0;
+
+        for (i = 0; i < answers.length; i++) {
+            score += Number(answers[i].value)
+        }
+
+        alert(score + " points")
+    }
 
     // if (answers) {
     //     score = parseInt(answers.value);
@@ -21,11 +36,12 @@ function calculateScore() {
     // }
 }
 
-function showThumb() {
+function updateThumb() {
     this.classList.remove('unset')
+    this.setAttribute('value', this.value)
 }
 
 for (i = 0; i < answers.length; i++) {
-    answers[i].addEventListener("input", showThumb);
-    // answers[i].addEventListener("change", showThumb);
+    answers[i].addEventListener("input", updateThumb);
+    answers[i].addEventListener("mousedown", updateThumb);
 }
