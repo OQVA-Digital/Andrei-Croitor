@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 9rem;
+    padding-bottom: 20rem;
 }
 
 section.intro {
@@ -29,7 +29,7 @@ header {}
 header .logo {
     width: clamp(15rem, 45vmin, 20rem);
     display: block;
-    margin: clamp(3rem, 9vmin, 5rem) 0 0;
+    margin: clamp(3rem, 9vmin, 8rem) 0 0;
 }
 
 h1 {
@@ -78,6 +78,12 @@ h1 strong {
     align-items: center;
     margin-top: 5rem;
     scroll-margin: 10rem;
+}
+
+.quiz_ctnr form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 input[type="range"] {
@@ -156,13 +162,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
 input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     background: var(--dark);
-    padding: 0.9rem 2rem;
+    padding: 0.9rem 3rem;
     border: 0.1rem solid var(--c3);
     border-radius: 3rem;
     transition: border-color 0.2s ease, background-color 0.2s ease;
     cursor: ew-resize;
-    background-image: url(../assets/icons/circle.svg);
-    background-size: calc(25% - 1.3rem) 0.4rem;
+    background-image: url(../assets/icons/circle-grey.svg), url(../assets/icons/circle-dark.svg);
+    background-size: calc(25% - 1.8rem) 0.6rem, calc((25% - 1.8rem) / 4) 0.3rem;
     background-position: center;
     background-repeat-y: no-repeat;
     background-repeat: repeat no-repeat;
@@ -179,12 +185,12 @@ input[type="range"]::-webkit-slider-runnable-track:active {}
     color: var(--c1);
 }
 
-.quiz_ctnr fieldset {
+.quiz_ctnr form > fieldset {
     border: unset;
     padding: clamp(2rem, 14vmin, 9rem) clamp(2rem, 5vmin, 5rem) clamp(2rem, 16vmin, 13rem);
     background-color: #1119;
     border-radius: 2rem;
-    margin-bottom: clamp(10rem, 24vw, 12rem);
+    margin-top: clamp(10rem, 24vw, 12rem);
     backdrop-filter: blur(0.3rem);
     z-index: 2;
     width: 100%;
@@ -284,10 +290,9 @@ ul, ul li {
 
 .submit {
     padding: 1.2rem 3.2rem;
-    background-color: var(--c2);
     border-radius: 0.4rem;
     color: var(--light);
-    margin-bottom: 5rem;
+    margin: 8rem 0 12rem;
     font-size: clamp(1.5rem, 5vw, 2rem);
     cursor: pointer;
 }
@@ -297,20 +302,30 @@ ul, ul li {
 
 
 
+.result.hidden {
+    /* display: none; */
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
 .result {
-    width: clamp(15rem, 88vw, 65rem);
+    width: clamp(15rem, 88vw, 74rem);
     box-sizing: border-box;
     background-color: #18181888;
     border-radius: 1.2rem;
     z-index: 2;
     backdrop-filter: blur(0.3rem);
-    max-height: 90vh;
+    /* max-height: 120vh;
+    overflow: auto; */
+    transition: max-height 1s ease, opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    visibility: visible;
 }
 
 .result > .ctnr {
-    margin: clamp(1.6rem, 8vw, 3.5rem) clamp(1.6rem, 6vw, 6rem) clamp(1.6rem, 9vw, 4.5rem);
+    margin: clamp(1.6rem, 8vw, 3.5rem) clamp(1.6rem, 6vw, 6rem) clamp(1.6rem, 12vw, 6.5rem);
 }
 
 .result h2 {
@@ -345,22 +360,26 @@ ul, ul li {
     letter-spacing: 0.1rem;
     position: absolute;
     right: 0;
-    transform: translateX(120%);
-}
-
-.result.hidden {
-    /* display: none; */
-    max-height: 0;
-}
-
-.result p {
-    margin-bottom: 1rem;
-    line-height: 1.55;
-    font-size: clamp(1rem, 3.2vmin, 1.6rem);
+    transform: translateX(calc(100% + 1rem));
+    white-space: nowrap;
+    text-align: left;
 }
 
 .result .txt {
     margin-bottom: 2rem;
+    font-size: clamp(1rem, 4vmin, 2.1rem);
+    line-height: 1.55;
+    text-align: center;
+}
+
+.result p {
+    margin-bottom: 1rem;
+}
+
+.result p b {
+    margin-bottom: 1rem;
+    color: var(--c1a);
+    font-weight: 300;
 }
 
 .result .general {}
@@ -370,7 +389,47 @@ ul, ul li {
 .result .cta {
     margin: 4rem auto 0;
     display: block;
+    cursor: pointer;
 }
+
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: unset;
+    margin-top: 4rem;
+}
+
+.contact_info .flex {
+    gap: 2rem;
+    flex-flow: row wrap;
+}
+
+.contact_info label {
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+    color: var(--grey);
+}
+
+.contact_info input {
+    border-radius: 0.3rem;
+    padding: 1rem 1.2rem;
+    background-color: #1D1D1D;
+    font-size: 0.9em;
+    border: 0.1rem solid var(--c3);
+    color: var(--light);
+    transition: 0.3s ease;
+}
+
+.contact_info input:hover {
+    background-color: #1f1f1f;
+    transition: 0s ease;
+}
+
+.contact_info button[type='submit'] {}
 
 
 

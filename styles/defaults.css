@@ -11,7 +11,7 @@
     --c2: #33a1fd;
     --c2a: #2176ff;
 
-    --c3: #31393c;
+    --c3: #39393C;
 
     --c4: #fdca40;
 
@@ -270,7 +270,7 @@ main>.ctnr {
     align-items: center;
     font-weight: 600;
     font-size: clamp(1.4rem, 3.9vw, 1.75rem);
-    padding: 1.1rem 3rem;
+    padding: 1.1rem clamp(1.5rem, 6vw, 3rem);
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     border: 0.2rem solid var(--c2);
