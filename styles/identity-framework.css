@@ -46,8 +46,8 @@ h1 strong {
 }
 
 .intro h2 {
-    font-size: clamp(1.4rem, 3.8vmin, 2.1rem);
-    line-height: 1.35;
+    font-size: clamp(1.4rem, 4.2vmin, 2.1rem);
+    line-height: 1.45;
     font-weight: 300;
     max-width: 89rem;
     margin: clamp(1rem, 3vmin, 3rem) auto clamp(1rem, 10vmin, 7rem);
@@ -88,7 +88,7 @@ input[type="range"] {
     border: 0;
     margin: 0;
     padding: 0;
-    touch-action: none;
+    touch-action: pan-x;
     transition: transform 0.4s ease;
 }
 
@@ -306,7 +306,7 @@ ul, ul li {
     backdrop-filter: blur(0.3rem);
     max-height: 90vh;
     overflow: hidden;
-    transition: max-height 1s ease;
+    transition: max-height 0.4s ease;
 }
 
 .result > .ctnr {

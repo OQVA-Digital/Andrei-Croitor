@@ -46,7 +46,7 @@ function calculateScore() {
 
         setTimeout(() => {
             window.scrollTo(0, document.body.scrollHeight)
-        }, 900);
+        }, 400);
     }
 
     // if (answers) {
