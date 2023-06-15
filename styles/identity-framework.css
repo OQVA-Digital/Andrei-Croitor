@@ -89,6 +89,7 @@ h1 strong {
 input[type="range"] {
     flex: 1;
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background: transparent;
     border: 0;
@@ -96,6 +97,7 @@ input[type="range"] {
     padding: 0;
     touch-action: pan-x;
     transition: transform 0.4s ease;
+    padding: 0.9rem 0rem;
 }
 
 input[type="range"]:hover {
@@ -104,7 +106,15 @@ input[type="range"]:hover {
 }
 
 .quiz_ctnr .statement .answer:hover input[type="range"]::-webkit-slider-runnable-track {
-    border-color: var(--c1)
+    border-color: var(--c1);
+}
+
+.quiz_ctnr .statement .answer:hover input[type="range"]::-moz-range-track {
+    border-color: var(--c1);
+}
+
+.quiz_ctnr .statement .answer:hover input[type="range"]::-ms-track {
+    border-color: var(--c1);
 }
 
 input[type="range"].unset::-webkit-slider-thumb {
@@ -127,7 +137,23 @@ input[type="range"][value='1']:not(.unset)::-webkit-slider-thumb {
     background-color: crimson;
 }
 
+input[type="range"][value='1']:not(.unset)::-moz-range-thumb {
+    background-color: crimson;
+}
+
+input[type="range"][value='1']:not(.unset)::-ms-thumb {
+    background-color: crimson;
+}
+
 input[type="range"][value='2']:not(.unset)::-webkit-slider-thumb {
+    background-color: orange;
+}
+
+input[type="range"][value='2']:not(.unset)::-moz-range-thumb {
+    background-color: orange;
+}
+
+input[type="range"][value='2']:not(.unset)::-ms-thumb {
     background-color: orange;
 }
 
@@ -135,11 +161,35 @@ input[type="range"][value='3']:not(.unset)::-webkit-slider-thumb {
     background-color: yellow;
 }
 
+input[type="range"][value='3']:not(.unset)::-moz-range-thumb {
+    background-color: yellow;
+}
+
+input[type="range"][value='3']:not(.unset)::-ms-thumb {
+    background-color: yellow;
+}
+
 input[type="range"][value='4']:not(.unset)::-webkit-slider-thumb {
     background-color: greenyellow;
 }
 
+input[type="range"][value='4']:not(.unset)::-moz-range-thumb {
+    background-color: greenyellow;
+}
+
+input[type="range"][value='4']:not(.unset)::-ms-thumb {
+    background-color: greenyellow;
+}
+
 input[type="range"][value='5']:not(.unset)::-webkit-slider-thumb {
+    background-color: var(--c2a);
+}
+
+input[type="range"][value='5']:not(.unset)::-moz-range-thumb {
+    background-color: var(--c2a);
+}
+
+input[type="range"][value='5']:not(.unset)::-ms-thumb {
     background-color: var(--c2a);
 }
 
@@ -153,13 +203,75 @@ input[type="range"]::-webkit-slider-thumb {
     transition: background-color 0.9s cubic-bezier(0, 0, 0.2, 1), transform 0.1s ease;
 }
 
+input[type="range"]::-moz-range-thumb {
+    background-color: var(--c3);
+    width: 1.2rem;
+    height: 2.6rem;
+    border-radius: 1rem;
+    transition: background-color 0.9s cubic-bezier(0, 0, 0.2, 1), transform 0.1s ease;
+}
+
+input[type="range"]::-ms-thumb {
+    background-color: var(--c3);
+    width: 1.2rem;
+    height: 2.6rem;
+    border-radius: 1rem;
+    transition: background-color 0.9s cubic-bezier(0, 0, 0.2, 1), transform 0.1s ease;
+}
+
 input[type="range"]::-webkit-slider-thumb:active {}
 
 input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.1);
 }
 
+input[type="range"]::-moz-range-thumb:active {}
+
+input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.1);
+}
+
+input[type="range"]::-ms-thumb:active {}
+
+input[type="range"]::-ms-thumb:hover {
+    transform: scale(1.1);
+}
+
 input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    background: var(--dark);
+    padding: 0.9rem 3rem;
+    height: 4.5rem;
+    border: 0.1rem solid var(--c3);
+    border-radius: 3rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: ew-resize;
+    background-image: url(../assets/icons/circle-grey.svg), url(../assets/icons/circle-dark.svg);
+    background-size: calc(25% - 1.8rem) 0.6rem, calc((25% - 1.8rem) / 4) 0.3rem;
+    background-position: center;
+    background-repeat-y: no-repeat;
+    background-repeat: repeat no-repeat;
+    box-sizing: border-box;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    background: var(--dark);
+    padding: 0.9rem 3rem;
+    height: 4.5rem;
+    border: 0.1rem solid var(--c3);
+    border-radius: 3rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: ew-resize;
+    background-image: url(../assets/icons/circle-grey.svg), url(../assets/icons/circle-dark.svg);
+    background-size: calc(25% - 1.8rem) 0.6rem, calc((25% - 1.8rem) / 4) 0.3rem;
+    background-position: center;
+    background-repeat-y: no-repeat;
+    background-repeat: repeat no-repeat;
+    box-sizing: border-box;
+}
+
+input[type="range"]::-ms-track {
     width: 100%;
     background: var(--dark);
     padding: 0.9rem 3rem;
@@ -176,10 +288,23 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 input[type="range"]::-webkit-slider-runnable-track:active {}
 
+input[type="range"]::-moz-range-track:active {}
+
 .quiz_ctnr .statement:hover input[type="range"]::-webkit-slider-runnable-track {
     border: 0.1rem solid var(--grey);
     transition: border-color 0.2s ease, background-color 0s ease;
 }
+
+.quiz_ctnr .statement:hover input[type="range"]::-moz-range-track {
+    border: 0.1rem solid var(--grey);
+    transition: border-color 0.2s ease, background-color 0s ease;
+}
+
+.quiz_ctnr .statement:hover input[type="range"]::-ms-track {
+    border: 0.1rem solid var(--grey);
+    transition: border-color 0.2s ease, background-color 0s ease;
+}
+
 
 .quiz_ctnr .statement:hover .answer > span {
     color: var(--c1);
@@ -208,13 +333,14 @@ input[type="range"]::-webkit-slider-runnable-track:active {}
 }
 
 .quiz_ctnr fieldset legend {
-    font-size: clamp(1.3em, 6.2vmin, 4.2em);
+    font-size: clamp(1.3em, 6.8vmin, 4.2em);
     text-align: center;
     color: var(--c1);
     font-weight: 900;
     padding: 1rem;
     box-sizing: border-box;
     /* text-shadow: 0 -0.3rem 0rem #201F1F; */
+    margin-inline: auto;
 }
 
 .quiz_ctnr fieldset hr {
@@ -298,7 +424,6 @@ ul, ul li {
 
 .submit {
     padding: 1.2rem 3.2rem;
-    border-radius: 0.4rem;
     color: var(--light);
     margin: 8rem 0 12rem;
     font-size: clamp(1.5rem, 5vw, 2rem);
@@ -490,7 +615,7 @@ ul, ul li {
     padding: 1.3rem 3.5rem;
     background-color: var(--c2a);
     color: var(--light);
-    border-radius: 0.6rem;
+    border-radius: 0.3rem;
     font-size: 1.6rem;
     cursor: pointer;
     border: 0.2rem solid var(--c2);
