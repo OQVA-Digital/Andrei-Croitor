@@ -45,7 +45,7 @@
         
         <section class="quiz_ctnr" id="start">
             <form name="identity-framework-submission" method="POST" data-netlify="true">
-                <fieldset>
+                <fieldset class="visible">
                     <legend>Conscious Contrast</legend>
 
                     <div class="questions">
@@ -558,6 +558,12 @@
                     </div>
                 </fieldset>
 
+                <!-- <div class="fieldset_controls">
+                    <button type="button" class="back disabled" aria-label="Previous fieldset button" onclick="checkFieldsets('backwards')">Back</button>
+
+                    <button type="button" class="next" aria-label="Next fieldset button" onclick="checkFieldsets('forwards')">Next</button>
+                </div> -->
+
 
 
 
@@ -586,7 +592,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, quis quidem aspernatur itaque impedit deserunt sit cum blanditiis qui. Facilis perferendis deleniti quasi harum facere similique impedit maxime non hic?</p>
                         </div> -->
         
-                        <fieldset class="contact_info">
+                        <div class="contact_info">
                             <div class="flex">
                                 <label>Name: <input type="text" name="name"/></label>
         
@@ -595,10 +601,12 @@
         
                             <label>Company: <input type="text" name="company"/></label>
         
-                            <label>Contact info: <input type="text" name="email" placeholder="Email or Phone Number" /></label>
-        
-                            <!-- <label>Phone number: <input type="tel" name="phone_no"/></label> -->
-                        </fieldset>
+                            <div class="flex">
+                                <label>Phone Number: <input type="tel" name="phone-number" /></label>
+            
+                                <label>E-mail: <input type="email" name="email" /></label>
+                            </div>
+                        </div>
             
                         <button type="submit" class="cta" aria-label="submit information">Improve Your Score</button>
                     </div>
@@ -607,6 +615,6 @@
         </section>
     </main>
 
-    <span class="warning">Please, answer all the fields.</span>
+    <span class="warning ">Please, answer all the fields.</span>
 </body>
 </html>
