@@ -1,8 +1,3 @@
-
-
-
-
-
 header {
     background-color: var(--c2a);
     width: 100%;
@@ -17,7 +12,7 @@ header {
     flex: 0;
 }
 
-header>.ctnr {
+header > .ctnr {
     width: var(--width-mobile);
     display: flex;
     flex-direction: row-reverse;
@@ -162,7 +157,7 @@ footer .social a:hover {
     cursor: pointer;
 }
 
-.hambt div {
+.hambt span {
     background-color: var(--light);
     height: 18%;
     width: 100%;
@@ -172,15 +167,15 @@ footer .social a:hover {
 
 .hambt.close {}
 
-.hambt.close div:nth-child(1) {
+.hambt.close span:nth-child(1) {
     transform: translateY(220%) rotate(45deg);
 }
 
-.hambt.close div:nth-child(2) {
+.hambt.close span:nth-child(2) {
     transform: rotate(-45deg);
 }
 
-.hambt.close div:nth-child(3) {
+.hambt.close span:nth-child(3) {
     opacity: 0;
     transform: translateY(-220%);
 }
@@ -213,7 +208,7 @@ footer .social a:hover {
         min-width: clamp(11rem, calc(7vw + 6vh), 18rem);
     }
 
-    header>.ctnr {
+    header > .ctnr {
         flex-direction: column;
         width: unset;
     }

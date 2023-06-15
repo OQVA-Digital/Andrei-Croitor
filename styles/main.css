@@ -36,7 +36,7 @@ section > .ctnr {
 
 .intro_sec > .ctnr {
     background-color: rgb(13 11 13 / 75%);
-    /* min-height: clamp(80vh, 160vw, 92vh); */
+    min-height: clamp(80vh, 160vw, 92vh);
     padding: 0 0 clamp(8rem, calc(30vh - 11rem), 14rem);
 }
 
@@ -47,16 +47,16 @@ section > .ctnr {
 
 .intro_sec h2 {
     font-weight: 800;
-    font-size: clamp(2.1rem, calc(1.8vw + 1.6vh + 1rem), 6rem);
+    font-size: clamp(2.1rem, 8vmin, 6rem);
     width: fit-content;
-    max-width: 78rem;
+    max-width: 90rem;
     margin-bottom: 2.5rem;
     line-height: 1.25;
     letter-spacing: 0;
     /* text-shadow: 0.3rem 0.3rem 0rem var(--c3); */
 }
 
-.intro_sec h2 strong {
+.intro_sec h2 strong, .intro_sec h2 b {
     letter-spacing: 0;
     color: var(--c1);
 }
@@ -98,6 +98,10 @@ section > .ctnr {
 .intro_sec .content {
     width: var(--width-mobile);
     margin-top: 3rem;
+}
+
+.intro_sec .content .cta {
+    max-width: 72%;
 }
 
 .cta_ctnr {
@@ -165,7 +169,7 @@ section > .ctnr {
 
 .about_sec .content .cta {
     margin-top: 1.5rem;
-    max-width: 77%;
+    max-width: 80%;
 }
 
 .about_sec .content .txt {
@@ -174,6 +178,7 @@ section > .ctnr {
     backdrop-filter: blur(0.4rem);
     z-index: 2;
     background-color: rgb(17 17 17 / 60%);
+    position: relative;
 }
 
 .about_sec .content .big {
@@ -837,7 +842,7 @@ footer .icon.mail {
     .cta_ctnr {}
 
     .intro_sec > .ctnr {
-        padding-top: clamp(8rem, calc(30vh - 11rem), 11rem);
+        padding-top: clamp(3rem, 10vmin, 11rem);
     }
 
     .intro_sec h1 span {
@@ -871,7 +876,7 @@ footer .icon.mail {
     .about_sec > .ctnr {
         flex-direction: row-reverse;
         gap: unset;
-        padding: clamp(1rem, 9vw, 6rem) 0 clamp(1rem, 9vw, 8rem);
+        padding: clamp(1rem, 9vw, 8rem) 0 clamp(1rem, 9vw, 8rem);
     }
 
     .about_sec .content {

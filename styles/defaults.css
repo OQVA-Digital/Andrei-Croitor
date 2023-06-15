@@ -269,8 +269,8 @@ main > .ctnr {
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    font-size: clamp(1.4rem, 3.9vw, 1.75rem);
-    padding: 1.1rem clamp(1.5rem, 6vw, 3rem);
+    font-size: clamp(1.4rem, 4vw, 1.75rem);
+    padding: clamp(0.9rem, 1vmin, 1.4rem) clamp(1.5rem, 5vmin, 3rem);
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     border: 0.2rem solid var(--c2);
@@ -280,6 +280,7 @@ main > .ctnr {
     transition: background-color 0.4s ease;
     width: fit-content;
     box-shadow: 0.6rem 0.6rem #fff2;
+    line-height: 1.35;
 }
 
 .cta::after {

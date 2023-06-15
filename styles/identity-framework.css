@@ -27,7 +27,7 @@ section.intro {
 header {}
 
 header .logo {
-    width: clamp(15rem, 45vmin, 20rem);
+    width: clamp(15rem, 45vmin, 26rem);
     display: block;
     margin: clamp(3rem, 9vmin, 8rem) 0 0;
 }
