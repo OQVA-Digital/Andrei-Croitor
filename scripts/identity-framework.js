@@ -2,7 +2,7 @@ let score;
 
 let answers = document.querySelectorAll('.answer input[type="range"]');
 
-let allFilled = true;
+let allFilled = false;
 
 let resultCtnr = document.querySelector('.result');
 let resultCtnrOffset;
@@ -13,7 +13,7 @@ const resultText = document.querySelector('.result .general.txt')
 
 const ScoreDisplay = document.querySelector('.score .current')
 
-const warning = document.querySelector('.warning')
+const fillingWarning = document.querySelector('.warning.require_fields')
 
 for (i = 0; i < answers.length; i++) {
 
@@ -26,20 +26,20 @@ for (i = 0; i < answers.length; i++) {
 
 function calculateScore() {
 
-    // for (i = 0; i < answers.length; i++) {
-    //     if (answers[i].classList.contains('unset')) {
-    //         warning.classList.add('visible')
+    for (i = 0; i < answers.length; i++) {
+        if (answers[i].classList.contains('unset')) {
+            fillingWarning.classList.add('visible')
 
-    //         setTimeout(() => {
-    //             warning.classList.remove('visible')
-    //         }, 2000);
+            setTimeout(() => {
+                fillingWarning.classList.remove('visible')
+            }, 2500);
 
-    //         allFilled = false;
-    //         return
-    //     } else {
-    //         allFilled = true;
-    //     }
-    // }
+            allFilled = false;
+            return
+        } else {
+            allFilled = true;
+        }
+    }
 
     if (allFilled == true) {
         score = 0;
@@ -102,54 +102,54 @@ for (let i = 0; i < answers.length; i++) {
 
 // FORMFIELDS TOGGLING
 
-// const backBt = document.querySelector('.fieldset_controls .back')
-// const nextBt = document.querySelector('.fieldset_controls .next')
+const backBt = document.querySelector('.fieldset_controls .back')
+const nextBt = document.querySelector('.fieldset_controls .next')
 
-// let formPosition = 0;
+let formPosition = 0;
 
-// const formFieldsets = document.querySelectorAll('form fieldset')
+const formFieldsets = document.querySelectorAll('form fieldset')
 
-// formFieldsets[formPosition].classList.add('visible')
+formFieldsets[formPosition].classList.add('visible')
 
-// const lastFieldPos = formFieldsets.length - 1
+const lastFieldPos = formFieldsets.length - 1
 
-// function checkFieldsets(direction) {
-//     if (direction == 'forwards') {
-//         if (!formFieldsets[lastFieldPos].classList.contains('visible')) {
-//             backBt.classList.remove('disabled');
-//             formFieldsets[formPosition].classList.remove('visible');
-//             formPosition++;
-//             formFieldsets[formPosition].classList.add('visible');
+function checkFieldsets(direction) {
+    if (direction == 'forwards') {
+        if (!formFieldsets[lastFieldPos].classList.contains('visible')) {
+            backBt.classList.remove('disabled');
+            formFieldsets[formPosition].classList.remove('visible');
+            formPosition++;
+            formFieldsets[formPosition].classList.add('visible');
 
-//             if (formPosition === lastFieldPos) {
-//                 nextBt.classList.add('disabled');
-//             }
-//         }
-//     } else if (direction == 'backwards') {
-//         if (!formFieldsets[0].classList.contains('visible')) {
-//             nextBt.classList.remove('disabled');
-//             formFieldsets[formPosition].classList.remove('visible');
-//             formPosition--;
-//             formFieldsets[formPosition].classList.add('visible');
+            if (formPosition === lastFieldPos) {
+                nextBt.classList.add('disabled');
+            }
+        }
+    } else if (direction == 'backwards') {
+        if (!formFieldsets[0].classList.contains('visible')) {
+            nextBt.classList.remove('disabled');
+            formFieldsets[formPosition].classList.remove('visible');
+            formPosition--;
+            formFieldsets[formPosition].classList.add('visible');
 
-//             if (formPosition === 0) {
-//                 backBt.classList.add('disabled');
-//             }
-//         }
-//     }
-// }
+            if (formPosition === 0) {
+                backBt.classList.add('disabled');
+            }
+        }
+    }
+}
 
 
-// const firstFields = document.querySelectorAll('.contact fieldset:first-child input, .contact fieldset:first-child select')
+const firstFields = document.querySelectorAll('.contact fieldset:first-child input, .contact fieldset:first-child select')
 
-// for (i = 0; i < firstFields.length; i++) {
-//     firstFields[i].addEventListener('input', function () {
-//         const allFilled = Array.from(firstFields).every(input => input.value.trim() !== '');
+for (i = 0; i < firstFields.length; i++) {
+    firstFields[i].addEventListener('input', function () {
+        const allFilled = Array.from(firstFields).every(input => input.value.trim() !== '');
 
-//         if (allFilled) {
-//             submitBt.classList.remove('disabled')
-//         } else {
-//             submitBt.classList.add('disabled')
-//         }
-//     })
-// }
+        if (allFilled) {
+            submitBt.classList.remove('disabled')
+        } else {
+            submitBt.classList.add('disabled')
+        }
+    })
+}

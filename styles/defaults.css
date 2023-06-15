@@ -170,12 +170,12 @@ main section {
     box-sizing: border-box;
 }
 
-body>.flex {
+body > .flex {
     display: flex;
     flex-direction: column;
 }
 
-main>.ctnr {
+main > .ctnr {
     flex: 1;
 }
 
@@ -283,7 +283,7 @@ main>.ctnr {
 }
 
 .cta::after {
-    content:'';
+    content: '';
     position: absolute;
     top: 0.4rem;
     right: 0.4rem;
@@ -314,6 +314,48 @@ main>.ctnr {
 
 
 
+/* Form warning */
+
+.warning {
+    position: fixed;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    text-align: center;
+    width: fit-content;
+    padding: 1rem 2.5rem;
+    background-color: var(--dark);
+    z-index: 9;
+    font-size: clamp(1.5rem, 5vw, 1.5rem);
+    border-radius: 5rem;
+    border: 0.2rem solid;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    transform: translateY(calc(100% + 3rem));
+    opacity: 0;
+    visibility: hidden;
+    color: var(--light)
+}
+
+.warning.require_fields {
+    color: var(--c4);
+}
+
+.warning.error {
+    border-color: crimson;
+}
+
+.warning.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+
 
 
 
@@ -330,7 +372,7 @@ main>.ctnr {
 
 
 @media screen and (min-width: 650px) {
-    body>.flex {
+    body > .flex {
         flex-direction: row-reverse;
     }
 

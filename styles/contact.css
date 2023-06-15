@@ -67,7 +67,7 @@ form {
 
 input::selection, textarea::selection {
     background-color: var(--c1);
-    color:var(--dark);
+    color: var(--dark);
 }
 
 input,

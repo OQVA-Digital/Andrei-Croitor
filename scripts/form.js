@@ -4,6 +4,12 @@
 
 const allInputs = document.querySelectorAll('input, textarea')
 
+// Create error warning
+const errorWarning = document.createElement('span')
+document.body.appendChild(errorWarning)
+errorWarning.classList.add('warning', 'error')
+errorWarning.innerHTML = 'Something went wrong. Please, try again later!'
+
 const handleSubmit = (event) => {
   event.preventDefault();
 
@@ -16,7 +22,7 @@ const handleSubmit = (event) => {
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => success())
-    .catch((error) => alert(error));
+    .catch((error) => error());
 };
 
 
@@ -26,4 +32,12 @@ const formBt = document.querySelector('form button[type="submit"]')
 
 function success() {
   formBt.innerHTML = 'Successfully sent. Thanks!'
+}
+
+function error() {
+  errorWarning.classList.add('visible')
+
+  setTimeout(() => {
+    errorWarning.classList.remove('visible')
+  }, 2500);
 }

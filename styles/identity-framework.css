@@ -185,18 +185,26 @@ input[type="range"]::-webkit-slider-runnable-track:active {}
     color: var(--c1);
 }
 
+.quiz_ctnr form > fieldset:not(:first-of-type) {
+    /* margin-top: clamp(10rem, 24vw, 12rem); */
+}
+
 .quiz_ctnr form > fieldset {
     border: unset;
     padding: clamp(2rem, 14vmin, 9rem) clamp(2rem, 5vmin, 5rem) clamp(2rem, 16vmin, 13rem);
     background-color: #1119;
     border-radius: 2rem;
-    margin-top: clamp(10rem, 24vw, 12rem);
     backdrop-filter: blur(0.3rem);
     z-index: 2;
     width: 100%;
     box-sizing: border-box;
     /* box-shadow: 0 1rem 1.2rem -0.5rem #0E0E0E; */
     border: 0.1rem solid #181818;
+    transition: opacity 0.4s 0.1s ease, visibility 0.4s 0.1s ease, transform 0.5s ease;
+    left: 0;
+    right: 0;
+    max-width: clamp(15rem, 88vw, 90rem);
+    margin-inline: auto;
 }
 
 .quiz_ctnr fieldset legend {
@@ -436,70 +444,90 @@ ul, ul li {
 .contact_info button[type='submit'] {}
 
 
-.warning {
-    position: fixed;
-    bottom: 3rem;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    text-align: center;
-    width: fit-content;
-    padding: 1rem 2.5rem;
-    background-color: var(--dark);
-    z-index: 9;
-    font-size: clamp(1.5rem, 5vw, 1.6rem);
-    border-radius: 5rem;
-    color: var(--c4);
-    border: 0.2rem solid var(--c4);
-    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    transform: translateY(calc(100% + 3rem));
-    opacity: 0;
-    visibility: hidden;
-}
-
-.warning.visible {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
-
-
-
-
 
 
 /* FORM CONTROLS */
 
-/* .fieldset_controls {
+.fieldset_controls {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    position: sticky;
+    bottom: 3rem;
+    z-index: 3;
+    margin-top: 4rem;
+}
+
+.fieldset_controls button:not(.disabled):hover {
+    background-color: var(--c2);
+}
+
+.fieldset_controls button.disabled::after, .fieldset_controls button.disabled::before {
+    display: none;
+}
+
+.fieldset_controls button:hover:after {
+    transform: translate(0.6rem, -50%) rotate(45deg);
+}
+
+.fieldset_controls button:hover:before {
+    transform: translate(-0.6rem, -50%) rotate(-135deg);
 }
 
 .fieldset_controls .next.disabled,
 .fieldset_controls .back.disabled {
-    background-color: var(--light-a);
+    background-color: #181818cc;
     color: var(--c2-e);
     cursor: default;
+    border: 0.2rem solid #1A1A1A;
+    backdrop-filter: blur(0.3rem);
 }
 
 .fieldset_controls .next,
 .fieldset_controls .back {
-    padding: 1rem 2rem;
-    background-color: var(--c2-b);
+    padding: 1.3rem 3.5rem;
+    background-color: var(--c2a);
     color: var(--light);
     border-radius: 0.6rem;
     font-size: 1.6rem;
     cursor: pointer;
+    border: 0.2rem solid var(--c2);
+    position: relative;
+}
+
+.fieldset_controls .next::after, .fieldset_controls .back::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: 0.2rem solid var(--light);
+    border-right: 0.2rem solid var(--light);
+    transition: transform 0.2s ease;
+}
+
+.fieldset_controls .next::after {
+    right: -2rem;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.fieldset_controls .back::before {
+    left: -2rem;
+    transform: translate(0, -50%) rotate(-135deg);
 }
 
 form fieldset:not(.visible) {
-    display: none;
-} */
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(1rem);
+}
 
-
+form fieldset.visible {
+    transform: translateX(0);
+}
 
 
 
