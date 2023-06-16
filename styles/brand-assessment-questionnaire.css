@@ -29,16 +29,17 @@ header {}
 header .logo {
     width: clamp(15rem, 45vmin, 26rem);
     display: block;
-    margin: clamp(3rem, 9vmin, 8rem) 0 0;
+    margin: clamp(3rem, 11vmin, 8rem) 0 0;
 }
 
 h1 {
-    font-size: clamp(2rem, 7.5vmin, 6rem);
+    font-size: clamp(2rem, 7vmin, 6rem);
     line-height: 1.35;
 }
 
 .intro .content {
-    max-width: 100rem;
+    max-width: 120rem;
+    margin: 5rem 0;
 }
 
 h1 strong {
@@ -50,7 +51,7 @@ h1 strong {
     line-height: 1.45;
     font-weight: 300;
     max-width: 89rem;
-    margin: clamp(1rem, 3vmin, 3rem) auto clamp(1rem, 10vmin, 7rem);
+    margin: clamp(1rem, 3vmin, 3rem) auto clamp(1rem, 5vmin, 7rem);
 }
 
 .intro h2 b {
