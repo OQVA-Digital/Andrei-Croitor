@@ -109,6 +109,10 @@ input[type="range"]:hover {
     border-color: var(--c1);
 }
 
+.quiz_ctnr .statement .answer input[type="range"]:not([class="unset"])::-webkit-slider-runnable-track {
+    border-color: var(--c1a);
+}
+
 .quiz_ctnr .statement .answer:hover input[type="range"]::-moz-range-track {
     border-color: var(--c1);
 }
@@ -427,7 +431,7 @@ ul, ul li {
     padding: 1.2rem 3.2rem;
     color: var(--light);
     margin: 8rem 0 12rem;
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    /* font-size: clamp(1.5rem, 5vw, 2rem); */
     cursor: pointer;
 }
 
@@ -598,13 +602,15 @@ ul, ul li {
 }
 
 .progress .overlay {
-    background-image: url(../assets/icons/circle-grey.svg);
-    background-size: 1rem 0.2rem;
+    background-color: var(--c3);
     background-position: center;
     background-repeat-y: no-repeat;
     background-repeat: repeat no-repeat;
     position: absolute;
     inset: 0;
+    height: 0.1rem;
+    margin: auto;
+    width: 99%;
 }
 
 .progress .amount {
@@ -668,6 +674,7 @@ ul, ul li {
     border: 0.1rem solid var(--c2);
     position: relative;
     transition: background-color 0.3s ease;
+    user-select: none;
 }
 
 .fieldset_controls .next::after, .fieldset_controls .back::before {
@@ -749,6 +756,6 @@ form fieldset.visible {
     }
 
     input[type="range"]::-webkit-slider-runnable-track {
-        border: 0.1rem solid var(--c3);
+        border: 0.1rem solid #1D1D1D;
     }
 }

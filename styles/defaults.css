@@ -281,6 +281,7 @@ main > .ctnr {
     width: fit-content;
     box-shadow: 0.6rem 0.6rem #fff2;
     line-height: 1.35;
+    user-select: none;
 }
 
 .cta::after {
