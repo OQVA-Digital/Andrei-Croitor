@@ -24,6 +24,12 @@ const ScoreDisplay = document.querySelector('.score .current')
 
 const fillingWarning = document.querySelector('.warning.require_fields')
 
+
+
+
+let randomAudioNo;
+
+
 function checkProgressBar() {
     if (allFilled == false) {
         totalFilled = document.querySelectorAll('.answer input[type="range"]:not([class="unset"])').length
@@ -131,6 +137,11 @@ function updateThumb(event) {
     element.setAttribute('value', element.value);
 
     checkProgressBar()
+
+    randomAudioNo = Math.round(Math.random() * 6 + 1)
+    new Audio(`../assets/sfx/snap0${randomAudioNo}.mp3`).play()
+
+    window.navigator.vibrate(60);
 }
 
 

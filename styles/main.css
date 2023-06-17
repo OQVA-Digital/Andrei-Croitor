@@ -36,7 +36,7 @@ section > .ctnr {
 
 .intro_sec > .ctnr {
     background-color: rgb(13 11 13 / 75%);
-    min-height: clamp(80vh, 160vw, 92vh);
+    min-height: clamp(80vh, 90vmin, 82rem);
     padding: 0 0 clamp(8rem, calc(30vh - 11rem), 14rem);
 }
 
@@ -863,7 +863,7 @@ footer .icon.mail {
     }
 
     .intro_sec h2 {
-        margin: clamp(0rem, 3vh, 2rem) 0 clamp(0rem, 5vh, 3.5rem);
+        margin: clamp(0rem, 3vmax, 3rem) 0 clamp(0rem, 5vh, 3.5rem);
         /* font-weight: 600; */
         line-height: 1.15;
     }

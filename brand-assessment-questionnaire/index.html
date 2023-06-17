@@ -19,6 +19,14 @@
     <script src="../scripts/brand-assessment-questionnaire.js" defer></script>
     <script src="../scripts/stroke-anim.js" defer></script>
     <script src="../scripts/form.js" defer></script>
+
+    <link rel="prefetch" href="../assets/sfx/snap01.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap02.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap03.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap04.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap05.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap06.mp3" as="audio/mpeg">
+    <link rel="prefetch" href="../assets/sfx/snap07.mp3" as="audio/mpeg">
 </head>
 
 <body class="id-framework-body">
@@ -37,7 +45,9 @@
             <div class="content">
                 <h1>Boost your brand's success with the <strong>Brand Assessment Questionnaire.</strong></h1>
     
-                <h2>Please rate your <b>level of agreement</b> with the following statements regarding your brand. <b>Be honest - there's no right or wrong; just truth.</b></h2>
+                <!-- <h2>Please rate your <b>level of agreement</b> with the following statements regarding your brand. <b>Be honest - there's no right or wrong; just truth.</b></h2> -->
+
+                <h2>The questionnaire will contain several statements related to different aspects of the framework. For each statement, the respondent will be asked to rate their level of agreement on a scale from <b>1 (Strong No)</b> to <b>5 (Strong Yes)</b>.</h2>
     
                 <a href="#start" class="cta">Let's start</a>
             </div>
@@ -48,6 +58,9 @@
         </section>
         
         <section class="quiz_ctnr" id="start">
+
+            <p class="instructions"><strong>Instructions</strong>: Please rate your level of agreement with the following statements regarding your brand. Be honest - there's no right or wrong; just truth.</p>
+
             <form name="brand-assessment-questionnaire-submission" method="POST" data-netlify="true">
                 <fieldset class="visible">
                     <legend>Conscious Contrast</legend>
