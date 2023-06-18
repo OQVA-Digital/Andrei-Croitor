@@ -390,6 +390,7 @@ input[type="range"]::-moz-range-track:active {}
     position: relative;
     color: var(--c1a);
     font-weight: 100;
+    margin-inline: auto;
 }
 
 .statement .answer > span {

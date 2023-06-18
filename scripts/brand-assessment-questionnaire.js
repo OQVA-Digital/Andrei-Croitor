@@ -27,6 +27,23 @@ const fillingWarning = document.querySelector('.warning.require_fields')
 
 
 
+function vibrate() {
+    if (!window) {
+        return;
+    }
+
+    if (!window.navigator) {
+        return;
+    }
+
+    if (!window.navigator.vibrate) {
+        return;
+    }
+
+    window.navigator.vibrate(60);
+}
+
+
 let randomAudioNo;
 
 
@@ -38,7 +55,7 @@ function checkProgressBar() {
 
         progressBar.style.width = relativeFilled + "%"
 
-        console.log(relativeFilled)
+        // console.log(relativeFilled)
 
         progressRelative.innerHTML = totalFilled;
 
@@ -111,17 +128,17 @@ function calculateScore() {
         if (score < 60) {
             resultText.innerHTML = "<p>Your brand is in the early stages of developing its consciousness. <b>Don't worry - with focus and effort, you can build a strong brand consciousness.</b></p>"
 
-            ScoreDisplay.style.color = 'orange'
+            ScoreDisplay.style.color = 'crimson'
 
         } else if (score >= 60 && score <= 89) {
             resultText.innerHTML = "<p>Your brand is on its way to <b>developing consciousness</b>, but there are many areas to improve. <b>A structured approach could help strengthen your brand's identity.</b></p>"
 
-            ScoreDisplay.style.color = 'yellow'
+            ScoreDisplay.style.color = 'crimson'
 
         } else if (score >= 90 && score <= 119) {
             resultText.innerHTML = "<p>Your brand has a <b>good level of consciousness</b>, but there's still room for improvement. <b>Consider focusing on areas where your score was lower.</b></p>"
 
-            ScoreDisplay.style.color = 'greenyellow'
+            ScoreDisplay.style.color = 'crimson'
 
         } else if (score >= 120) {
             resultText.innerHTML = "<p>Your brand has a <b>strong consciousness</b> and a <b>loyal tribe.</b></p>"
@@ -141,7 +158,7 @@ function updateThumb(event) {
     randomAudioNo = Math.round(Math.random() * 6 + 1)
     new Audio(`../assets/sfx/snap0${randomAudioNo}.mp3`).play()
 
-    window.navigator.vibrate(60);
+    vibrate()
 }
 
 
