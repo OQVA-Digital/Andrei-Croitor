@@ -334,11 +334,11 @@ input[type="range"]::-moz-range-track:active {}
     color: var(--c1);
 }
 
-.quiz_ctnr form > fieldset:not(:first-of-type) {
+.quiz_ctnr form > .ctnr fieldset:not(:first-of-type) {
     /* margin-top: clamp(10rem, 24vw, 12rem); */
 }
 
-.quiz_ctnr form > fieldset {
+.quiz_ctnr form > .ctnr fieldset {
     border: unset;
     padding: clamp(2rem, 9vmin, 6rem) clamp(2rem, 5vmin, 5rem) clamp(2rem, 22vmin, 13rem);
     background-color: #1119;
@@ -354,6 +354,12 @@ input[type="range"]::-moz-range-track:active {}
     right: 0;
     max-width: clamp(15rem, 88vw, 93rem);
     margin-inline: auto;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.quiz_ctnr fieldset .questions {
+    height: fit-content;
 }
 
 .quiz_ctnr fieldset legend {
@@ -401,7 +407,7 @@ input[type="range"]::-moz-range-track:active {}
     align-items: center;
     justify-content: center;
     gap: 1.8rem;
-    width: clamp(10rem, 75vw, 60rem);
+    width: clamp(10rem, 75vw, 40rem);
     position: relative;
     color: var(--c1a);
     font-weight: 100;
@@ -417,18 +423,19 @@ input[type="range"]::-moz-range-track:active {}
     content: '';
     background-image: url(../assets/icons/touch.svg);
     position: absolute;
-    right: 0;
-    left: 0;
+    left: 2rem;
+    /*right: 2rem;
+    */
     top: 50%;
     transform: translate(0, -20%);
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     margin-inline: auto;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    animation: slide_indicator 5s ease infinite;
-    -webkit-animation: slide_indicator 5s ease infinite;
+    animation: slide_indicator 4s ease-in-out infinite;
+    -webkit-animation: slide_indicator 4s ease-in-out infinite;
     -webkit-transform: translate(0, -20%);
     -moz-transform: translate(0, -20%);
     -ms-transform: translate(0, -20%);
@@ -438,47 +445,47 @@ input[type="range"]::-moz-range-track:active {}
 
 @keyframes slide_indicator {
     0% {
-        transform: translate(-6rem, -20%);
-        -webkit-transform: translate(-6rem, -20%);
-        -moz-transform: translate(-6rem, -20%);
-        -ms-transform: translate(-6rem, -20%);
-        -o-transform: translate(-6rem, -20%);
+        transform: translate(0, -20%);
+        -webkit-transform: translate(0, -20%);
+        -moz-transform: translate(0, -20%);
+        -ms-transform: translate(0, -20%);
+        -o-transform: translate(0, -20%);
         opacity: 0;
     }
 
-    20% {
-        transform: translate(-6rem, -20%);
-        -webkit-transform: translate(-6rem, -20%);
-        -moz-transform: translate(-6rem, -20%);
-        -ms-transform: translate(-6rem, -20%);
-        -o-transform: translate(-6rem, -20%);
-        opacity: 1;
+    30% {
+        transform: translate(0, -20%);
+        -webkit-transform: translate(0, -20%);
+        -moz-transform: translate(0, -20%);
+        -ms-transform: translate(0, -20%);
+        -o-transform: translate(0, -20%);
+        opacity: 0;
     }
 
     50% {
-        transform: translate(6rem, -20%);
-        -webkit-transform: translate(6rem, -20%);
-        -moz-transform: translate(6rem, -20%);
-        -ms-transform: translate(6rem, -20%);
-        -o-transform: translate(6rem, -20%);
+        transform: translate(0, -20%);
+        -webkit-transform: translate(0, -20%);
+        -moz-transform: translate(0, -20%);
+        -ms-transform: translate(0, -20%);
+        -o-transform: translate(0, -20%);
         opacity: 1;
     }
 
-    75% {
-        transform: translate(6rem, -20%);
-        -webkit-transform: translate(6rem, -20%);
-        -moz-transform: translate(6rem, -20%);
-        -ms-transform: translate(6rem, -20%);
-        -o-transform: translate(6rem, -20%);
-        opacity: 0;
+    80% {
+        transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -webkit-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -moz-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -ms-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -o-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        opacity: 1;
     }
 
     100% {
-        transform: translate(6rem, -20%);
-        -webkit-transform: translate(6rem, -20%);
-        -moz-transform: translate(6rem, -20%);
-        -ms-transform: translate(6rem, -20%);
-        -o-transform: translate(6rem, -20%);
+        transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -webkit-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -moz-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -ms-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
+        -o-transform: translate(calc(clamp(10rem, 75vw, 40rem) / 1.3), -20%);
         opacity: 0;
     }
 }
@@ -672,9 +679,9 @@ ul, ul li {
 
 
 .progress {
-    width: clamp(15rem, 77vw, 81rem);
+    width: clamp(15rem, 88vw, 81rem);
     height: 0.7rem;
-    z-index: 3;
+    z-index: 4;
     background-color: #181818;
     border-radius: 0.4rem;
     position: sticky;
@@ -806,11 +813,16 @@ form fieldset:not(.visible) {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    transform: translateX(1rem);
 }
 
-form fieldset.visible {
+.quiz_ctnr form > .ctnr fieldset.visible {
     transform: translateX(0);
+    position: relative;
+    max-height: 1000000rem;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
 }
 
 
@@ -850,10 +862,19 @@ form fieldset.visible {
     }
 
     .statement .answer .range_indicator {
-        position: relative;
+        position: absolute;
         transform: unset;
         transition: color 0.2s ease;
         width: 9rem;
+        bottom: unset;
+    }
+
+    .statement .answer .range_indicator:first-of-type {
+        transform: translateX(calc(-100% - 1rem));
+    }
+
+    .statement .answer .range_indicator:last-of-type {
+        transform: translateX(calc(100% + 1rem));
     }
 
     .quiz_ctnr fieldset hr {
