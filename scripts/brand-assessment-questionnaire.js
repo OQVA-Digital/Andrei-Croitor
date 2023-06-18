@@ -198,6 +198,8 @@ formFieldsets[formPosition].classList.add('visible')
 
 const lastFieldPos = formFieldsets.length - 1
 
+const quizCtnrDistance = window.scrollY + document.querySelector('.quiz_ctnr').getBoundingClientRect().top
+
 function checkFieldsets(direction) {
     if (direction == 'forwards') {
         if (!formFieldsets[lastFieldPos].classList.contains('visible')) {
@@ -205,6 +207,8 @@ function checkFieldsets(direction) {
             formFieldsets[formPosition].classList.remove('visible');
             formPosition++;
             formFieldsets[formPosition].classList.add('visible');
+
+            window.scrollTo(0, quizCtnrDistance)
 
             if (formPosition === lastFieldPos) {
                 nextBt.classList.add('disabled');
