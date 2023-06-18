@@ -44,9 +44,6 @@ function vibrate() {
 }
 
 
-let randomAudioNo;
-
-
 function checkProgressBar() {
     if (allFilled == false) {
         totalFilled = document.querySelectorAll('.answer input[type="range"]:not([class="unset"])').length
@@ -148,6 +145,17 @@ function calculateScore() {
     }
 }
 
+
+let randomAudioNo;
+
+let snap01 = new Audio(`../assets/sfx/snap01.mp3`)
+let snap02 = new Audio(`../assets/sfx/snap02.mp3`)
+let snap03 = new Audio(`../assets/sfx/snap03.mp3`)
+let snap04 = new Audio(`../assets/sfx/snap04.mp3`)
+let snap05 = new Audio(`../assets/sfx/snap05.mp3`)
+let snap06 = new Audio(`../assets/sfx/snap06.mp3`)
+let snap07 = new Audio(`../assets/sfx/snap07.mp3`)
+
 function updateThumb(event) {
     const element = event.target;
     element.classList.remove('unset');
@@ -156,7 +164,22 @@ function updateThumb(event) {
     checkProgressBar()
 
     randomAudioNo = Math.round(Math.random() * 6 + 1)
-    new Audio(`../assets/sfx/snap0${randomAudioNo}.mp3`).play()
+    if (randomAudioNo == 1) {
+        snap01.play()
+    } else if (randomAudioNo == 2) {
+        snap02.play()
+    } else if (randomAudioNo == 3) {
+        snap03.play()
+    } else if (randomAudioNo == 4) {
+        snap04.play()
+    } else if (randomAudioNo == 5) {
+        snap05.play()
+    } else if (randomAudioNo == 6) {
+        snap06.play()
+    } else if (randomAudioNo == 7) {
+        snap07.play()
+    }
+    // new Audio(`../assets/sfx/snap0${randomAudioNo}.mp3`).play()
 
     vibrate()
 }
