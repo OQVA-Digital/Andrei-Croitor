@@ -47,7 +47,7 @@ h1 strong {
 }
 
 .intro h2 {
-    font-size: clamp(1.4rem, 4.2vmin, 2.1rem);
+    font-size: clamp(1.4rem, 3.9vmin, 2.1rem);
     line-height: 1.45;
     font-weight: 300;
     max-width: 93rem;
