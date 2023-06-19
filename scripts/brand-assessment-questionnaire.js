@@ -87,6 +87,10 @@ for (i = 0; i < answers.length; i++) {
         updateThumb(event)
         iosPolyfill(event)
     });
+
+    if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
+        answers[i].addEventListener("touchend", iosPolyfill, { passive: true });
+    }
 }
 
 function iosPolyfill(event) {
@@ -106,10 +110,6 @@ function iosPolyfill(event) {
         ind = segmentArr.sort((a, b) => Math.abs(val - a) - Math.abs(val - b))[0];
 
     event.target.value = segCopy.indexOf(ind) + 1;
-
-    if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
-        event.target.addEventListener("touchend", iosPolyfill, { passive: true });
-    }
 }
 
 
