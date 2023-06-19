@@ -208,7 +208,7 @@ function checkFieldsets(direction) {
             formPosition++;
             formFieldsets[formPosition].classList.add('visible');
 
-            window.scrollTo(0, quizCtnrDistance)
+            window.scrollTo(0, quizCtnrDistance - (window.innerHeight / 10))
 
             if (formPosition === lastFieldPos) {
                 nextBt.classList.add('disabled');
