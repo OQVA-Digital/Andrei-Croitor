@@ -75,15 +75,45 @@ for (i = 0; i < answers.length; i++) {
         document.querySelector('.score .total').innerHTML = '/ ' + maxScore
     }
 
-    answers[i].addEventListener("input", (event) => {
-        updateThumb(event)
-        resultCtnr.classList.add('hidden');
-        resultCtnr.style.maxHeight = '0'
-    });
+    // answers[i].addEventListener("input", (event) => {
+    //     updateThumb(event)
+    //     resultCtnr.classList.add('hidden');
+    //     resultCtnr.style.maxHeight = '0'
+    // });
 
-    answers[i].addEventListener("mousedown", updateThumb);
-    answers[i].addEventListener("touchstart", updateThumb);
+    // answers[i].addEventListener("mousedown", updateThumb);
+
+    answers[i].addEventListener("touchstart", (event) => {
+        updateThumb(event)
+        iosPolyfill(event)
+    });
 }
+
+function iosPolyfill(event) {
+    var val = (event.pageX - event.target.getBoundingClientRect().left) /
+        (event.target.getBoundingClientRect().right - event.target.getBoundingClientRect().left),
+        max = event.target.getAttribute("max"),
+        segment = 1 / (max - 1),
+        segmentArr = [];
+
+    max++;
+
+    for (var i = 0; i < max; i++) {
+        segmentArr.push(segment * i);
+    }
+
+    var segCopy = segmentArr.slice(),
+        ind = segmentArr.sort((a, b) => Math.abs(val - a) - Math.abs(val - b))[0];
+
+    event.target.value = segCopy.indexOf(ind) + 1;
+
+    if (!!navigator.platform.match(/iPhone|iPod|iPad/)) {
+        event.target.addEventListener("touchend", iosPolyfill, { passive: true });
+    }
+}
+
+
+
 
 progressRelative.innerHTML = relativeFilled;
 progressTotal.innerHTML = totalStatements;
