@@ -75,13 +75,13 @@ for (i = 0; i < answers.length; i++) {
         document.querySelector('.score .total').innerHTML = '/ ' + maxScore
     }
 
-    // answers[i].addEventListener("input", (event) => {
-    //     updateThumb(event)
-    //     resultCtnr.classList.add('hidden');
-    //     resultCtnr.style.maxHeight = '0'
-    // });
+    answers[i].addEventListener("input", (event) => {
+        updateThumb(event)
+        resultCtnr.classList.add('hidden');
+        resultCtnr.style.maxHeight = '0'
+    });
 
-    // answers[i].addEventListener("mousedown", updateThumb);
+    answers[i].addEventListener("mousedown", updateThumb);
 
     answers[i].addEventListener("touchstart", (event) => {
         updateThumb(event)
