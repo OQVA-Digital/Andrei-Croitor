@@ -94,23 +94,40 @@ for (i = 0; i < answers.length; i++) {
 }
 
 function iosPolyfill(event) {
-    var val = (event.pageX - event.target.getBoundingClientRect().left) /
-        (event.target.getBoundingClientRect().right - event.target.getBoundingClientRect().left),
-        max = event.target.getAttribute("max"),
-        segment = 1 / (max - 1),
-        segmentArr = [];
+    let initialValue = event.target.value;
+    let inputWidth = event.target.offsetWidth;
 
-    max++;
+    // Add a touchstart event listener to the range input
+    event.target.addEventListener('touchstart', handleTouchStart, { passive: true });
 
-    for (var i = 0; i < max; i++) {
-        segmentArr.push(segment * i);
+    // Add a touchmove event listener to the range input
+    event.target.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    // Handle the touchstart event
+    function handleTouchStart(event) {
+        // Update the initial value and the width of the range input
+        initialValue = event.target.value;
+        inputWidth = event.target.offsetWidth;
     }
 
-    var segCopy = segmentArr.slice(),
-        ind = segmentArr.sort((a, b) => Math.abs(val - a) - Math.abs(val - b))[0];
+    // Handle the touchmove event
+    function handleTouchMove(event) {
+        // Prevent the default behavior of touch events
 
-    event.target.value = segCopy.indexOf(ind) + 1;
+        // Calculate the new value and the position of the thumb based on the touch position
+        const touch = event.touches[0];
+        const touchX = touch.clientX - event.target.getBoundingClientRect().left;
+        const newValue = Math.round((touchX / inputWidth) * (event.target.max - event.target.min) + event.target.min);
+
+        // Update the value and the position of the thumb
+        event.target.value = newValue;
+        event.target.style.setProperty('--thumb-position', (newValue - event.target.min) / (event.target.max - event.target.min) * 100 + '%');
+
+        // Trigger the input event manually to notify any event listeners
+        event.target.dispatchEvent(new Event('input'));
+    }
 }
+
 
 
 
@@ -185,6 +202,14 @@ let snap04 = new Audio(`../assets/sfx/snap04.mp3`)
 let snap05 = new Audio(`../assets/sfx/snap05.mp3`)
 let snap06 = new Audio(`../assets/sfx/snap06.mp3`)
 let snap07 = new Audio(`../assets/sfx/snap07.mp3`)
+
+snap01.volume = 0.6;
+snap02.volume = 0.6;
+snap03.volume = 0.6;
+snap04.volume = 0.6;
+snap05.volume = 0.6;
+snap06.volume = 0.6;
+snap07.volume = 0.6;
 
 function updateThumb(event) {
     const element = event.target;

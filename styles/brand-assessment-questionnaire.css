@@ -155,7 +155,7 @@ input:focus-visible {
 }
 
 input[type="range"]:not(.unset)::-webkit-slider-thumb {
-    border-color: transparent;
+    border-color: var(--c2a);
 }
 
 input[type="range"][value='1']:not(.unset)::-webkit-slider-thumb {
@@ -285,10 +285,10 @@ input[type="range"]::-ms-thumb:hover {
 
 input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
-    background: var(--dark);
+    background: #181818;
     padding: 0.7rem 3rem;
     height: 4.5rem;
-    border: 0.1rem solid #333;
+    border: 0.1rem solid transparent;
     border-radius: 3rem;
     transition: border-color 0.2s ease, background-color 0.2s ease;
     cursor: ew-resize;
@@ -298,6 +298,8 @@ input[type="range"]::-webkit-slider-runnable-track {
     background-repeat-y: no-repeat;
     background-repeat: repeat no-repeat;
     box-sizing: border-box;
+    color: var(--dark);
+    transition: border-color 0.3s e;
 }
 
 input[type="range"]::-moz-range-track {
@@ -906,7 +908,7 @@ form fieldset:not(.visible) {
     }
 
     input[type="range"]::-webkit-slider-runnable-track {
-        border: 0.1rem solid #1D1D1D;
+        /* border: 0.1rem solid #1D1D1D; */
     }
 
     .progress {
