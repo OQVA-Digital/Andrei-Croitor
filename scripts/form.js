@@ -30,8 +30,19 @@ document.querySelector("form").addEventListener("submit", handleSubmit);
 
 const formBt = document.querySelector('form button[type="submit"]')
 
+const formInputs = document.querySelectorAll('.contact_form input')
+
 function success() {
   formBt.innerHTML = 'Successfully sent. Thanks!'
+  formBt.classList.add('disabled')
+
+  setTimeout(() => {
+    formBt.classList.remove('disabled')
+
+    for (i = 0; i < formInputs.length; i++) {
+      formInputs[i].value = ''
+    }
+  }, 3000);
 }
 
 function error() {

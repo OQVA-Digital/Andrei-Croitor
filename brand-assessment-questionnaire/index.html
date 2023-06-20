@@ -19,6 +19,9 @@
     <script src="../scripts/brand-assessment-questionnaire.js" defer></script>
     <script src="../scripts/stroke-anim.js" defer></script>
     <script src="../scripts/form.js" defer></script>
+    <!-- <script src="../scripts/jquery-3.7.0.min.js"></script> -->
+    <script src="../scripts/rosette-chart.js" defer></script>
+    <script src="../scripts/charts.js"></script>
 
     <link rel="prefetch" href="../assets/sfx/snap01.mp3" as="audio/mpeg">
     <link rel="prefetch" href="../assets/sfx/snap02.mp3" as="audio/mpeg">
@@ -663,10 +666,10 @@
 
 
 
-                <button onclick="calculateScore()" type="button" aria-label="Submit button" class="submit cta">Find out your score</button>
+                <button onclick="calculateScore()" type="button" aria-label="submit button" class="reveal cta">Find out your score</button>
 
 
-                <div class="result hidden">
+                <div class="result">
                     <div class="ctnr">
                         <h2>Your score:
                             <span class="score">
@@ -683,7 +686,7 @@
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, quis quidem aspernatur itaque impedit deserunt sit cum blanditiis qui. Facilis perferendis deleniti quasi harum facere similique impedit maxime non hic?</p>
                         </div> -->
         
-                        <div class="contact_info">
+                        <div class="contact_form">
                             <div class="flex">
                                 <label>Name: <input type="text" name="name"/></label>
         
@@ -704,6 +707,8 @@
                 </div>
             </form>
         </section>
+
+        <canvas id="chart"></canvas>
     </main>
 
     <span class="warning require_fields">Please, answer all the fields.</span>

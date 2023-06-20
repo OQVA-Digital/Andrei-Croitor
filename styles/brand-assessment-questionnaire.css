@@ -11,7 +11,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-bottom: 20rem;
+    padding-bottom: 15rem;
 }
 
 section.intro {
@@ -362,11 +362,11 @@ input[type="range"]::-moz-range-track:active {}
     color: var(--c1);
 }
 
-.quiz_ctnr form > .ctnr fieldset:not(:first-of-type) {
+.quiz_ctnr form>.ctnr fieldset:not(:first-of-type) {
     /* margin-top: clamp(10rem, 24vw, 12rem); */
 }
 
-.quiz_ctnr form > .ctnr fieldset {
+.quiz_ctnr form>.ctnr fieldset {
     border: unset;
     padding: clamp(2rem, 9vmin, 6rem) clamp(2rem, 5vmin, 5rem) clamp(2rem, 22vmin, 13rem);
     background-color: #1119;
@@ -443,7 +443,7 @@ input[type="range"]::-moz-range-track:active {}
     margin-inline: auto;
 }
 
-.quiz_ctnr .statement .answer input[type="range"]:not([class="unset"]) + .slide_indicator {
+.quiz_ctnr .statement .answer input[type="range"]:not([class="unset"])+.slide_indicator {
     animation: unset;
     display: none;
 }
@@ -551,12 +551,19 @@ ul, ul li {
     opacity: 0.3;
 }
 
-.submit {
-    padding: 1.2rem 3.2rem;
+.reveal.cta {
+    padding: 1.5rem 2rem;
     color: var(--light);
-    margin: 8rem 0 12rem;
+    margin: 3rem 0 12rem;
     /* font-size: clamp(1.5rem, 5vw, 2rem); */
     cursor: pointer;
+    position: sticky;
+    width: clamp(10rem, 85vw, 29rem);
+}
+
+.reveal.cta.stick {
+    position: sticky;
+    bottom: clamp(2rem, 6vmin, 3.5rem);
 }
 
 
@@ -565,10 +572,7 @@ ul, ul li {
 
 
 .result.hidden {
-    /* display: none; */
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
+    display: none;
 }
 
 .result {
@@ -580,13 +584,11 @@ ul, ul li {
     backdrop-filter: blur(0.3rem);
     /* max-height: 120vh;
     overflow: auto; */
-    transition: max-height 1s ease, opacity 0.6s ease, visibility 0.6s ease;
     opacity: 1;
-    overflow: hidden;
-    visibility: visible;
+    position: relative;
 }
 
-.result > .ctnr {
+.result>.ctnr {
     margin: clamp(1.6rem, 8vw, 3.5rem) clamp(1.6rem, 6vw, 6rem) clamp(1.6rem, 12vw, 6.5rem);
 }
 
@@ -629,7 +631,7 @@ ul, ul li {
 
 .result .txt {
     margin-bottom: 2rem;
-    font-size: clamp(1rem, 4vmin, 2.1rem);
+    font-size: clamp(1rem, 4vmin, 2rem);
     line-height: 1.55;
     text-align: center;
 }
@@ -654,7 +656,13 @@ ul, ul li {
     cursor: pointer;
 }
 
-.contact_info {
+.result .cta.disabled {
+    opacity: 0.6;
+    cursor: none;
+    pointer-events: none;
+}
+
+.contact_form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -662,16 +670,16 @@ ul, ul li {
     margin-top: 4rem;
 }
 
-.contact_info .flex {
+.contact_form .flex {
     gap: 2rem;
     flex-flow: row wrap;
 }
 
-.contact_info .flex input {
+.contact_form .flex input {
     min-width: 15rem;
 }
 
-.contact_info label {
+.contact_form label {
     font-size: 1.6rem;
     display: flex;
     flex-direction: column;
@@ -680,7 +688,7 @@ ul, ul li {
     color: var(--grey);
 }
 
-.contact_info input {
+.contact_form input {
     border-radius: 0.3rem;
     padding: 1rem 1.2rem;
     background-color: #1D1D1D;
@@ -690,12 +698,12 @@ ul, ul li {
     transition: background-color 0.3s ease;
 }
 
-.contact_info input:hover {
+.contact_form input:hover {
     background-color: #1f1f1f;
     transition: 0s ease;
 }
 
-.contact_info button[type='submit'] {}
+.contact_form button[type='submit'] {}
 
 
 
@@ -798,7 +806,7 @@ ul, ul li {
 
 .fieldset_controls .next,
 .fieldset_controls .back {
-    padding: clamp(1rem, 5vmin, 1.5rem) clamp(2rem, 8vmin, 3.5rem);
+    padding: clamp(1rem, 5vmin, 1.3rem) clamp(2rem, 8.1vmin, 3.5rem);
     background-color: var(--dark);
     color: var(--light);
     border-radius: 0.3rem;
@@ -838,7 +846,7 @@ form fieldset:not(.visible) {
     position: absolute;
 }
 
-.quiz_ctnr form > .ctnr fieldset.visible {
+.quiz_ctnr form>.ctnr fieldset.visible {
     transform: translateX(0);
     position: relative;
     max-height: 1000000rem;
@@ -847,6 +855,69 @@ form fieldset:not(.visible) {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
 }
+
+#chart {
+    width: clamp(10rem, 85vw, 90rem) !important;
+    height: clamp(10rem, 85vw, 90rem) !important;
+    margin: 5rem auto 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#targetChart {
+    /*   transform: scale(0.5) */
+    transition: 1s all;
+    max-width: 700px;
+}
+
+.rotator {
+    margin-bottom: 5rem;
+}
+
+.result-action {
+    margin-top: 5px;
+}
+
+.shadow {
+    -webkit-filter: drop-shadow(3px 2px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+}
+
+
+
+
+
+
+
+
+
 
 
 

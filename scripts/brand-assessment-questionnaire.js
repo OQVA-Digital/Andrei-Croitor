@@ -43,6 +43,7 @@ function vibrate() {
     window.navigator.vibrate(60);
 }
 
+const revealBt = document.querySelector('.reveal.cta')
 
 function checkProgressBar() {
     if (allFilled == false) {
@@ -61,6 +62,8 @@ function checkProgressBar() {
 
     if (relativeFilled == 100) {
         progressBar.style.backgroundColor = 'var(--c2a)'
+
+        revealBt.classList.add('stick')
     }
 }
 
@@ -78,7 +81,6 @@ for (i = 0; i < answers.length; i++) {
     answers[i].addEventListener("input", (event) => {
         updateThumb(event)
         resultCtnr.classList.add('hidden');
-        resultCtnr.style.maxHeight = '0'
     });
 
     answers[i].addEventListener("mousedown", updateThumb);
@@ -143,14 +145,13 @@ function calculateScore() {
         }
 
         resultCtnr.classList.remove('hidden')
-        resultCtnr.style.maxHeight = resultCtnr.scrollHeight + 200 + 'px'
-        resultCtnrOffset = resultCtnr.offsetTop
+        resultCtnrOffset = resultCtnr.offsetTop - 100
 
         ScoreDisplay.innerHTML = score
 
         setTimeout(() => {
-            window.scrollTo(0, window.scrollY + (window.innerHeight / 2))
-        }, 400);
+            window.scrollTo(0, resultCtnrOffset)
+        }, 100);
 
         if (score < 60) {
             resultText.innerHTML = "<p>Your brand is in the early stages of developing its consciousness. <b>Don't worry - with focus and effort, you can build a strong brand consciousness.</b></p>"
