@@ -9,52 +9,52 @@ var chart = new Chart(ctx, {
     type: 'radar',
     data: {
         labels: [
-            'Conscious Contrast',
-            'Compression of Sensation',
-            'Identity Tools',
-            'Evoke Sensation',
-            'Encourage Consciousness',
-            'Identify Common Individuals',
-            'Create Common Events',
-            'Associate with Common Locations',
-            'Provide Common Sacrifices',
-            'Establish a Common Enemy'
+            'CC',
+            'CS',
+            'IT',
+            'ES',
+            'EC',
+            'ICI',
+            'CCE',
+            'ACL',
+            'PCS',
+            'ECE'
         ],
         datasets: [{
             label: 'Your Brand Profile',
             data: [consciousContrast, 5, 6, 6, 4, 7, 7, 8, 5, 9],
             fill: true,
             clip: 0,
-            backgroundColor: '#33a1fd88',
-            borderColor: '#33a1fd',
+            backgroundColor: '#ffb7ab88',
+            borderColor: '#ffb7ab',
             borderWidth: 0,
-            pointBackgroundColor: '#33a1fd',
+            pointBackgroundColor: '#ffb7ab',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: '#33a1fd',
+            pointHoverBorderColor: '#ffb7ab',
         }]
     },
     options: {
         plugins: {
             subtitle: {
-                // display: false,
+                display: false,
             },
             tooltip: {
                 enabled: false,
             },
             legend: {
-                display: false,
-                position: 'bottom',
-                align: 'start',
+                display: true,
+                position: 'top',
+                align: 'middle',
             }
         },
         scales: {
             r: {
                 angleLines: {
                     display: true,
-                    color: '#181818'
+                    color: '#1c1c1c'
                 },
-                min: 0,
+                min: 3,
                 max: 15,
                 ticks: {
                     // display: false
@@ -65,9 +65,11 @@ var chart = new Chart(ctx, {
                     display: true,
                     centerPointLabels: false,
                     font: {
-                        size: 16
+                        size: 16,
+                        family: 'Brooklyn, sans-serif'
                     },
-                    pointStyleWidth: 5,
+                    pointStyleWidth: 0,
+                    padding: 10,
                 },
                 grid: {
                     color: '#ffffff11',
@@ -81,6 +83,7 @@ var chart = new Chart(ctx, {
             pointBackgroundColor: '#ffffff00'
         }
     },
+    maintainAspectRatio: false,
 });
 
 let sum;
@@ -102,7 +105,7 @@ function getFieldsetValues() {
             chart.data.datasets[0].data[i] = sum
             chart.update(); // Update the chart to reflect the new data
 
-            console.log(chart.data.datasets[0].data[i])
+            // console.log(chart.data.datasets[0].data[i])
 
             sum = 0
         }
@@ -110,6 +113,10 @@ function getFieldsetValues() {
         updateChart(sum)
 
         // console.log('Inner sum for fieldset ' + (i + 1) + ': ' + sum);
+
+
+        chart.canvas.parentNode.style.height = 'clamp(10rem, 75vw, 45rem)';
+        chart.canvas.parentNode.style.width = 'clamp(10rem, 75vw, 45rem)';
     }
 }
 

@@ -270,7 +270,7 @@ main>.ctnr {
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    font-size: clamp(1.4rem, 5vw, 1.85rem);
+    font-size: clamp(1.4rem, 4.4vw, 1.85rem);
     padding: clamp(0.9rem, 1vmin, 1.4rem) clamp(1.5rem, 5vmin, 3rem);
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;

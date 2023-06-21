@@ -576,7 +576,7 @@ ul, ul li {
 }
 
 .result {
-    width: clamp(15rem, 88vw, 74rem);
+    width: clamp(15rem, 88vw, 93rem);
     box-sizing: border-box;
     background-color: #18181888;
     border-radius: 1.2rem;
@@ -661,7 +661,8 @@ ul, ul li {
     flex-direction: column;
     gap: 2rem;
     border: unset;
-    margin-top: 4rem;
+    max-width: 60rem;
+    margin: 4rem auto 0;
 }
 
 .contact_form button {}
@@ -853,10 +854,63 @@ form fieldset:not(.visible) {
 }
 
 #chart {
-    width: clamp(10rem, 85vw, 90rem) !important;
-    height: clamp(10rem, 85vw, 90rem) !important;
-    margin: 0 auto;
+    /* width: clamp(10rem, 85vw, 70rem) !important; */
+    /* height: clamp(10rem, 85vw, 70rem) !important; */
+    /* margin: 10rem 0 4rem; */
     display: block;
+    object-fit: cover;
+    /* max-width: 50%; */
+    /* position: fixed; */
+    /* display: none; */
+}
+
+.chart_ctnr {
+    margin: 5rem auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.chart_ctnr .subtitles {
+    font-size: 1.1rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem clamp(1rem, 2vw, 2rem);
+    /* text-align: center; */
+    align-items: center;
+    /* padding-bottom: 10rem; */
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.chart_ctnr .subtitles li {
+    max-width: 1vw;
+    text-transform: uppercase;
+    min-width: clamp(9rem, 35vmin, 14rem);
+    position: relative;
+}
+
+.chart_ctnr .subtitles li::before {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    border-top: 0.1rem solid var(--c1);
+    width: 1rem;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.chart_ctnr .subtitles b {
+    color: var(--grey);
+    display: block;
+    /* font-size: 0.9em; */
+    font-weight: 900;
 }
 
 
