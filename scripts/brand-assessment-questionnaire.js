@@ -24,9 +24,6 @@ const ScoreDisplay = document.querySelector('.score .current')
 
 const fillingWarning = document.querySelector('.warning.require_fields')
 
-
-
-
 function vibrate() {
     if (!window) {
         return;
@@ -52,8 +49,6 @@ function checkProgressBar() {
         relativeFilled = Math.floor((totalFilled * 100) / totalStatements)
 
         progressBar.style.width = relativeFilled + "%"
-
-        // console.log(relativeFilled)
 
         progressRelative.innerHTML = totalFilled;
 
@@ -95,6 +90,9 @@ for (i = 0; i < answers.length; i++) {
     }
 }
 
+
+
+
 function iosPolyfill(event) {
     var val = (event.pageX - event.target.getBoundingClientRect().left) /
         (event.target.getBoundingClientRect().right - event.target.getBoundingClientRect().left),
@@ -113,6 +111,26 @@ function iosPolyfill(event) {
 
     event.target.value = segCopy.indexOf(ind) + 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,6 +195,23 @@ function calculateScore() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let randomAudioNo;
 
 let snap01 = new Audio(`../assets/sfx/snap01.mp3`)
@@ -221,7 +256,21 @@ function updateThumb(event) {
     // new Audio(`../assets/sfx/snap0${randomAudioNo}.mp3`).play()
 
     vibrate()
+
+    getFieldsetValues()
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // FORMFIELDS TOGGLING
@@ -281,3 +330,12 @@ for (i = 0; i < firstFields.length; i++) {
         }
     })
 }
+
+
+
+
+
+
+
+
+

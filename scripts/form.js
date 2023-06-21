@@ -30,7 +30,7 @@ document.querySelector("form").addEventListener("submit", handleSubmit);
 
 const formBt = document.querySelector('form button[type="submit"]')
 
-const formInputs = document.querySelectorAll('.contact_form input')
+const formInputs = document.querySelectorAll('.contact_form input, .contact_form textarea')
 
 function success() {
   formBt.innerHTML = 'Successfully sent. Thanks!'

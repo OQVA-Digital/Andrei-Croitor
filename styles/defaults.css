@@ -171,12 +171,12 @@ main section {
     box-sizing: border-box;
 }
 
-body > .flex {
+body>.flex {
     display: flex;
     flex-direction: column;
 }
 
-main > .ctnr {
+main>.ctnr {
     flex: 1;
 }
 
@@ -355,6 +355,12 @@ main > .ctnr {
     visibility: visible;
 }
 
+.contact_form button[type="submit"].disabled {
+    opacity: 0.6;
+    cursor: none;
+    pointer-events: none;
+}
+
 
 
 
@@ -376,7 +382,7 @@ main > .ctnr {
 
 
 @media screen and (min-width: 650px) {
-    body > .flex {
+    body>.flex {
         flex-direction: row-reverse;
     }
 

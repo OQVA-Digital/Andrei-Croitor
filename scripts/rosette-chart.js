@@ -1,7 +1,11 @@
 
 const ctx = document.getElementById('chart');
 
-new Chart(ctx, {
+let consciousContrast = 7
+
+
+
+var chart = new Chart(ctx, {
     type: 'radar',
     data: {
         labels: [
@@ -17,13 +21,13 @@ new Chart(ctx, {
             'Establish a Common Enemy'
         ],
         datasets: [{
-            // label: 'My First Dataset',
-            data: [7, 5, 3, 6, 4, 7, 5, 8, 5, 9],
+            label: 'Your Brand Profile',
+            data: [consciousContrast, 5, 6, 6, 4, 7, 7, 8, 5, 9],
             fill: true,
             clip: 0,
-            backgroundColor: '#33a1fd55',
+            backgroundColor: '#33a1fd88',
             borderColor: '#33a1fd',
-            borderWidth: 0.6,
+            borderWidth: 0,
             pointBackgroundColor: '#33a1fd',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
@@ -32,32 +36,38 @@ new Chart(ctx, {
     },
     options: {
         plugins: {
-            legend: {
-                display: false,
-            },
             subtitle: {
-                display: false,
+                // display: false,
             },
             tooltip: {
                 enabled: false,
+            },
+            legend: {
+                display: false,
+                position: 'bottom',
+                align: 'start',
             }
         },
         scales: {
-            y: {
-                beginAtZero: true
-            },
             r: {
                 angleLines: {
-                    display: false
+                    display: true,
+                    color: '#181818'
                 },
-                min: 3,
-                max: 9,
+                min: 0,
+                max: 15,
                 ticks: {
                     // display: false
                     backdropColor: 'transparent'
                 },
                 pointLabels: {
-                    color: 'white'
+                    color: 'white',
+                    display: true,
+                    centerPointLabels: false,
+                    font: {
+                        size: 16
+                    },
+                    pointStyleWidth: 5,
                 },
                 grid: {
                     color: '#ffffff11',
@@ -73,14 +83,34 @@ new Chart(ctx, {
     },
 });
 
-// const config = {
-//     type: 'radar',
-//     data: data,
-//     options: {
-//         elements: {
-//             line: {
-//                 borderWidth: 1
-//             }
-//         }
-//     },
-// };
+let sum;
+
+function getFieldsetValues() {
+    for (i = 0; i < formFieldsets.length; i++) {
+        sum = 0;
+
+        var innerAnswers = formFieldsets[i].querySelectorAll('input[type="range"]')
+
+        for (var j = 0; j < innerAnswers.length; j++) {
+            var value = parseInt(innerAnswers[j].value); // Parse the input value as an integer
+            sum += value;
+        }
+
+        function updateChart(sum) {
+            // console.log(chart.data.datasets[0].data.length)
+            // console.log(w)
+            chart.data.datasets[0].data[i] = sum
+            chart.update(); // Update the chart to reflect the new data
+
+            console.log(chart.data.datasets[0].data[i])
+
+            sum = 0
+        }
+
+        updateChart(sum)
+
+        // console.log('Inner sum for fieldset ' + (i + 1) + ': ' + sum);
+    }
+}
+
+getFieldsetValues()

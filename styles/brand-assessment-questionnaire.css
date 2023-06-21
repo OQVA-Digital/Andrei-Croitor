@@ -515,7 +515,7 @@ input[type="range"]::-moz-range-track:active {}
     position: absolute;
     bottom: 0;
     transform: translateY(2.5rem);
-    font-size: clamp(1rem, 3vmin, 1.3rem);
+    font-size: clamp(1rem, 3vmin, 1.4rem);
     user-select: none;
     text-transform: uppercase;
     letter-spacing: 0.25rem;
@@ -656,12 +656,6 @@ ul, ul li {
     cursor: pointer;
 }
 
-.result .cta.disabled {
-    opacity: 0.6;
-    cursor: none;
-    pointer-events: none;
-}
-
 .contact_form {
     display: flex;
     flex-direction: column;
@@ -669,6 +663,8 @@ ul, ul li {
     border: unset;
     margin-top: 4rem;
 }
+
+.contact_form button {}
 
 .contact_form .flex {
     gap: 2rem;
@@ -859,7 +855,8 @@ form fieldset:not(.visible) {
 #chart {
     width: clamp(10rem, 85vw, 90rem) !important;
     height: clamp(10rem, 85vw, 90rem) !important;
-    margin: 5rem auto 5rem;
+    margin: 0 auto;
+    display: block;
 }
 
 
