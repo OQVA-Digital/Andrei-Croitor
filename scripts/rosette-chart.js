@@ -1,8 +1,6 @@
 
 const ctx = document.getElementById('chart');
 
-let consciousContrast = 7
-
 
 
 var chart = new Chart(ctx, {
@@ -21,17 +19,67 @@ var chart = new Chart(ctx, {
             'ECE'
         ],
         datasets: [{
-            label: 'Your Brand Profile',
-            data: [consciousContrast, 5, 6, 6, 4, 7, 7, 8, 5, 9],
+            label: "You",
+            data: [7, 5, 6, 6, 4, 7, 7, 8, 5, 9],
             fill: true,
             clip: 0,
             backgroundColor: '#ffb7ab88',
             borderColor: '#ffb7ab',
-            borderWidth: 0,
+            borderWidth: 2,
             pointBackgroundColor: '#ffb7ab',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
             pointHoverBorderColor: '#ffb7ab',
+        }, {
+            label: "Apple",
+            data: [15, 13, 14, 14, 13, 12, 14, 13, 15, 10],
+            fill: true,
+            clip: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#ffffff',
+            borderWidth: 1,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: 'transparent'
+        }, {
+            label: "Nike",
+            data: [15, 14, 14, 15, 13, 15, 15, 12, 13, 12],
+            fill: true,
+            clip: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#ea553b',
+            borderWidth: 1,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: 'transparent'
+        }, {
+            label: "Red Bull",
+            data: [13, 14, 12, 15, 13, 12, 15, 9, 11, 9],
+            fill: true,
+            clip: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#1d19ac',
+            borderWidth: 1,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: 'transparent'
+        }, {
+            label: "McDonald's",
+            data: [12, 10, 8, 12, 11, 10, 13, 13, 8, 5],
+            fill: true,
+            clip: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#FFC72C',
+            borderWidth: 1,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: 'transparent'
+        }, {
+            label: "Porsche",
+            data: [15, 12, 13, 13, 12, 12, 13, 12, 13, 11],
+            fill: true,
+            clip: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#02a64d',
+            borderWidth: 1,
+            pointBackgroundColor: 'transparent',
+            pointBorderColor: 'transparent'
         }]
     },
     options: {
@@ -57,7 +105,7 @@ var chart = new Chart(ctx, {
                 min: 3,
                 max: 15,
                 ticks: {
-                    // display: false
+                    display: false,
                     backdropColor: 'transparent'
                 },
                 pointLabels: {
