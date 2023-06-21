@@ -32,7 +32,7 @@ var chart = new Chart(ctx, {
             pointHoverBorderColor: '#ffb7ab',
         }, {
             label: "Apple",
-            data: [15, 13, 14, 14, 13, 12, 14, 13, 15, 10],
+            data: [15, 14, 15, 14, 13, 12, 14, 14, 15, 15],
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
@@ -42,7 +42,7 @@ var chart = new Chart(ctx, {
             pointBorderColor: 'transparent'
         }, {
             label: "Nike",
-            data: [15, 14, 14, 15, 13, 15, 15, 12, 13, 12],
+            data: [15, 12, 14, 11, 13, 14, 11, 12, 13, 14],
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
@@ -100,7 +100,7 @@ var chart = new Chart(ctx, {
             r: {
                 angleLines: {
                     display: true,
-                    color: '#1c1c1c'
+                    color: '#333333'
                 },
                 min: 3,
                 max: 15,
@@ -120,7 +120,7 @@ var chart = new Chart(ctx, {
                     padding: 10,
                 },
                 grid: {
-                    color: '#ffffff11',
+                    color: '#ffffff00',
                     drawTicks: false,
                     circular: true,
                 }
@@ -163,8 +163,8 @@ function getFieldsetValues() {
         // console.log('Inner sum for fieldset ' + (i + 1) + ': ' + sum);
 
 
-        chart.canvas.parentNode.style.height = 'clamp(10rem, 75vw, 45rem)';
-        chart.canvas.parentNode.style.width = 'clamp(10rem, 75vw, 45rem)';
+        chart.canvas.parentNode.style.height = 'clamp(10rem, 80vw, 45rem)';
+        chart.canvas.parentNode.style.width = 'clamp(10rem, 80vw, 45rem)';
     }
 }
 
