@@ -238,10 +238,10 @@ if (urlLocation.includes('?')) {
         });
 
         // console.log(params.length)
-        for (w = 1; w < params.length; w++) {
+        for (w = 0; w < params.length; w++) {
             // console.log(w)
+            console.log(params[w + 1])
             chart.data.datasets[0].data[w] = params[w].value;
-            console.log(params[w])
             chart.update();
         }
         return params;
