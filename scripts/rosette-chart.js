@@ -36,7 +36,7 @@ var chart = new Chart(ctx, {
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
-            borderColor: '#ffffff',
+            borderColor: '#ffffff66',
             borderWidth: 1,
             pointBackgroundColor: 'transparent',
             pointBorderColor: 'transparent'
@@ -46,7 +46,7 @@ var chart = new Chart(ctx, {
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
-            borderColor: '#ea553b',
+            borderColor: '#ea553b66',
             borderWidth: 1,
             pointBackgroundColor: 'transparent',
             pointBorderColor: 'transparent'
@@ -56,7 +56,7 @@ var chart = new Chart(ctx, {
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
-            borderColor: '#1d19ac',
+            borderColor: '#1d19ac99',
             borderWidth: 1,
             pointBackgroundColor: 'transparent',
             pointBorderColor: 'transparent'
@@ -66,7 +66,7 @@ var chart = new Chart(ctx, {
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
-            borderColor: '#FFC72C',
+            borderColor: '#FFC72C66',
             borderWidth: 1,
             pointBackgroundColor: 'transparent',
             pointBorderColor: 'transparent'
@@ -76,7 +76,7 @@ var chart = new Chart(ctx, {
             fill: true,
             clip: 0,
             backgroundColor: 'transparent',
-            borderColor: '#02a64d',
+            borderColor: '#02a64d66',
             borderWidth: 1,
             pointBackgroundColor: 'transparent',
             pointBorderColor: 'transparent'
@@ -92,7 +92,7 @@ var chart = new Chart(ctx, {
             },
             legend: {
                 display: true,
-                position: 'top',
+                position: 'bottom',
                 align: 'middle',
             }
         },
