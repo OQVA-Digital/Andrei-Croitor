@@ -189,6 +189,12 @@ section>.ctnr {
     letter-spacing: 0;
 }
 
+.about_sec .content .big a {
+    font-weight: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+}
+
 .about_sec .content .big b,
 .about_sec .content .big strong {
     font-weight: 800;
