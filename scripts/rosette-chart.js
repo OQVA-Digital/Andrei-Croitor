@@ -136,6 +136,8 @@ var chart = new Chart(ctx, {
 
 let sum;
 
+const scoreHiddenInputs = document.querySelectorAll('.score_inputs input[type="hidden"]')
+
 function getFieldsetValues() {
     for (i = 0; i < formFieldsets.length; i++) {
         sum = 0;
@@ -145,23 +147,17 @@ function getFieldsetValues() {
         for (var j = 0; j < innerAnswers.length; j++) {
             var value = parseInt(innerAnswers[j].value); // Parse the input value as an integer
             sum += value;
+            scoreHiddenInputs[i].value = sum;
         }
 
         function updateChart(sum) {
-            // console.log(chart.data.datasets[0].data.length)
-            // console.log(w)
-            chart.data.datasets[0].data[i] = sum
-            chart.update(); // Update the chart to reflect the new data
+            chart.data.datasets[0].data[i] = sum;
+            chart.update();
 
-            // console.log(chart.data.datasets[0].data[i])
-
-            sum = 0
+            sum = 0;
         }
 
         updateChart(sum)
-
-        // console.log('Inner sum for fieldset ' + (i + 1) + ': ' + sum);
-
 
         chart.canvas.parentNode.style.height = 'clamp(10rem, 80vw, 45rem)';
         chart.canvas.parentNode.style.width = 'clamp(10rem, 80vw, 45rem)';

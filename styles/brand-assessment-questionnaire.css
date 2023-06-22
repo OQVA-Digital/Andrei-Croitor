@@ -665,6 +665,8 @@ ul, ul li {
     margin: 4rem auto 0;
 }
 
+.contact_form input[type='hidden'] {}
+
 .contact_form button {}
 
 .contact_form .flex {
