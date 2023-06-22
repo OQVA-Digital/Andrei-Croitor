@@ -638,6 +638,8 @@ ul, ul li {
 
 .result p {
     margin-bottom: 1rem;
+    max-width: 85%;
+    margin-inline: auto;
 }
 
 .result p b {
@@ -661,7 +663,7 @@ ul, ul li {
     flex-direction: column;
     gap: 2rem;
     border: unset;
-    max-width: 60rem;
+    max-width: clamp(10rem, 75vw, 60rem);
     margin: 4rem auto 0;
 }
 
