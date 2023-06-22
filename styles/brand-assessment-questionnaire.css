@@ -572,7 +572,7 @@ ul, ul li {
 
 
 .result.hidden {
-    display: none;
+    /* display: none; */
 }
 
 .result {
@@ -589,7 +589,7 @@ ul, ul li {
 }
 
 .result>.ctnr {
-    margin: clamp(1.6rem, 8vw, 3.5rem) clamp(1.6rem, 6vw, 6rem) clamp(1.6rem, 12vw, 6.5rem);
+    margin: clamp(1.6rem, 8vw, 3.5rem) 0 clamp(1.6rem, 12vw, 6.5rem);
 }
 
 .result h2 {
@@ -871,24 +871,28 @@ form fieldset:not(.visible) {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    gap: 2rem;
+    gap: 2rem 0rem;
     justify-content: center;
     width: 100%;
+    padding: 0 clamp(2rem, 2vw, 5rem);
+    box-sizing: border-box;
 }
 
 .chart_ctnr .subtitles {
     font-size: 1.15rem;
     display: flex;
     flex-flow: row wrap;
-    gap: 1rem clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 2rem);
     /* text-align: center; */
     align-items: center;
     /* padding-bottom: 10rem; */
     position: relative;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     line-height: 1.6;
     flex: 1;
+    max-width: 55rem;
+    width: 100%;
 }
 
 .chart_ctnr .subtitles li {

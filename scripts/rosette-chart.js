@@ -20,7 +20,7 @@ var chart = new Chart(ctx, {
         ],
         datasets: [{
             label: "You",
-            data: [7, 5, 6, 6, 4, 7, 7, 8, 5, 9],
+            data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
             fill: true,
             clip: 0,
             backgroundColor: '#ffb7ab88',
@@ -158,10 +158,108 @@ function getFieldsetValues() {
         }
 
         updateChart(sum)
-
-        chart.canvas.parentNode.style.height = 'clamp(10rem, 80vw, 45rem)';
-        chart.canvas.parentNode.style.width = 'clamp(10rem, 80vw, 45rem)';
     }
+
+    updateURL()
 }
 
-getFieldsetValues()
+// getFieldsetValues()
+
+chart.canvas.parentNode.style.height = 'clamp(10rem, 85vw, 45rem)';
+chart.canvas.parentNode.style.width = 'clamp(10rem, 85vw, 45rem)';
+
+
+
+
+
+
+
+
+
+
+
+
+function updateURLParameter(url, param, paramVal) {
+    var TheAnchor = null;
+    var newAdditionalURL = "";
+    var tempurlLocationay = url.split("?");
+    var baseURL = tempurlLocationay[0];
+    var additionalURL = tempurlLocationay[1];
+    var temp = "";
+
+    if (additionalURL) {
+        var tmpAnchor = additionalURL.split("#");
+        var TheParams = tmpAnchor[0];
+        TheAnchor = tmpAnchor[1];
+        if (TheAnchor)
+            additionalURL = TheParams;
+
+        tempurlLocationay = additionalURL.split("&");
+
+        for (var i = 0; i < tempurlLocationay.length; i++) {
+            if (tempurlLocationay[i].split('=')[0] != param) {
+                newAdditionalURL += temp + tempurlLocationay[i];
+                temp = "&";
+            }
+        }
+    }
+    else {
+        var tmpAnchor = baseURL.split("#");
+        var TheParams = tmpAnchor[0];
+        TheAnchor = tmpAnchor[1];
+
+        if (TheParams)
+            baseURL = TheParams;
+    }
+
+    if (TheAnchor)
+        paramVal += "#" + TheAnchor;
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseURL + "?" + newAdditionalURL + rows_txt;
+}
+
+var url = updateURLParameter(window.location.href, 'locId', 'newLoc');
+url = updateURLParameter(url, 'resId', 'newResId');
+
+const urlLocation = window.location.href;
+
+
+// Check if there's params
+if (urlLocation.includes('?')) {
+    console.log('params')
+    const params = [];
+
+    function updateGraphFromURL(urlLocation) {
+        const paramPairs = urlLocation.split('&');
+        paramPairs.forEach(pair => {
+            const [key, value] = pair.split('=');
+            params.push({ key, value });
+        });
+
+        // console.log(params.length)
+        for (w = 1; w < params.length; w++) {
+            // console.log(w)
+            chart.data.datasets[0].data[w] = params[w].value;
+            console.log(params[w])
+            chart.update();
+        }
+        return params;
+    }
+
+    updateGraphFromURL(urlLocation)
+
+    // console.log(updateGraphFromURL(urlLocation).length)
+
+    // console.log(updateGraphFromURL(urlLocation)[0].key);
+} else {
+    console.log('no params')
+}
+
+
+
+function updateURL() {
+    for (i = 0; i < scoreHiddenInputs.length; i++) {
+        window.history.replaceState('', '', updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value));
+    }
+}
