@@ -232,26 +232,27 @@ const urlLocation = window.location.href;
 // Check if there's params
 if (urlLocation.includes('?')) {
     console.log('params')
-    const params = [];
 
     function updateGraphFromURL(urlLocation) {
         const paramPairs = urlLocation.split('&');
+        const params = [];
+
         paramPairs.forEach(pair => {
             const [key, value] = pair.split('=');
             params.push({ key, value });
         });
 
-        // console.log(params.length)
-        for (w = 0; w < params.length; w++) {
-            // console.log(w)
-            console.log(params[w + 1])
+        for (let w = 0; w < params.length; w++) {
+            console.log(params[w]);
             chart.data.datasets[0].data[w] = params[w].value;
-            chart.update();
         }
+
+        chart.update();
         return params;
     }
 
-    updateGraphFromURL(urlLocation)
+    updateGraphFromURL(urlLocation);
+
 
     // console.log(updateGraphFromURL(urlLocation).length)
 
@@ -261,9 +262,9 @@ if (urlLocation.includes('?')) {
 }
 
 
-
 function updateURL() {
     for (i = 0; i < scoreHiddenInputs.length; i++) {
-        window.history.replaceState('', '', updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value));
+        var newURL = updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value);
+        window.history.pushState('', '', newURL);
     }
 }
