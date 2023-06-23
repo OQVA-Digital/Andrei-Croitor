@@ -212,8 +212,12 @@ function updateURLParameter(url, param, paramVal) {
             baseURL = TheParams;
     }
 
-    if (TheAnchor)
-        paramVal += "#" + TheAnchor;
+    if (TheAnchor) {
+        url = baseURL + "?" + newAdditionalURL + "#" + TheAnchor;
+    } else {
+        url = baseURL + "?" + newAdditionalURL;
+    }
+
 
     var rows_txt = temp + "" + param + "=" + paramVal;
     return baseURL + "?" + newAdditionalURL + rows_txt;
