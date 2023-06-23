@@ -229,7 +229,9 @@ var url = window.location.href;
 
 const mainEl = document.querySelector('main')
 
-const paramHideable = document.querySelectorAll('.result h2, section.intro, .questions_ctnr, .fieldset_controls, .reveal.cta, .contact_form')
+const paramHideable = document.querySelectorAll('section.intro, .questions_ctnr, .fieldset_controls, .reveal.cta, .contact_form')
+
+const scoreDisplay = document.querySelector('.result h2')
 
 function hasParams() {
     for (i = 0; i < paramHideable.length; i++) {
@@ -241,11 +243,13 @@ function hasParams() {
     openFullPageBt.setAttribute('href', 'index.html')
     document.body.appendChild(openFullPageBt)
     openFullPageBt.classList.add('open_full_page')
-    openFullPageBt.innerHTML = 'Open full page'
+    openFullPageBt.innerHTML = 'Asses Your Brand'
     openFullPageBt.style.display = 'block'
 
     mainEl.style.height = '100vh'
     mainEl.style.paddingBottom = '0'
+    mainEl.style.justifyContent = 'unset'
+    document.querySelector('.result').style.margin = '10rem 0'
 }
 
 // Check if there's params
@@ -256,6 +260,8 @@ if (url.includes('?')) {
     function updateGraphFromURL(url) {
         // const paramPairs = url.split('&');
         const params = [];
+
+        let totalScoreFromURL = 0;
 
         // paramPairs.forEach(pair => {
         //     const [key, value] = pair.split('=');
@@ -275,9 +281,14 @@ if (url.includes('?')) {
 
         for (let w = 0; w < params.length; w++) {
             chart.data.datasets[0].data[w] = params[w].value;
+
+            totalScoreFromURL += Number(params[w].value)
         }
 
         chart.update();
+
+        scoreDisplay.innerHTML = `Score:<span class="score"><span class="current">${totalScoreFromURL}</span><span class="total">/150</span></span>`
+        scoreDisplay.classList.add('preset')
         return params;
     }
 
