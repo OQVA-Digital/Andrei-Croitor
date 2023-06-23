@@ -155,6 +155,9 @@ function calculateScore() {
         }
     }
 
+
+    const totalScoreInput = document.getElementById('totalScore')
+
     if (allFilled == true) {
         score = 0;
 
@@ -166,6 +169,8 @@ function calculateScore() {
         resultCtnrOffset = resultCtnr.offsetTop - 100
 
         ScoreDisplay.innerHTML = score
+
+        totalScoreInput.value = score
 
         setTimeout(() => {
             window.scrollTo(0, resultCtnrOffset)
