@@ -6,6 +6,26 @@
     --bgline3: calc(75.5% - ((var(--bglinewidth) * 9) - (var(--bglinewidth) * var(--thumbfactor))));
 }
 
+.open_full_page {
+    display: none;
+    position: absolute;
+    top: clamp(2rem, 7vmin, 4rem);
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: fit-content;
+    padding: 1.2rem 2rem;
+    margin-inline: auto;
+    background-color: var(--c1);
+    border-radius: 0.3rem;
+    z-index: 2;
+    color: var(--dark);
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -362,11 +382,11 @@ input[type="range"]::-moz-range-track:active {}
     color: var(--c1);
 }
 
-.quiz_ctnr form>.ctnr fieldset:not(:first-of-type) {
+.quiz_ctnr form>.questions_ctnr fieldset:not(:first-of-type) {
     /* margin-top: clamp(10rem, 24vw, 12rem); */
 }
 
-.quiz_ctnr form>.ctnr fieldset {
+.quiz_ctnr form>.questions_ctnr fieldset {
     border: unset;
     padding: clamp(2rem, 9vmin, 6rem) clamp(2rem, 5vmin, 5rem) clamp(2rem, 22vmin, 13rem);
     background-color: #1119;
@@ -847,7 +867,7 @@ form fieldset:not(.visible) {
     position: absolute;
 }
 
-.quiz_ctnr form>.ctnr fieldset.visible {
+.quiz_ctnr form>.questions_ctnr fieldset.visible {
     transform: translateX(0);
     position: relative;
     max-height: 1000000rem;

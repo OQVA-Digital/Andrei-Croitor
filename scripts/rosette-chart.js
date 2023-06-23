@@ -138,6 +138,8 @@ let sum;
 
 const scoreHiddenInputs = document.querySelectorAll('.score_inputs input[type="hidden"]')
 
+const userScoreURL = document.getElementById('userScoreURL')
+
 function getFieldsetValues() {
     for (i = 0; i < formFieldsets.length; i++) {
         sum = 0;
@@ -225,10 +227,31 @@ function updateURLParameter(url, param, paramVal) {
 
 var url = window.location.href;
 
+const mainEl = document.querySelector('main')
+
+const paramHideable = document.querySelectorAll('.result h2, section.intro, .questions_ctnr, .fieldset_controls, .reveal.cta, .contact_form')
+
+function hasParams() {
+    for (i = 0; i < paramHideable.length; i++) {
+        paramHideable[i].style.display = 'none'
+        // console.log(paramHideable[i])
+    }
+
+    const openFullPageBt = document.createElement("a");
+    openFullPageBt.setAttribute('href', 'index.html')
+    document.body.appendChild(openFullPageBt)
+    openFullPageBt.classList.add('open_full_page')
+    openFullPageBt.innerHTML = 'Open full page'
+    openFullPageBt.style.display = 'block'
+
+    mainEl.style.height = '100vh'
+    mainEl.style.paddingBottom = '0'
+}
 
 // Check if there's params
 if (url.includes('?')) {
-    console.log('params')
+
+    hasParams()
 
     function updateGraphFromURL(url) {
         // const paramPairs = url.split('&');
@@ -251,7 +274,6 @@ if (url.includes('?')) {
         }
 
         for (let w = 0; w < params.length; w++) {
-            // console.log(params[w]);
             chart.data.datasets[0].data[w] = params[w].value;
         }
 
@@ -260,9 +282,6 @@ if (url.includes('?')) {
     }
 
     updateGraphFromURL(url);
-
-
-    // console.log(updateGraphFromURL(url))
 } else {
     console.log('no params')
 }
@@ -274,4 +293,5 @@ function updateURL() {
         newURL = updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value);
         window.history.pushState('', '', newURL);
     }
+    userScoreURL.value = window.location.href
 }
