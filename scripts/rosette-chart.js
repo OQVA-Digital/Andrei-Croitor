@@ -223,47 +223,55 @@ function updateURLParameter(url, param, paramVal) {
     return baseURL + "?" + newAdditionalURL + rows_txt;
 }
 
-var url = updateURLParameter(window.location.href, 'locId', 'newLoc');
-url = updateURLParameter(url, 'resId', 'newResId');
-
-const urlLocation = window.location.href;
+var url = window.location.href;
 
 
 // Check if there's params
-if (urlLocation.includes('?')) {
+if (url.includes('?')) {
     console.log('params')
-    const params = [];
 
-    function updateGraphFromURL(urlLocation) {
-        const paramPairs = urlLocation.split('&');
-        paramPairs.forEach(pair => {
-            const [key, value] = pair.split('=');
-            params.push({ key, value });
-        });
+    function updateGraphFromURL(url) {
+        // const paramPairs = url.split('&');
+        const params = [];
 
-        // console.log(params.length)
-        for (w = 0; w < params.length; w++) {
-            // console.log(w)
-            console.log(params[w + 1])
-            chart.data.datasets[0].data[w] = params[w].value;
-            chart.update();
+        // paramPairs.forEach(pair => {
+        //     const [key, value] = pair.split('=');
+        //     params.push({ key, value });
+        // });
+
+        var queryString = url.split("?")[1];
+        if (queryString) {
+            var pairs = queryString.split("&");
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split("=");
+                var key = decodeURIComponent(pair[0]);
+                var value = decodeURIComponent(pair[1]);
+                params.push({ key: key, value: value });
+            }
         }
+
+        for (let w = 0; w < params.length; w++) {
+            // console.log(params[w]);
+            chart.data.datasets[0].data[w] = params[w].value;
+        }
+
+        chart.update();
         return params;
     }
 
-    updateGraphFromURL(urlLocation)
+    updateGraphFromURL(url);
 
-    // console.log(updateGraphFromURL(urlLocation).length)
 
-    // console.log(updateGraphFromURL(urlLocation)[0].key);
+    // console.log(updateGraphFromURL(url))
 } else {
     console.log('no params')
 }
 
+var newURL;
 
 function updateURL() {
     for (i = 0; i < scoreHiddenInputs.length; i++) {
-        var newURL = updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value);
+        newURL = updateURLParameter(window.location.href, scoreHiddenInputs[i].id, scoreHiddenInputs[i].value);
         window.history.pushState('', '', newURL);
     }
 }
